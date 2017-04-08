@@ -1,0 +1,11 @@
+{
+  "name": "politeia",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-less": "^3.3.0",
+    "gulp-nunjucks-render": "^2.2.1",
+    "nunjucks": "^3.0.0"
+  }
+}
