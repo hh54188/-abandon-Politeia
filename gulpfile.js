@@ -6,7 +6,7 @@ var less = require('gulp-less');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 
-gulp.task('dev', ['watch', 'compile template', 'dev web server', 'compile less']);
+gulp.task('dev', ['watch', 'compile template', 'dev web server', 'compile less', 'concat css']);
 var outputRootPath = path.join(__dirname, 'releases');
 
 var templateOuputFolderPath = path.join(outputRootPath, 'pages');
@@ -41,9 +41,9 @@ gulp.task('watch', function () {
     gulp.watch(lessDirs, ['compile less']);
 });
 
-// gulp.task('concat css', function () {
-//     return gulp.src('./releases/styles/index.css')
-//         .pipe(concatCss('./normalize.css'))
-//         .pipe(gulp.dest(styleOutputDirPath));
-// });
+gulp.task('concat css', function () {
+    return gulp.src([path.join(__dirname, 'releases', 'styles', 'index.css'), path.join(__dirname, 'node_modules', 'normalize.css', 'normalize.css')])
+        .pipe(concat('index.css'))
+        .pipe(gulp.dest(styleOutputDirPath));
+});
 

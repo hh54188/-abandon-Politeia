@@ -1,6 +1,6 @@
 {% extends "base.nunjucks" %}
 
 {% block content %}
-    {% include  "partials/header.nunjucks" %}
+    {% include  "partials/header_index.nunjucks" %}
     {% include  "partials/carousel.nunjucks" %}
 {% endblock %}
