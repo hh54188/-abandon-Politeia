@@ -1,0 +1,4 @@
+{% extends "base.nunjucks" %}
+{% block content %}
+<h2>This is the index page1</h2>
+{% endblock %}

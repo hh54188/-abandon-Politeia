@@ -4,6 +4,7 @@
         <title></title>
     </head>
     <body>
-        <h1>Hello World</h1>
+        <h1>Hello World 04</h1>
+        {% block content %} {% endblock %}
     </body>
 </html>
