@@ -9,7 +9,6 @@
     "gulp-connect": "^5.0.0",
     "gulp-less": "^3.3.0",
     "gulp-nunjucks-render": "^2.2.1",
-    "normalize.css": "^6.0.0",
     "nunjucks": "^3.0.0"
   }
 }

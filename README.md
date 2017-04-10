@@ -1,37 +1,18 @@
-## Required Modules
+## Required Global Modules
 
 ```javascript
-npm install --save-dev gulp-nunjucks-render
-```
-
-```javascript
-npm install --save-dev gulp-connect
-```
-
-```javascript
-npm install --save-dev gulp-webserver
-```
-
-```javascript
-npm install --global gulp-cli
-```
-
-```javascript
-npm install --save-dev gulp
-```
-
-```javascript
-npm install --save-dev nunjucks
+npm install --g gulp-cli
 ```
 
 ```javascript
 npm install -g less
 ```
 
+```javascript
+npm install -g bower
+```
+
 ## Tutorial
 - https://zellwk.com/blog/nunjucks-with-gulp/
-- https://github.com/carlosl/gulp-nunjucks-render
-- https://github.com/schickling/gulp-webserver
-- https://github.com/AveVlad/gulp-connect/
 
 
