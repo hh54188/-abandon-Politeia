@@ -3,4 +3,6 @@
 {% block content %}
     {% include  "partials/header_index.nunjucks" %}
     {% include  "partials/carousel.nunjucks" %}
+    {% include  "partials/recommend_block.nunjucks" %}
+    {% include  "partials/category_block.nunjucks" %}
 {% endblock %}

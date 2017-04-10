@@ -7,7 +7,7 @@
 
     &__text {
         display: inline-block;
-        font-size: 1.4rem;
+        font-size:  @titleFontSize;
         padding: 1rem 2rem;
         text-decoration: none;
 
@@ -21,6 +21,103 @@
     }
 }
 
+.load {
+    width: 100%;
+    border: 1px solid @borderColor;
+    font-size: @titleFontSize;
+    color: @subTextColor;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem 0;
+}
+
+.recommend {
+    padding: 0 @pagePadding;
+    box-sizing: border-box;
+
+    &__title {
+        font-size: @titleFontSize;
+        border-bottom: 1px solid @borderColor;
+        padding: 1rem 0;
+    }
+
+    &__content {
+        padding: 1rem 0;
+        
+        &__row {
+            margin: 0 0 1rem;
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            &__item {
+                width: 48%;
+                height: 10rem;
+                line-height: 10rem;
+                text-align: center;
+                font-size: @titleFontSize;
+                color: black;
+                text-decoration: none;
+
+                &:first-child {
+                    float: left;
+                }
+                
+                &:last-child {
+                    float: right;
+                }
+
+                &--color-one {
+                    background: @importantColor;
+                    color: #ffffff;
+                }
+
+                &--color-two {
+                    background: @focusColor;                    
+                }
+
+                &--color-three {
+                    background: @contrastColor;
+                }
+
+                &--color-four {
+                    background: @highlightColor;
+                }                                    
+            }
+        }
+    }
+}
+
+.category {
+    padding: 0 @pagePadding;
+    box-sizing: border-box;
+
+    &__title {
+        font-size: @titleFontSize;
+        border-bottom: 1px solid @borderColor;
+        padding: 1rem 0;        
+    }
+
+    &__content {
+        padding: 1rem 0; 
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 6rem;
+    background: @focusColor;
+    display: block;
+
+    &__background {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
 .carousel {
     height: 200px;
     background: @focusColor;
@@ -28,12 +125,23 @@
 
     &__controller {
         width: 100%;
-        height: 20px;
+        height: 2rem;
+        line-height: 2rem;        
         position: absolute;
         bottom: 0;
+        text-align: center;
 
         &__item {
-            
+            width: 3rem;
+            height: 0.5rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+            background: #ffffff;
+            display: inline-block;
+            margin-left: 1rem;
+
+            &--focus {
+                background: @contrastColor;
+            }
         }
     }
 }
