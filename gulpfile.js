@@ -5,6 +5,7 @@ var webserver = require('gulp-connect');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('dev', ['watch', 'compile template', 'dev web server', 'compile less', 'concat css']);
 var outputRootPath = path.join(__dirname, 'releases');
@@ -31,6 +32,7 @@ gulp.task('compile less', function () {
         .pipe(less({
             paths: [path.join(__dirname, 'src', 'styles', 'includes')]
         }))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(styleOutputDirPath));
 });
 

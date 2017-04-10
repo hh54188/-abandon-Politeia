@@ -1,4 +1,5 @@
 node_modules
+bower_components
 
 releases/pages/*.html
 releases/scripts/*.js

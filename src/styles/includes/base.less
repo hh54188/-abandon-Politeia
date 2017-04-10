@@ -1,3 +1,9 @@
+@import "variables.less";
+
+.autop-refixer-test {
+    transform: rotateY(-3deg);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,4 +15,35 @@ html, body {
 }
 a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
+    color: #000000;
 }
+
+img:not([src]) {
+    visibility: hidden;
+}
+
+input:focus {
+    outline: none;
+    padding: 0 0 0 1rem;
+}
+
+// ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+//     color: @commentColor;
+//     padding: 0 0 0 1rem;
+// }
+// :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//    color:    @commentColor;
+//    opacity:  1;
+//    padding: 0 0 0 1rem;   
+// }
+// ::-moz-placeholder { /* Mozilla Firefox 19+ */
+//    color:    @commentColor;
+//    opacity:  1;
+//    padding: 0 0 0 1rem;   
+// }
+// :-ms-input-placeholder { /* Internet Explorer 10-11 */
+//    color:    @commentColor;
+//    padding: 0 0 0 1rem;   
+// }
+

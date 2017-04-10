@@ -1,3 +1,4 @@
-<a class="banner" target="blank" href="javascript:void(0);">
-    <img class="banner__background" src="" alt="">
+<a class="banner" target="blank" href="javascript:alert(0);">
+    <img data-src="../sample_images/banner-01.jpg" class="banner__background" alt="">
+    {#<img src="../sample_images/banner-01.jpg" class="banner__background" alt="">#}
 </a>

@@ -1,5 +1,9 @@
 {% extends "base.nunjucks" %}
 
+{% block style%}
+    {% include  "partials/style_index.nunjucks" %}    
+{% endblock %}
+
 {% block content %}
     {% include  "partials/header_index.nunjucks" %}
     {% include  "partials/carousel.nunjucks" %}

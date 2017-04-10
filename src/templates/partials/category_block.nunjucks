@@ -4,5 +4,38 @@
     </div>
     <div class="category__content">
         {% include "partials/banner.nunjucks" %}
+        <ul class="category__list">
+            <li class="category__list__item">
+                <div class="book-cover">
+                    <img src="../sample_images/cover-01.jpg" class="book-cover__image" />
+                </div>
+                <div class="book-desc">
+                    <p class="book-desc__title">千古文人侠客梦</p>
+                    <p class="book-desc__author">陈平原</p>
+                    <p class="book-desc__intro"></p>
+                </div>
+            </li>
+            <li class="category__list__item">
+                <div class="book-cover">
+                    <img src="../sample_images/cover-03.jpg" class="book-cover__image" />
+                </div>
+                <div class="book-desc">
+                    <p class="book-desc__title">阿城精选</p>
+                    <p class="book-desc__author">阿城</p>
+                    <p class="book-desc__intro"></p>
+                </div>            
+            </li>
+            <li class="category__list__item">
+                <div class="book-cover">
+                    <img src="../sample_images/cover-04.jpg" class="book-cover__image" />
+                </div>
+                <div class="book-desc">
+                    <p class="book-desc__title">贾想1996-2008:贾樟柯​电影手记</p>
+                    <p class="book-desc__author">贾樟柯</p>
+                    <p class="book-desc__intro"></p>
+                </div>             
+            </li>
+        </ul>
+        {% include "partials/load_more_button.nunjucks" %}
     </div>
 </div>

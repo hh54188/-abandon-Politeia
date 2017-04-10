@@ -1,0 +1,17 @@
+{% extends "base.nunjucks" %}
+
+{% block style%}
+    {% include  "partials/style_search.nunjucks" %}    
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    {% include  "partials/search_bar.nunjucks" %}
+    <div class="keywords">
+        <a target="_self" href="javascript:alert(0);" class="keywords__keyword">响应式设计</a>
+        <a target="_self" href="javascript:alert(0);" class="keywords__keyword">贾想1996-2008:贾樟柯​电影手记</a>
+        <a target="_self" href="javascript:alert(0);" class="keywords__keyword">观看之道</a>
+        <a target="_self" href="javascript:alert(0);" class="keywords__keyword">说话之道</a>
+        <a target="_self" href="javascript:alert(0);" class="keywords__keyword">企业应用架构模式</a>
+    </div>
+{% endblock %}
