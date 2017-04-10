@@ -1,0 +1,4 @@
+<div class="header">
+    <a target="_blank" href="javascript:void(0);" class="header__text header__text--focus">书城</a>
+    <a target="_blank" href="javascript:void(0);" class="header__text header__text--blur">我的书架</a>
+</div>

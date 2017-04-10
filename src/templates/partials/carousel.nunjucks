@@ -1,1 +1,3 @@
-<h1>This is carousel</h1>
+<div class="carousel">
+    <div class="carousel__controller"></div>
+</div>
