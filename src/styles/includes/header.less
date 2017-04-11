@@ -1,6 +1,27 @@
 .header {
     border-bottom: 1px solid @borderColor;
     text-align: center;
+    position: relative;
+
+    &__back {
+        font-size: @normalFontSize;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        padding: 1rem;
+        transform: translateY(-50%);        
+    }
+
+    &__search {
+        position: absolute;
+        font-size: @titleFontSize;
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        padding: 1rem;
+        transform: translateY(-50%);
+    }
 
     &__text {
         display: inline-block;

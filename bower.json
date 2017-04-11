@@ -3,6 +3,5 @@
   "dependencies": {
     "slick-carousel": "^1.6.0",
     "normalize-css": "^6.0.0",
-    "font-awesome": "fontawesome#^4.7.0"
   }
 }

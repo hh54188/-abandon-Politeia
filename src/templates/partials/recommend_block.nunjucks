@@ -20,5 +20,5 @@
             </a>        
         </div>
     </div>
-    {% include "partials/load_more_button.nunjucks" %}
+    {% include "partials/load_button.nunjucks" %}
 </div>

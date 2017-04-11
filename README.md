@@ -1,13 +1,17 @@
 ## TODO
 
+- 图书特效
+- 标题按钮
+- font-icon
 - 块状物体垂直居中
 - autoprefix
-- font-icon
 - 图片懒加载
 - 加载菊花居中
-- carousel
-- 主页上的搜索按钮
-- 图书特效
+
+## 兼容性可能存在问题的样式：
+
+- flex
+- line-clamp
 
 ## TO BE DETERMINED
 
@@ -47,6 +51,9 @@ bower install
 
 - vertical center:
     - https://css-tricks.com/centering-css-complete-guide/
+
+- flexbox tutorial
+    - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
 

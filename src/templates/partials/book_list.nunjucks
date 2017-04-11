@@ -1,0 +1,81 @@
+<div class="books__list">
+    <ul>
+        <li class="books__list__item">
+            <div class="book-cover">
+                <div class="book">
+                    <img src="../sample_images/cover-01.jpg" />
+                </div>
+            </div>
+            <div class="book-desc">
+                <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                <p class="book-desc__author book-desc__author--small">陈平原</p>
+                <p class="book-desc__intro book-desc__intro--small">千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、</p>
+                <div class="book-desc__rate">
+                    {% include "partials/stars.nunjucks" %}
+                </div>
+            </div>
+        </li>
+        <li class="books__list__item">
+            <div class="book-cover">
+                <div class="book">
+                    <img src="../sample_images/cover-03.jpg" />
+                </div>                
+            </div>
+            <div class="book-desc">
+                <p class="book-desc__title book-desc__title--small">阿城精选</p>
+                <p class="book-desc__author book-desc__author--small">阿城</p>
+                <p class="book-desc__intro book-desc__intro--small">“世纪文学60家”书系的出版，旨在囊括20世纪华文创作的精华，展示具有经典意义的作家作品，打造一份适于典藏的精品书目。她凝聚了数十位专家的心血，</p>
+                <div class="book-desc__rate">
+                    {% include "partials/stars.nunjucks" %}
+                </div>            
+            </div>            
+        </li>
+        <li class="books__list__item">
+            <div class="book-cover">
+                <div class="book">
+                    <img src="../sample_images/cover-04.jpg" />
+                </div>
+            </div>
+            <div class="book-desc">
+                <p class="book-desc__title book-desc__title--small">贾想1996-2008:贾樟柯​电影手记</p>
+                <p class="book-desc__author book-desc__author--small">贾樟柯</p>
+                <p class="book-desc__intro book-desc__intro--small">贾樟柯从上世纪90年代开始电影编导工作，至今已逾十年。《贾想1996-2008：贾樟柯电影手记》就是十多年来贾樟柯导演生涯的一个总结，</p>
+                <div class="book-desc__rate">
+                    {% include "partials/stars.nunjucks" %}
+                </div>            
+            </div>            
+        </li>
+        <li class="books__list__item">
+            <div class="book-cover">
+                <div class="book">
+                    <img src="../sample_images/cover-02.jpg" />
+                </div>
+            </div>
+            <div class="book-desc">
+                <p class="book-desc__title book-desc__title--small">贾想1996-2008:贾樟柯​电影手记</p>
+                <p class="book-desc__author book-desc__author--small">贾樟柯</p>
+                <p class="book-desc__intro book-desc__intro--small">贾樟柯从上世纪90年代开始电影编导工作，至今已逾十年。《贾想1996-2008：贾樟柯电影手记》就是十多年来贾樟柯导演生涯的一个总结，</p>
+                <div class="book-desc__rate">
+                    {% include "partials/stars.nunjucks" %}
+                </div>            
+            </div>            
+        </li>
+        <li class="books__list__item">
+            <div class="book-cover">
+                <div class="book">
+                    <img src="../sample_images/cover-05.jpg" />
+                </div>
+            </div>
+            <div class="book-desc">
+                <p class="book-desc__title book-desc__title--small">观看之道</p>
+                <p class="book-desc__author book-desc__author--small">约翰·伯格</p>
+                <p class="book-desc__intro book-desc__intro--small">观看先于言语。观看确立了我们在周围世界的地位。他人的视线与我们的相结合，使我们确信自己置身于这可观看的世界之中。</p>
+                <div class="book-desc__rate">
+                    {% include "partials/stars.nunjucks" %}
+                </div>            
+            </div>            
+        </li>        
+    </ul>
+    {% include "partials/load_button.nunjucks" %}
+    {% include "partials/loading_state.nunjucks" %}
+</div>

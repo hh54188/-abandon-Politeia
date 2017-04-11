@@ -9,6 +9,8 @@
         lazyLoad: 'ondemand',
         appendDots: $('.carousel__controller'),
         dots: true,
-        dotsClass: 'carousel__controller__item'；
+        customPaging: function (slider, i) {
+            return $('<span></span>');
+        }
     });
 </script>

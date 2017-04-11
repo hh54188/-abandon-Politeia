@@ -1,0 +1,11 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/booklist_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    {% include  "partials/search_bar.nunjucks" %}
+    {% include  "partials/book_list.nunjucks" %}
+{% endblock %}

@@ -1,3 +1,5 @@
 <div class="header">
+    <a class="header__back" target="self" href="javascript:alert(0);">返回</a>
     <span class="header__text">搜索图书</span>
+    <a class="header__search icon-search" href="javascript:alert(0);" target="_blank"></a>
 </div>

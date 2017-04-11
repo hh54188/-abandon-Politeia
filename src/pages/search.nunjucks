@@ -1,7 +1,7 @@
 {% extends "base.nunjucks" %}
 
-{% block style%}
-    {% include  "partials/style_search.nunjucks" %}    
+{% block header %}
+    {% include "partials/style_search.nunjucks" %}    
 {% endblock %}
 
 {% block content %}

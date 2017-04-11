@@ -1,0 +1,12 @@
+<ul class="stars-list">
+    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__text">
+        <span class="stars-list__text__cur">10</span>
+        <span class="stars-list__text__split">/</span>
+        <span class="stars-list__text__total">10</span>
+    </li>
+</ul>

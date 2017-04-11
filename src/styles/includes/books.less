@@ -1,0 +1,102 @@
+.books {
+    padding: 0 @pagePadding;
+    box-sizing: border-box;
+
+    &__title {
+        font-size: @titleFontSize;
+        border-bottom: 1px solid @borderColor;
+        padding: 1rem 0;        
+    }
+
+    &__content {
+        padding: 1rem 0; 
+    }
+
+    &__list {
+        &__item {
+            padding: 1rem 0;
+            border-bottom: 1px solid @borderColor;
+            list-style-type: none;
+            // display: block;
+            display: flex; 
+            flex-direction: row;
+            justify-content:space-between;
+
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover {
+                background: @focusColor;
+            }
+        }
+    }
+}
+
+@bookCoverWidth: 8rem;
+
+.book-cover {
+    float: left;
+    width: @bookCoverWidth;
+    height: 10rem;
+
+    &__image {
+        height: 10rem;
+        box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
+    }
+}
+
+.book-desc {
+    height: 10rem;
+    width: 100%;
+
+    box-sizing: border-box;
+    margin: 0 0 0 -@bookCoverWidth;
+    float: left;
+    padding: 0 0 0 @bookCoverWidth + 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+
+    &__title {
+        &--normal {
+            font-size: @titleFontSize;
+        }
+        &--small {
+            font-size: @normalFontSize;
+        }
+    }
+
+    &__author {
+        &--normal {
+            font-size: @normalFontSize;
+        }
+        &--small {
+            font-size: @normalFontSize;
+            color: @subTextColor;
+        }        
+    }
+
+    &__intro {
+        &--normal {
+            font-size: @normalFontSize;
+            -webkit-line-clamp: 3;
+        }
+        &--small {
+            font-size: @normalFontSize;
+            -webkit-line-clamp: 2;            
+        }
+        color: @subTextColor;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+    }
+}

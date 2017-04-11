@@ -11,8 +11,10 @@
         </a>
     </div>
     <div class="carousel__controller">
-        {#<div class="carousel__controller__item"></div>
-        <div class="carousel__controller__item"></div>
-        <div class="carousel__controller__item carousel__controller__item--focus"></div>#}
+        {#<ul class="carousel__controller__list">
+            <div class="carousel__controller__list__item"></div>
+            <div class="carousel__controller__list__item"></div>
+            <div class="carousel__controller__list__item carousel__controller__item--focus"></div>
+        </ul>#}
     </div>
 </div>

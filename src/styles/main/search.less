@@ -1,37 +1,7 @@
 @import "base.less";
 @import "variables.less";
 @import "header.less";
-
-.search-bar {
-    padding: 0 @pagePadding;
-    margin: 1rem 0 0;
-    position: relative;
-    
-    &__icon {
-        content: '';
-        display: block;
-        font-size: @titleFontSize;
-        color: @commentColor;
-
-        position: absolute;
-        top: 50%;
-        right: 2rem;
-        transform: translateY(-50%);
-    }
-
-    &__input {
-        border: 1px solid @borderColor;
-        display: block;
-        width: 100%;
-        height: 4rem;
-        padding: 0 2rem 0 1rem;
-        box-sizing: border-box;
-
-        &:focus ~ span {
-            visibility: hidden;
-        }
-    }
-}
+@import "search_bar.less";
 
 .keywords {
     margin: 1rem 0 0;

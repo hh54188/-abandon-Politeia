@@ -1,43 +1,50 @@
-<div class="category">
-    <div class="category__title">
+<div class="books">
+    <div class="books__title">
         <p>热门推荐</p>
     </div>
-    <div class="category__content">
+    <div class="books__content">
         {% include "partials/banner.nunjucks" %}
-        <ul class="category__list">
-            <li class="category__list__item">
+        <ul class="books__list">
+            <li class="books__list__item">
                 <div class="book-cover">
                     <div class="book">
                         <img src="../sample_images/cover-01.jpg" class="" />
                     </div>
                 </div>
                 <div class="book-desc">
-                    <p class="book-desc__title">千古文人侠客梦</p>
-                    <p class="book-desc__author">陈平原</p>
-                    <p class="book-desc__intro"></p>
+                    <p class="book-desc__title book-desc__title--normal">千古文人侠客梦</p>
+                    <p class="book-desc__author book-desc__author--normal">陈平原</p>
+                    {#<div class="book-desc__rate">
+                        {% include "partials/stars.nunjucks" %}
+                    </div>#}
+                    <p class="book-desc__intro book-desc__intro--normal">千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、</p>
                 </div>
             </li>
-            <li class="category__list__item">
+            <li class="books__list__item">
                 <div class="book-cover">
-                    <img src="../sample_images/cover-03.jpg" class="" />
+                    <div class="book">
+                        <img src="../sample_images/cover-03.jpg" class="" />
+                    </div>                
                 </div>
                 <div class="book-desc">
-                    <p class="book-desc__title">阿城精选</p>
-                    <p class="book-desc__author">阿城</p>
-                    <p class="book-desc__intro"></p>
+                    <p class="book-desc__title book-desc__title--normal">阿城精选</p>
+                    <p class="book-desc__author book-desc__author--normal">阿城</p>
+                    <p class="book-desc__intro book-desc__intro--normal">“世纪文学60家”书系的出版，旨在囊括20世纪华文创作的精华，展示具有经典意义的作家作品，打造一份适于典藏的精品书目。她凝聚了数十位专家的心血，</p>
                 </div>            
             </li>
-            <li class="category__list__item">
+            <li class="books__list__item">
                 <div class="book-cover">
-                    <img src="../sample_images/cover-04.jpg" class="" />
+                    <div class="book">
+                        <img src="../sample_images/cover-04.jpg" class="" />
+                    </div>
                 </div>
                 <div class="book-desc">
-                    <p class="book-desc__title">贾想1996-2008:贾樟柯​电影手记</p>
-                    <p class="book-desc__author">贾樟柯</p>
-                    <p class="book-desc__intro"></p>
+                    <p class="book-desc__title book-desc__title--normal">贾想1996-2008:贾樟柯​电影手记</p>
+                    <p class="book-desc__author book-desc__author--normal">贾樟柯</p>
+                    <p class="book-desc__intro book-desc__intro--normal">贾樟柯从上世纪90年代开始电影编导工作，至今已逾十年。《贾想1996-2008：贾樟柯电影手记》就是十多年来贾樟柯导演生涯的一个总结，</p>
                 </div>             
             </li>
         </ul>
-        {% include "partials/load_more_button.nunjucks" %}
+        {% include "partials/load_button.nunjucks" %}
     </div>
 </div>

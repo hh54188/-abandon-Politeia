@@ -3,6 +3,8 @@
 @import "header.less";
 @import "load_button.less";
 @import "book_cover_effect.less";
+@import "books.less";
+@import "stars.less";
 
 .recommend {
     padding: 0 @pagePadding;
@@ -24,10 +26,13 @@
                 display: block;
                 clear: both;
             }
+            
+            @itemHeight: 8rem;
+
             &__item {
                 width: 48%;
-                height: 10rem;
-                line-height: 10rem;
+                height: @itemHeight;
+                line-height: @itemHeight;
                 text-align: center;
                 font-size: @titleFontSize;
                 color: black;
@@ -62,74 +67,12 @@
     }
 }
 
-.category {
-    padding: 0 @pagePadding;
-    box-sizing: border-box;
-
-    &__title {
-        font-size: @titleFontSize;
-        border-bottom: 1px solid @borderColor;
-        padding: 1rem 0;        
-    }
-
-    &__content {
-        padding: 1rem 0; 
-    }
-
-    &__list {
-        &__item {
-            padding: 1rem 0;
-            border-bottom: 1px solid @borderColor;
-            list-style-type: none;
-            display: block;
-
-            &:after {
-                content: '';
-                display: block;
-                clear: both;
-            }
-
-            &:last-child {
-                border: none;
-            }
-        }
-    }
-}
-
-.book-cover {
-    float: left;
-    width: 8rem;
-    height: 10rem;
-
-    &__image {
-        height: 10rem;
-        box-shadow: 0.1rem 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
-    }
-}
-
-.book-desc {
-    height: 10rem;
-    float: left;
-    margin: 0 0 0 1rem;
-
-    &__title {
-        font-size: @normalFontSize;
-    }
-
-    &__author {
-        font-size: @normalFontSize;
-    }
-
-    &__intro {
-        font-size: @normalFontSize;
-        color: @subTextColor;
-    }
-}
 
 .banner {
     width: 100%;
     height: 5rem;
-    background: @focusColor;
+    // background: @focusColor;
+    border: 1px solid @borderColor;
     display: block;
     position: relative;
 
@@ -144,6 +87,7 @@
     }
 }
 
+
 .carousel {
     height: 200px;
     background: @focusColor;
@@ -152,22 +96,29 @@
     &__controller {
         width: 100%;
         height: 2rem;
-        line-height: 2rem;        
         position: absolute;
         bottom: 0;
         text-align: center;
-
-        &__item {
-            width: 3rem;
-            height: 0.5rem;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-            background: #ffffff;
-            display: inline-block;
-            margin-left: 1rem;
-
-            &--focus {
-                background: @contrastColor;
-            }
-        }
     }
+}
+
+.slick-dots {
+    width: 100%;
+    height: 100%;
+}
+
+@dotWidth: 0.8rem;
+
+.slick-dots li {
+    width: @dotWidth;
+    height: @dotWidth;
+    border-radius: @dotWidth / 2;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+    background: #ffffff;
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+li.slick-active {
+    background: @importantColor;   
 }

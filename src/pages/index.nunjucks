@@ -1,6 +1,6 @@
 {% extends "base.nunjucks" %}
 
-{% block style%}
+{% block header %}
     {% include  "partials/index_header.nunjucks" %}    
 {% endblock %}
 
