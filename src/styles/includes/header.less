@@ -1,0 +1,18 @@
+.header {
+    border-bottom: 1px solid @borderColor;
+    text-align: center;
+
+    &__text {
+        display: inline-block;
+        font-size:  @titleFontSize;
+        padding: 1rem 2rem;
+
+        &--focus {
+            color: @mainTextColor;
+        }
+
+        &--blur {
+            color: @commentColor;
+        }
+    }
+}

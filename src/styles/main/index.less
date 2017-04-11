@@ -1,34 +1,7 @@
 @import "base.less";
 @import "variables.less";
-
-.header {
-    border-bottom: 1px solid @borderColor;
-    text-align: center;
-
-    &__text {
-        display: inline-block;
-        font-size:  @titleFontSize;
-        padding: 1rem 2rem;
-
-        &--focus {
-            color: @mainTextColor;
-        }
-
-        &--blur {
-            color: @commentColor;
-        }
-    }
-}
-
-.load {
-    width: 100%;
-    border: 1px solid @borderColor;
-    font-size: @titleFontSize;
-    color: @subTextColor;
-    display: block;
-    text-align: center;
-    padding: 1rem 0;
-}
+@import "header.less";
+@import "load_button.less";
 
 .recommend {
     padding: 0 @pagePadding;

@@ -1,7 +1,7 @@
 ## TODO
 
+- 块状物体垂直居中
 - autoprefix
-- less extend
 - font-icon
 - 图片懒加载
 - 加载菊花居中
