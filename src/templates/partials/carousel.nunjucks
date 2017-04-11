@@ -1,7 +1,18 @@
 <div class="carousel">
+    <div class="carousel__list">
+        <a target="_blank" href="javascript:alert(0);" class="carousel__list__item">
+            <img data-lazy="../sample_images/banner-01.jpg"/>
+        </a>
+        <a target="_blank" href="javascript:alert(0);" class="carousel__list__item">
+            <img data-lazy="../sample_images/banner-02.jpg"/>        
+        </a>
+        <a target="_blank" href="javascript:alert(0);" class="carousel__list__item">
+            <img data-lazy="../sample_images/banner-03.jpg"/>
+        </a>
+    </div>
     <div class="carousel__controller">
+        {#<div class="carousel__controller__item"></div>
         <div class="carousel__controller__item"></div>
-        <div class="carousel__controller__item"></div>
-        <div class="carousel__controller__item carousel__controller__item--focus"></div>
+        <div class="carousel__controller__item carousel__controller__item--focus"></div>#}
     </div>
 </div>

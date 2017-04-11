@@ -1,0 +1,14 @@
+<script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
+<script>
+    $('.carousel__list').slick({
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 300,
+        arrows: false,
+        mobileFirst: true,
+        lazyLoad: 'ondemand',
+        appendDots: $('.carousel__controller'),
+        dots: true,
+        dotsClass: 'carousel__controller__item'；
+    });
+</script>

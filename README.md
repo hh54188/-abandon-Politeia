@@ -45,4 +45,8 @@ bower install
     - http://srobbin.com/blog/3d-css-book-covers/
     - https://tympanus.net/codrops/2013/07/11/animated-books-with-css-3d-transforms/
 
+- vertical center:
+    - https://css-tricks.com/centering-css-complete-guide/
+
+
 

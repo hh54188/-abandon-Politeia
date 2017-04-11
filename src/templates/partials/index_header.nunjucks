@@ -1,0 +1,3 @@
+<link rel="stylesheet" href="../styles/index.css">
+<link rel="stylesheet" href="../../bower_components/slick-carousel/slick/slick.css">
+<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>

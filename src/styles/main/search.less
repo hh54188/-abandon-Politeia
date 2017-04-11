@@ -12,9 +12,11 @@
         display: block;
         font-size: @titleFontSize;
         color: @commentColor;
+
         position: absolute;
-        right: 0;
-        top: 0;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
     }
 
     &__input {
@@ -24,6 +26,10 @@
         height: 4rem;
         padding: 0 2rem 0 1rem;
         box-sizing: border-box;
+
+        &:focus ~ span {
+            visibility: hidden;
+        }
     }
 }
 

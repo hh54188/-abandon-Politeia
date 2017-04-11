@@ -1,7 +1,7 @@
 {% extends "base.nunjucks" %}
 
 {% block style%}
-    {% include  "partials/style_index.nunjucks" %}    
+    {% include  "partials/index_header.nunjucks" %}    
 {% endblock %}
 
 {% block content %}
@@ -9,4 +9,5 @@
     {% include  "partials/carousel.nunjucks" %}
     {% include  "partials/recommend_block.nunjucks" %}
     {% include  "partials/category_block.nunjucks" %}
+    {% include  "partials/index_footer.nunjucks" %}
 {% endblock %}
