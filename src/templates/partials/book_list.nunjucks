@@ -77,5 +77,4 @@
         </li>        
     </ul>
     {% include "partials/load_button.nunjucks" %}
-    {% include "partials/loading_state.nunjucks" %}
 </div>

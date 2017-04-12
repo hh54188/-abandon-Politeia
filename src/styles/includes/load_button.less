@@ -1,9 +1,31 @@
 .load {
     width: 100%;
     border: 1px solid @borderColor;
+    padding: 1rem 0;
     font-size: @titleFontSize;
     color: @subTextColor;
     display: block;
     text-align: center;
-    padding: 1rem 0;
+    position: relative;
+    box-sizing: border-box;
+
+
+    &--normal {
+        .spinner_circle {
+            display: none;
+        }
+        .load__text {
+            display: inline;
+        }
+    }
+
+    &--loading {
+        height: 5rem;
+        .spinner_circle {
+            display: block;
+        }
+        .load__text {
+            display: none;
+        }        
+    }
 }

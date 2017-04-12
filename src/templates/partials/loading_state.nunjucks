@@ -1,3 +1,4 @@
 <div class="loading">
-    <span>更多图书加载中</span>
+    {% include "partials/spinner-circle.nunjucks" %}
+    {#<span>更多图书加载中</span>#}
 </div>
