@@ -1,0 +1,23 @@
+.tab-header {
+    box-sizing: border-box;
+    border-bottom: 1px solid @borderColor;
+
+    &__list {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+
+        display: flex;
+        justify-content: space-around;
+
+        &__item {
+            padding: 0.5rem 1.5rem;
+            font-size: @normalFontSize;
+            display: inline-block;
+            &--focus {
+                background: @focusColor;
+            }
+        }
+    }
+}

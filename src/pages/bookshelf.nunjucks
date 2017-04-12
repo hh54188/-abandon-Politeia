@@ -1,0 +1,75 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/bookshelf_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    <div class="tab-wrap">
+        {% include  "partials/tab_header.nunjucks" %}
+        <div class="tab_content">
+            <div class="books__list">
+                <ul>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                            <p class="book-desc__author book-desc__author--small">陈平原</p>
+                            <div class="book-desc__menu-wrap">
+                                <span class="book-desc__menu-wrap__icon icon-menu"></span>
+                                <div class="book-desc__menu-wrap__menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-03.jpg" />
+                            </div>                
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">阿城精选</p>
+                            <p class="book-desc__author book-desc__author--small">阿城</p>          
+                        </div>            
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-04.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">贾想1996-2008:贾樟柯​电影手记</p>
+                            <p class="book-desc__author book-desc__author--small">贾樟柯</p>           
+                        </div>            
+                    </li>     
+                </ul>
+                {% include "partials/load_button.nunjucks" %}
+            </div>            
+        </div>
+    </div>
+{% endblock %}
