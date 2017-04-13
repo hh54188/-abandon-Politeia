@@ -67,6 +67,16 @@
 
     position: relative;
 
+    &__category {
+        font-size: @normalFontSize;
+        color: @subTextColor;        
+    }
+
+    &__price {
+        font-size: @normalFontSize;
+        color: @subTextColor;          
+    }
+
     &__title {
         &--normal {
             font-size: @titleFontSize;
@@ -116,16 +126,23 @@
             font-size: @iconFontSize;
         }
 
+        &__input {
+            display: none;
+            &:checked ~ .menu{
+                display: block;
+            } 
+        }
+
         &__menu {
             font-size: @normalFontSize;
             background: #ffffff;
+
+            display: none;
 
             position: absolute;
             right: 120%;
             top: 50%;
             transform: translateY(-50%);
-
-            z-index: 1;
 
             border: 1px solid @borderColor;
             width: 8rem;
@@ -140,10 +157,6 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
-
-                &__item {
-                    // border: 1px solid @borderColor;
-                }
             }
         }
     }

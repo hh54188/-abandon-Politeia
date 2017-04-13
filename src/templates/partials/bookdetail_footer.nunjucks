@@ -1,0 +1,8 @@
+<script src="../../bower_components/iscroll/build/iscroll.js"></script>
+<script>
+    new IScroll('.recommend__container', { 
+        scrollX: true, 
+        scrollY: false, 
+        mouseWheel: true 
+    });
+</script>

@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <script src="../../bower_components/iscroll/build/iscroll.js"></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #wrapper {
+                width: 300px;
+                height: 100px;
+                border: 1px solid black;
+
+                position: relative;
+
+                /*position: absolute;
+                top: 0;
+                left: 0;*/
+            }
+            #scroller {
+	            position: absolute;
+                left: 0;
+                top: 0;
+
+                width: 5000px;
+	            height: 100%;
+
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a7cfdf+0,23538a+100;Blue+3d+%238 */
+                background: #a7cfdf; /* Old browsers */
+                background: -moz-linear-gradient(left,  #a7cfdf 0%, #23538a 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  #a7cfdf 0%,#23538a 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=1 ); /* IE6-9 */
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="scroller">
+            </div>
+        </div>
+        <script>
+             new IScroll('#wrapper', { 
+                 scrollX: true, 
+                 scrollY: false, 
+                 mouseWheel: true 
+             });
+        </script>
+    </body>
+</html>

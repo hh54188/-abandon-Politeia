@@ -1,0 +1,97 @@
+@import "base.less";
+@import "variables.less";
+@import "header.less";
+@import "load_button.less";
+@import "book_cover_effect.less";
+@import "books.less";
+@import "stars.less";
+
+.content {
+    padding:0  @pagePadding;
+}
+
+.button-group {
+    padding: 1rem 0 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid @borderColor;
+
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    &__button {
+        background: none;
+        border: none;
+
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        text-align: center;
+
+        width: 46%;
+
+        &--primary {
+            background: @importantColor;
+            color: white;
+            float: left;
+        }
+
+        &--secondary {
+            border: 1px solid @borderColor;
+            float: right;
+        }
+
+    }
+}
+
+.recommend {
+    margin: 1rem 0 0;
+    border: 1px sold @borderColor;
+    
+    &__title {
+        font-size: @titleFontSize;
+    }
+
+    &__container {
+        margin: 1rem 0;
+        width: 100%;
+        height: 13rem;
+    }
+
+    &__list {
+        width: 100%;
+        height: 100%;
+
+        &__item {
+            float: left;
+            margin: 0 0 0 2rem;
+
+            .book-cover {
+                float: none;
+            }
+
+            &__book-title {
+                text-align: center;
+                font-size: @normalFontSize;
+                margin: 1rem 0 0;
+            }
+
+            &:first-child {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.comment {
+    margin: 1rem 0 0;
+    clear: both;
+
+    &__title {
+        font-size: @titleFontSize;        
+    }
+}
+
+
+

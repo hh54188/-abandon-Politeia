@@ -1,0 +1,97 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/bookdetail_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    <div class="content">
+        <div class="books__list">
+            <ul>
+                <li class="books__list__item">
+                    <div class="book-cover">
+                        <div class="book">
+                            <img src="../sample_images/cover-01.jpg" />
+                        </div>
+                    </div>
+                    <div class="book-desc">
+                        <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                        <p class="book-desc__author book-desc__author--small">陈平原</p>
+                        <p class="book-desc__author book-desc__category">小说 / 武侠</p>
+                        <div class="book-desc__rate">
+                            {% include "partials/stars.nunjucks" %}
+                        </div>
+                        <p class="book-desc__author book-desc__price">价格: <span>22</span>元</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="button-group">
+            <button class="button-group__button button-group__button--primary">购买</button>
+            <button class="button-group__button button-group__button--secondary">试读</button>
+        </div>
+        <div class="recommend">
+            <p class="recommend__title">相关推荐</p>
+            <div class="recommend__container">
+                <ul class="recommend__list" style="width:110rem;">
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>
+                        <p class="recommend__list__item__book-title">很长的书名</p>
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>                    
+                    </li>                                                                                
+                </ul>
+            </div>
+        </div>
+        <div class="comment">
+            <p class="comment__title">热门评论</p>
+        </div>
+    </div>
+    {% include "partials/bookdetail_footer.nunjucks" %}
+    {% include "partials/tab_script.nunjucks" %}
+{% endblock %}

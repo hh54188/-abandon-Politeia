@@ -1,0 +1,36 @@
+<script>
+    var tabHeaderItems = [].slice.call(document.querySelectorAll('.tab-header li'));
+    var tabContents = [].slice.call(document.querySelectorAll('.tab-content'));
+
+    var headerActiveClassName = 'tab-header__list__item--focus';
+    var contentActiveClassName = 'tab-content--focus';
+
+    function removeHeaderFocus() {
+        tabHeaderItems.forEach(function (item) {
+            item.classList.remove(headerActiveClassName);
+        });
+    }
+
+    function removeContentFocus() {
+        tabContents.forEach(function (item) {
+            item.classList.remove(contentActiveClassName);
+        })
+    }
+
+    if (tabHeaderItems) {
+        tabHeaderItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                var contentId = this.getAttribute('data-content');
+                removeHeaderFocus();
+                this.classList.add(headerActiveClassName);
+
+                removeContentFocus();
+                contentId = 'tab-' + contentId;
+                var content = document.querySelector('#' + contentId);
+                content.classList.add(contentActiveClassName);
+            });
+        });
+    }
+
+
+</script>
