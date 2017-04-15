@@ -1,6 +1,8 @@
 node_modules
 bower_components
 
+*.log
+
 releases/pages/*.html
 releases/scripts/*.js
 releases/styles/*.css

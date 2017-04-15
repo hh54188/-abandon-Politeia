@@ -1,0 +1,6 @@
+<div class="tab-header">
+    <ul class="tab-header__list">
+        <li data-content="intro" class="tab-header__list__item tab-header__list__item--focus"><span>图书简介</span></li>
+        <li data-content="index" class="tab-header__list__item"><span>目录</span></li>
+    </ul>
+</div>

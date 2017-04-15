@@ -34,7 +34,7 @@
         <div class="recommend">
             <p class="recommend__title">相关推荐</p>
             <div class="recommend__container">
-                <ul class="recommend__list" style="width:110rem;">
+                <ul class="recommend__list">
                     <li class="recommend__list__item">
                         <div class="book-cover">
                             <div class="book">
@@ -49,47 +49,42 @@
                                 <img src="../sample_images/cover-01.jpg" />
                             </div>
                         </div>                    
-                    </li>
-                    <li class="recommend__list__item">
-                        <div class="book-cover">
-                            <div class="book">
-                                <img src="../sample_images/cover-01.jpg" />
-                            </div>
-                        </div>                    
-                    </li>
-                    <li class="recommend__list__item">
-                        <div class="book-cover">
-                            <div class="book">
-                                <img src="../sample_images/cover-01.jpg" />
-                            </div>
-                        </div>                    
-                    </li>
-                    <li class="recommend__list__item">
-                        <div class="book-cover">
-                            <div class="book">
-                                <img src="../sample_images/cover-01.jpg" />
-                            </div>
-                        </div>                    
-                    </li>
-                    <li class="recommend__list__item">
-                        <div class="book-cover">
-                            <div class="book">
-                                <img src="../sample_images/cover-01.jpg" />
-                            </div>
-                        </div>                    
-                    </li>
-                    <li class="recommend__list__item">
-                        <div class="book-cover">
-                            <div class="book">
-                                <img src="../sample_images/cover-01.jpg" />
-                            </div>
-                        </div>                    
-                    </li>                                                                                
+                    </li>                                                                               
                 </ul>
+            </div>
+        </div>
+        <div class="book-intro">
+            {% include "partials/bookdetail_tab_header.nunjucks" %}
+            <div id="tab-intro" class="tab-content tab-content--focus">
+                <div class="book-intro__intro book-intro__intro--hidden">
+                    <p class="book-intro__intro__text book-intro__intro__text--hidden">《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、主题、背景及过程。全书将小说形态学的研究与文化发生学的探讨相结合，是一部视野广阔、研究扎实的武侠小说研究著作。</p>
+                    <button class="book-intro__intro__button">
+                        <span class="book-intro__intro__button__text">点击阅读更多</span>
+                    </button>
+                </div>
+            </div>
+            <div id="tab-index" class="tab-content">
             </div>
         </div>
         <div class="comment">
             <p class="comment__title">热门评论</p>
+            <div class="comment__content">
+                <ul class="comment__content__list">
+                    <li class="comment__content__list__item">
+                        <div class="comment__content__list__item__avatar-wrap">
+                            <img class="comment__content__list__item__avatar-wrap__avatar" />
+                        </div>
+                        <div class="comment__content__list__item__content">
+                            <div class="comment__content__list__item__content__header">
+                                <p class="comment__content__list__item__content__header__author">用户名称</p>
+                                <div class="comment__content__list__item__content__header__rate"></div>
+                            </div>
+                            <div class="comment__content__list__item__content__body"></div>
+                            <div class="comment__content__list__item__content__footer"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     {% include "partials/bookdetail_footer.nunjucks" %}
