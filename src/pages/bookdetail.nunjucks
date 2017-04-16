@@ -77,12 +77,46 @@
                         <div class="comment__content__list__item__content">
                             <div class="comment__content__list__item__content__header">
                                 <p class="comment__content__list__item__content__header__author">用户名称</p>
-                                <div class="comment__content__list__item__content__header__rate"></div>
+                                <div class="comment__content__list__item__content__header__rate">
+                                    {% include "partials/stars.nunjucks" %}
+                                </div>
                             </div>
-                            <div class="comment__content__list__item__content__body"></div>
-                            <div class="comment__content__list__item__content__footer"></div>
+                            <div class="comment__content__list__item__content__body">
+                                <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
+                            </div>
+                            <div class="comment__content__list__item__content__footer">
+                                <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
+                                <div class="comment__content__list__item__content__footer__fav">
+                                    <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
+                                    <span class="comment__content__list__item__content__footer__fav__text">10</span>
+                                </div>
+                            </div>
                         </div>
                     </li>
+                    <li class="comment__content__list__item">
+                        <div class="comment__content__list__item__avatar-wrap">
+                            <img class="comment__content__list__item__avatar-wrap__avatar" />
+                        </div>
+                        <div class="comment__content__list__item__content">
+                            <div class="comment__content__list__item__content__header">
+                                <img src="../sample_images/avatars/avatar-01.jpg" class="comment__content__list__item__content__header__avatar" alt="">
+                                <p class="comment__content__list__item__content__header__author">用户名称</p>
+                                <div class="comment__content__list__item__content__header__rate">
+                                    {% include "partials/stars.nunjucks" %}
+                                </div>
+                            </div>
+                            <div class="comment__content__list__item__content__body">
+                                <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
+                            </div>
+                            <div class="comment__content__list__item__content__footer">
+                                <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
+                                <div class="comment__content__list__item__content__footer__fav">
+                                    <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
+                                    <span class="comment__content__list__item__content__footer__fav__text">10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>                    
                 </ul>
             </div>
         </div>
