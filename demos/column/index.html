@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            html, body {
+                width: 100%;
+                height: 100%;
+                font-size: 16px;
+            }
+            .container {
+                width: 100%;
+                height: 100%;                
+                columns: auto 100vw;
+            }
+            button {
+                padding: 10px 20px;
+                font-weight: bold;
+                z-index: 1;
+            }
+            #help {
+                position: fixed;
+                left: 0;
+                top: 0;
+            }
+            .fixed-to-top {
+                width: 100%;
+                height: 200px;
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="help">跳转到</button>
+        <div class="container">
+            <script>
+                function generateRandomStr(content) {
+                    var minWordCount = 50;
+                    var maxWordCount = 100;
+                    var currentCount =  parseInt(minWordCount + (maxWordCount - minWordCount) * Math.random(), 10);
+                    var str = '';
+                    for (var i = 0; i < currentCount; i++) {
+                        str += ("--" + content + "--");
+                    }
+                    return str;
+                }
+
+                function generateRandomFontSize() {
+                    var rootElement = document.querySelector('html');
+                    var minFontSize = 10;
+                    var maxFontSize = 30;
+                    var currentFontSize = parseInt(minFontSize + (maxFontSize - minFontSize) * Math.random(), 10);
+                    return currentFontSize;
+                }
+
+                function generateRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++ ) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+                
+                generateRandomFontSize();
+
+                var paragraphMap = {};
+
+                for (var i = 0; i < 100; i++) {
+                    var id = "p-id-" + i;
+                    document.write("<p style=\"background:" + generateRandomColor() + ";font-size:" + generateRandomFontSize() + "px;\" id=\"" + id + "\">" + generateRandomStr(id) + "</p>");
+                }
+
+                for (var i = 0; i < 100; i++) {
+                    var id = "p-id-" + i;
+                    var target = document.querySelector('#' + id);
+                    paragraphMap[id] = target.offsetLeft;
+                }
+
+                function customScrollToId(num) {
+                    var id = "p-id-" + num;
+                    window.scrollTo(paragraphMap[id], 0);
+                    // document.querySelector('#' + id).scrollIntoView({block: "start", behavior: "smooth"});
+                }
+
+                document.querySelector('#help').onclick = function () {
+                    try {
+                        var value = prompt("请输入自然段序号（0至100）");
+                        customScrollToId(value);
+                    } catch(e) {
+                        alert("输入有误！");
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

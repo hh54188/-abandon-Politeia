@@ -1,9 +1,19 @@
 <ul class="stars-list">
-    <li class="stars-list__item icon-star-full"></li>
-    <li class="stars-list__item icon-star-full"></li>
-    <li class="stars-list__item icon-star-full"></li>
-    <li class="stars-list__item icon-star-full"></li>
-    <li class="stars-list__item icon-star-full"></li>
+    <li class="stars-list__item">
+        <span class="icon-star-full"></span>
+    </li>
+    <li class="stars-list__item">
+        <span class="icon-star-full"></span>    
+    </li>
+    <li class="stars-list__item">
+        <span class="icon-star-full"></span>    
+    </li>
+    <li class="stars-list__item">
+        <span class="icon-star-full"></span>        
+    </li>
+    <li class="stars-list__item">
+        <span class="icon-star-full"></span>    
+    </li>
     <li class="stars-list__text">
         <span class="stars-list__text__cur">10</span>
         <span class="stars-list__text__split">/</span>
