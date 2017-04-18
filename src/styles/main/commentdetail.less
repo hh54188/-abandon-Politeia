@@ -1,0 +1,80 @@
+@import "base.less";
+@import "variables.less";
+@import "header.less";
+@import "load_button.less";
+@import "book_cover_effect.less";
+@import "books.less";
+@import "stars.less";
+
+.book-detail {
+    background: @focusColor;
+    padding: 0 @pagePadding;
+}
+
+.comment-detail {
+    padding: 0 @pagePadding;
+    margin: 1rem 0 0;
+
+    &__header {
+        @headerHeight: 4rem;
+        height: @headerHeight;
+        &:after {
+            .clear-float;
+        }
+        &__avatar {
+            height: @headerHeight;
+            width: @headerHeight;
+            border-radius: @headerHeight / 2;
+            float: left;
+            display: block;
+        }
+
+        &__text {
+            font-size: @normalFontSize;
+            float: left;
+            margin: 0 0 0 1rem;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        &__fav {
+            float: right;
+            height: 100%;
+            line-height: @headerHeight;
+            &__icon {
+                color: @contrastColor;
+                font-size: @normalFontSize;
+            }
+        }
+    }
+
+    &__body {
+        font-size: @normalFontSize;
+        margin: 1rem 0;
+
+        p {
+            text-indent: 2rem;
+            margin: 0 0 0.5rem;
+        }
+    }
+
+    &__footer {
+        &:after {
+            .clear-float;
+        }
+
+        font-size: @normalFontSize;
+        color: @subTextColor;
+        margin: 0 0 1rem;
+        &__date {
+            float: left;
+        }
+
+        &__share {
+            float: right;
+        }
+    }
+}

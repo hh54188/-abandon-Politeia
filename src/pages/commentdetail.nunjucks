@@ -1,0 +1,76 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/commentdetail_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    <div class="book-detail">
+        <div class="books__list">
+            <ul>
+                <li class="books__list__item">
+                    <div class="book-cover">
+                        <div class="book">
+                            <img src="../sample_images/cover-01.jpg" />
+                        </div>
+                    </div>
+                    <div class="book-desc">
+                        <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                        <p class="book-desc__author book-desc__author--small">陈平原</p>
+                        <p class="book-desc__author book-desc__intro">《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、主题、背景及过程。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="comment-detail">
+        <div class="comment-detail__header">
+            <img src="../sample_images/avatars/avatar-01.jpg" class="comment-detail__header__avatar" /> 
+            <div class="comment-detail__header__text">
+                <p class="comment-detail__header__text__name">用户名很长</p>
+                <div class="comment-detail__header__text__rate">
+                    <ul class="stars-list">
+                        <li class="stars-list__item">
+                            <span class="icon-star-full"></span>
+                        </li>
+                        <li class="stars-list__item">
+                            <span class="icon-star-full"></span>    
+                        </li>
+                        <li class="stars-list__item">
+                            <span class="icon-star-full"></span>    
+                        </li>
+                        <li class="stars-list__item">
+                            <span class="icon-star-full"></span>        
+                        </li>
+                        <li class="stars-list__item">
+                            <span class="icon-star-full"></span>    
+                        </li>
+                        <li class="stars-list__text">
+                            <span class="stars-list__text__cur">10</span>
+                            <span class="stars-list__text__split">/</span>
+                            <span class="stars-list__text__total">10</span>
+                        </li>
+                    </ul>                
+                </div>
+            </div>
+            <div class="comment-detail__header__fav">
+                <i class="icon-heart comment-detail__header__fav__icon"></i> 
+                <span class="comment-detail__header__fav__text">10</span>           
+            </div>
+        </div>
+        <div class="comment-detail__body">
+            <p>马丁斯科塞斯执导的电影《沉默》改编自日本作家远藤周作的同名小说，截至此刻，本片在烂番茄网站上的好评率为83%，在Metascore的评分为79，在imdb上的评分为7.7，和他上一部宗教题材的电影《基督最后的诱惑》在这三个网站上的积分基本持平。</p>
+            <p>在上映之前，《沉默》被视为2016岁末颁奖季的热门电影之一，但电影在美国本土上映之后，并未能引起舆论的足够重视，也未能在一系列奖项提名中取得惊人建树，但这并不能掩盖电影《沉默》是一部杰作的事实。</p>
+            <p>对于《沉默》最多的批评来自于电影温吞的节奏，个人认为这种指责是不妥的。电影其实在推进过程中保持了一个极为稳定且有效的节奏安排。160分钟的长度毫不拖延，电影相当考究的用激励事件促进故事逻辑化的递进，这比筱田正浩版本散点式，片段化的叙述其实更接近电影的表达方式。故事的贯穿始终的明线是罗德里格兹和加佩神父远赴日本寻找失踪的费莱拉神父，暗线则是主人公罗德里格兹个人对待信仰方式的变化。虽然旁白贯穿始终，但从来没有作为干扰或代替镜头语言叙事的形式出现过。</p>
+        </div>
+        <div class="comment-detail__footer">
+            <div class="comment-detail__footer__date">2017-3-17</div>
+            <div class="comment-detail__footer__share">
+                <i class="comment-detail__footer__share__icon icon-share"></i>
+                <span class="comment-detail__footer__share__text">分享</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
