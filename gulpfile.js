@@ -6,6 +6,7 @@ var less = require('gulp-less');
 var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var autoprefixer = require('gulp-autoprefixer');
+var data = require('gulp-data');
 
 gulp.task('dev', ['watch', 'compile template', 'dev web server', 'compile less', 'concat css']);
 var outputRootPath = path.join(__dirname, 'releases');
@@ -13,6 +14,11 @@ var outputRootPath = path.join(__dirname, 'releases');
 var templateOuputFolderPath = path.join(outputRootPath, 'pages');
 gulp.task('compile template', function () {
     return gulp.src(path.join(__dirname, 'src', 'pages', '*.nunjucks'))
+        .pipe(data(function() {
+            return {
+                data: 'Hello World'
+            }
+        }))
         .pipe(nunjucksRender({
             path: [path.join(__dirname, 'src', 'templates')]
         }))
