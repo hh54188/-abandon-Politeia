@@ -1,0 +1,76 @@
+@import "base.less";
+@import "variables.less";
+@import "header.less";
+@import "load_button.less";
+@import "book_cover_effect.less";
+@import "books.less";
+@import "stars.less";
+
+.book-detail {
+    background: @focusColor;
+    padding: 0 @pagePadding;
+}
+
+.comment-form {
+    padding: 0 @pagePadding;
+    font-size: @titleFontSize;    
+    &__rate {
+        margin: 1rem 0 0;
+        &:after { 
+            .clear-float;
+        }
+
+        &__text {
+            float: left;
+        }
+
+        &__list {
+            float: left;
+            margin: 0 0 0 1rem;
+
+            &__item {
+                display: inline-block;
+                color: @subTextColor;
+                font-size: @iconFontSize;
+                line-height: @iconFontSize;
+            }
+        }
+    }
+
+    &__textarea {
+        margin: 1rem 0 0;
+        textarea {
+            width: 100%;
+            height: 12rem;
+            border: 1px solid @borderColor;
+            box-shadow: inset 0 0 6px 0 @subTextColor;
+            resize: none;
+
+            padding: 1rem;
+            box-sizing: border-box;
+            font-size: @normalFontSize;
+        }
+    }
+
+    &__footer {
+        margin: 0.5rem 0 0;
+        font-size: @normalFontSize;
+        color: @subTextColor;
+
+        &:after {
+            .clear-float;
+        }
+
+        &__text {
+            float: left;
+        }
+
+        &__submit {
+            border: none;
+            float: right;
+            padding: 0.5rem 3rem;
+            background: @importantColor;
+            color: #ffffff;
+        }
+    }
+}

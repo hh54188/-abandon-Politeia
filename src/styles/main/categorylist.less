@@ -1,0 +1,59 @@
+@import "base.less";
+@import "variables.less";
+@import "header.less";
+@import "search_bar.less";
+@import "load_button.less";
+@import "book_cover_effect.less";
+@import "books.less";
+@import "stars.less";
+@import "spinner_circle.less";
+
+.category-list {
+    padding: 0 @pagePadding;
+    &__item {
+        height: 5rem;
+        border-bottom: 1px solid @borderColor;
+        &__wrap {            
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            &__text {
+                &:after {
+                    .clear-float;
+                }
+                float: left;
+                height: 100%;
+                width: 100%;
+                position: relative;
+
+                &__title {
+                    font-size: @titleFontSize;
+
+                    position: absolute;
+                    left: 0;
+                    top: 0.5rem;
+                }
+                &__desc {
+                    font-size: @normalFontSize;
+                    color: @subTextColor;
+                    
+                    position: absolute;
+                    left: 0;
+                    bottom: 0.5rem;                    
+                }
+            }
+
+            &__icon {
+                font-size: @iconFontSize;
+                color: @subTextColor;
+
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

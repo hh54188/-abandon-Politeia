@@ -1,0 +1,61 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/writecomment_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    <div class="book-detail">
+        <div class="books__list">
+            <ul>
+                <li class="books__list__item">
+                    <div class="book-cover">
+                        <div class="book">
+                            <img src="../sample_images/cover-01.jpg" />
+                        </div>
+                    </div>
+                    <div class="book-desc">
+                        <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                        <p class="book-desc__author book-desc__author--small">陈平原</p>
+                        <p class="book-desc__author book-desc__intro">《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>    
+
+    <div class="comment-form">
+        <div class="comment-form__rate">
+            <p class="comment-form__rate__text">请评分</p>
+            <ul class="comment-form__rate__list">
+                <li class="comment-form__rate__list__item">
+                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>
+                </li>
+                <li class="comment-form__rate__list__item">
+                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                </li>
+                <li class="comment-form__rate__list__item">
+                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                </li>
+                <li class="comment-form__rate__list__item">
+                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                </li>
+                <li class="comment-form__rate__list__item">
+                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                </li>
+            </ul>
+        </div>
+        <div class="comment-form__textarea">
+            <textarea></textarea>
+        </div>
+        <div class="comment-form__footer">
+            <p class="comment-form__footer__text">
+                <span>还能输入</span>
+                <span>10</span>
+                <span>个字</span>
+            </p>
+            <button class="comment-form__footer__submit">提交</button>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include "partials/categorylist_header.nunjucks" %}
+{% endblock %}
+
+{% block content %}
+    {% include  "partials/header_common.nunjucks" %}
+    <ul class="category-list">
+        <li class="category-list__item">
+            <a href="javascript:alert(0);" target="_self" class="category-list__item__wrap">
+                <div class="category-list__item__wrap__text">
+                    <p class="category-list__item__wrap__text__title">武侠</p>
+                    <p class="category-list__item__wrap__text__desc">武侠类别介绍</p>
+                </div>
+                <i class="category-list__item__wrap__icon icon-circle-right"></i>
+            </a>
+        </li>
+        <li class="category-list__item">
+            <a href="javascript:alert(0);" target="_self" class="category-list__item__wrap">
+                <div class="category-list__item__wrap__text">
+                    <p class="category-list__item__wrap__text__title">武侠</p>
+                    <p class="category-list__item__wrap__text__desc">武侠类别介绍</p>
+                </div>
+                <i class="category-list__item__wrap__icon icon-circle-right"></i>
+            </a>        
+        </li>
+        <li class="category-list__item">
+            <a href="javascript:alert(0);" target="_self" class="category-list__item__wrap">
+                <div class="category-list__item__wrap__text">
+                    <p class="category-list__item__wrap__text__title">武侠</p>
+                    <p class="category-list__item__wrap__text__desc">武侠类别介绍</p>
+                </div>
+                <i class="category-list__item__wrap__icon icon-circle-right"></i>
+            </a>        
+        </li>
+    </ul>
+{% endblock %}
