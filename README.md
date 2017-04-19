@@ -1,12 +1,11 @@
 ## TODO
 
-- 图书特效
-- 标题按钮
-- font-icon
-- 块状物体垂直居中
-- autoprefix
+- .nunjucks 参数化
 - 图片懒加载
 - 加载菊花居中
+- autoprefix
+- 垂直居中 + clear-float 整理
+- 模板归类文件夹
 
 ## 兼容性可能存在问题的样式：
 
@@ -18,10 +17,10 @@
 - 图片尺寸有待决定
 - 热门推荐中是使用背景颜色还是图片？
 
-## Required Global Modules
+## Required Modules
 
 ```javascript
-npm install --g gulp-cli
+npm install -g gulp-cli
 ```
 
 ```javascript
