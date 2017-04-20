@@ -1,0 +1,1610 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>理想国书城接口文档</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700|Source+Code+Pro');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}.hljs-comment{color:#969896}.css .hljs-class,.css .hljs-id,.css .hljs-pseudo,.hljs-attribute,.hljs-regexp,.hljs-tag,.hljs-variable,.html .hljs-doctype,.ruby .hljs-constant,.xml .hljs-doctype,.xml .hljs-pi,.xml .hljs-tag .hljs-title{color:#77A619}.hljs-literal{color:#A69819}.hljs-built_in,.hljs-constant,.hljs-number,.hljs-params,.hljs-pragma,.hljs-preprocessor{color:#1B88B3}.css .hljs-rule .hljs-attribute,.ruby .hljs-class .hljs-title{color:#A37518}.hljs-header,.hljs-inheritance,.hljs-name,.hljs-string,.hljs-value,.ruby .hljs-symbol,.xml .hljs-cdata{color:inherit}.coffeescript .hljs-title,.css .hljs-hexcolor,.hljs-function,.hljs-title,.javascript .hljs-title,.perl .hljs-sub,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword{color:#A63A4A}.hljs-keyword,.javascript .hljs-function{color:#A69819}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .css,.xml .hljs-cdata,.xml .javascript,.xml .vbscript{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#C1EF65}.right .hljs-literal{color:#EBDE68}.right .hljs-built_in,.right .hljs-constant,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#77BCD7}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:inherit}.right .coffeescript .hljs-title,.right .css .hljs-hexcolor,.right .hljs-function,.right .hljs-title,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#f099a6}.right .hljs-keyword,.right .javascript .hljs-function{color:#EBDE68}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:#4c555a;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid transparent;margin-bottom:12px}h1,h2,h3,h4,h5{color:#292e31;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:100 36px 'Roboto',Helvetica,sans-serif;font-size:36px}h2{font:100 36px 'Roboto',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#0099e5;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(76,85,90,0) 20%, rgba(76,85,90,0.2) 48%, rgba(221,228,232,0.2) 48%, rgba(221,228,232,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(76,85,90,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:3px;overflow:auto}pre code{color:#4c555a;background-color:transparent;padding:0;border:none}code{color:#b93d6a;background-color:#f5f5f5;font:13px / 19.5px 'Source Code Pro',Menlo,monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:100 36px 'Roboto',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:#4c555a;background-color:#ebf7fd;border-left:4px solid #0099e5}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#0099e5}.warning{color:#4c555a;background-color:#faf0f4;border-left:4px solid #B82E5F}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#B82E5F}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:#4c555a;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:underline;background-color:transparent;border-left:2px solid transparent}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(76,85,90,0.7);padding:8px 12px;border-top:1px solid transparent;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:underline;background-color:transparent;border-left:2px solid transparent}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:black;background-color:transparent;border-radius:10px;margin:-2px -8px -2px 0}.badge.get{color:#fff;background-color:#ddf1fc}.badge.head{color:#fff;background-color:#ddf1fc}.badge.options{color:#fff;background-color:#ddf1fc}.badge.put{color:#fff;background-color:#f7f2c3}.badge.patch{color:#fff;background-color:#f7f2c3}.badge.post{color:#fff;background-color:#e4f2c8}.badge.delete{color:#fff;background-color:#f2d8e1}.collapse-button{float:right}.collapse-button .close{display:none;color:#0099e5;cursor:pointer}.collapse-button .open{color:#0099e5;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:15%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:15%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:48%;padding-right:12px}.right{box-sizing:border-box;float:right;width:52%;padding-left:12px}.right a{color:#0099e5}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:#dde4e8}.right pre{background-color:#272B2D;border:1px solid #272B2D}.right pre code{color:#D0D0D0}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#8ab82e}.definition .method.put{color:#b8aa2e}.definition .method.patch{color:#b8aa2e}.definition .method.delete{color:#b82e5f}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:3px}.example-names .tab-button{cursor:pointer;color:#4c555a;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#424648}.right .example-names .tab-button{color:#dde4e8;border:1px solid #6C6F71;border-radius:3px}.right .example-names .tab-button.active{background-color:#5a6063}#nav-background{position:fixed;left:0;top:0;bottom:0;width:15%;padding-right:14.4px;background-color:#fafcfc;border-right:1px solid #f0f4f7;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:52%;background-color:#2d3134;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:52%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(76,85,90,0.5);background-color:transparent;text-decoration:none !important;border-top:1px solid transparent;border-left:1px solid transparent;border-right:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px 12px 12px 0;margin-bottom:12px;background-color:transparent;border:1px solid transparent;border-radius:3px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px 12px 12px 0;margin:0 0 12px 0;background-color:transparent;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid transparent}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:3px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:2px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#0099e5}.action h4.action-heading .method.head{color:#fff;background-color:#0099e5}.action h4.action-heading .method.options{color:#fff;background-color:#0099e5}.action h4.action-heading .method.put{color:#fff;background-color:#b1a74e}.action h4.action-heading .method.patch{color:#fff;background-color:#b1a74e}.action h4.action-heading .method.post{color:#fff;background-color:#85a546}.action h4.action-heading .method.delete{color:#fff;background-color:#c14a74}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid transparent;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#ddf1fc}.action.get h4.action-heading{color:#0099e5;background:#ddf1fc;border-bottom-color:#ddf1fc}.action.head{border-color:#ddf1fc}.action.head h4.action-heading{color:#0099e5;background:#ddf1fc;border-bottom-color:#ddf1fc}.action.options{border-color:#ddf1fc}.action.options h4.action-heading{color:#0099e5;background:#ddf1fc;border-bottom-color:#ddf1fc}.action.post{border-color:#e4f2c8}.action.post h4.action-heading{color:#85a546;background:#e4f2c8;border-bottom-color:#e4f2c8}.action.put{border-color:#f7f2c3}.action.put h4.action-heading{color:#b1a74e;background:#f7f2c3;border-bottom-color:#f7f2c3}.action.patch{border-color:#f7f2c3}.action.patch h4.action-heading{color:#b1a74e;background:#f7f2c3;border-bottom-color:#f7f2c3}.action.delete{border-color:#f2d8e1}.action.delete h4.action-heading{color:#c14a74;background:#f2d8e1;border-bottom-color:#f2d8e1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-图书">图书</a></li><li><a href="#header-1.-分类图书列表">1. 分类图书列表</a></li><li><a href="#header-2.-搜索图书列表">2. 搜索图书列表</a></li><li><a href="#header-3.-用户购买图书列表">3. 用户购买图书列表</a></li><li><a href="#header-4.-用户借阅图书列表">4. 用户借阅图书列表</a></li><li><a href="#header-5.-用户阅读记录">5. 用户阅读记录</a></li><li><a href="#header-评论">评论</a></li><li><a href="#header-1.-图书评论列表">1. 图书评论列表</a></li><li><a href="#header-2.-发评论">2. 发评论</a></li><li><a href="#header-阅读">阅读</a></li><li><a href="#header-1.-图书正文内容">1. 图书正文内容</a></li><li><a href="#header-2.-图书目录">2. 图书目录</a></li><li><a href="#header-3.-书签列表">3. 书签列表</a></li><li><a href="#header-4.-添加书签">4. 添加书签</a></li><li><a href="#header-5.-移除书签">5. 移除书签</a></li><li><a href="#header-6.-保存阅读进度">6. 保存阅读进度</a></li><li><a href="#header-书架">书架</a></li><li><a href="#header-1.-借阅图书">1. 借阅图书</a></li><li><a href="#header-2.-归还图书">2. 归还图书</a></li><li><a href="#header-3.-删除阅读记录">3. 删除阅读记录</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">理想国书城接口文档</h1></header><h2 id="header-图书">图书 <a class="permalink" href="#header-图书" aria-hidden="true">¶</a></h2>
+<h3 id="header-1.-分类图书列表">1. 分类图书列表 <a class="permalink" href="#header-1.-分类图书列表" aria-hidden="true">¶</a></h3>
+<p>获取指定分类下的图书列表，支持按照分页加载。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/books</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cate_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">分类ID</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10001</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"柴静十年央视历程，中国十年社会变迁备忘录"</span>,  <span class="hljs-comment">//图书内容摘要</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>, <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10002</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"柴静十年央视历程，中国十年社会变迁备忘录"</span>,  <span class="hljs-comment">//图书内容摘要</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>,  <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+    }
+    ]
+ }
+}</code></pre>
+<h3 id="header-2.-搜索图书列表">2. 搜索图书列表 <a class="permalink" href="#header-2.-搜索图书列表" aria-hidden="true">¶</a></h3>
+<p>获取指定关键词图书列表，包括全部分类、指定分类、个人书架（阅读历史、已购买、已借阅）。
+支持按照分页加载。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/search</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left"><mark>String,<strong>必填</strong></mark></td>
+<td style="text-align:left">关键词</td>
+</tr>
+<tr>
+<td style="text-align:left">cate_id</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">指定的分类ID</td>
+</tr>
+<tr>
+<td style="text-align:left">shelf</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">只搜索个人书架时，需指定shelf=1，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10001</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"柴静十年央视历程，中国十年社会变迁备忘录"</span>,  <span class="hljs-comment">//图书内容摘要</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>, <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。此字段只在指定shelf=1时返回</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10002</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"柴静十年央视历程，中国十年社会变迁备忘录"</span>,  <span class="hljs-comment">//图书内容摘要</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>,  <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。此字段只在指定shelf=1时返回</span>
+    }
+    ]
+ }
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"参数错误"</span>,
+}</code></pre>
+<h3 id="header-3.-用户购买图书列表">3. 用户购买图书列表 <a class="permalink" href="#header-3.-用户购买图书列表" aria-hidden="true">¶</a></h3>
+<p>获取当前用户已购买的图书列表，支持按照分页加载。需要当前用户已登录。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/bought_books</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10001</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>, <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10002</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>,  <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。</span>
+    }
+    ]
+ }
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"未登录"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"还没有购买过图书"</span>,
+}</code></pre>
+<h3 id="header-4.-用户借阅图书列表">4. 用户借阅图书列表 <a class="permalink" href="#header-4.-用户借阅图书列表" aria-hidden="true">¶</a></h3>
+<p>获取当前用户已借阅的图书列表，支持按照分页加载。需要当前用户是已登录，且已加入理想家会员。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/borrowed_books</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10001</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>, <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10002</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>,  <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">85</span>, <span class="hljs-comment">//阅读进度，85表示85‰，返回数据不含千分比符号。</span>
+    }
+    ]
+ }
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"未登录"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"没有借阅权限"</span>,
+}</code></pre>
+<h3 id="header-5.-用户阅读记录">5. 用户阅读记录 <a class="permalink" href="#header-5.-用户阅读记录" aria-hidden="true">¶</a></h3>
+<p>获取当前用户阅读过的历史记录图书列表，支持按照分页加载。允许当前用户未登录的情况。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/read_history</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<p>有数据时</p>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"message"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10001</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>, <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">150</span>, <span class="hljs-comment">//阅读进度，150表示150%，返回数据不含千分比符号。</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">10002</span>,  <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"看见"</span>,  <span class="hljs-comment">//图书名</span>
+      <span class="hljs-string">"author_name"</span>: <span class="hljs-string">"柴静"</span>,  <span class="hljs-comment">//作者名</span>
+      <span class="hljs-string">"cate_id"</span>:  <span class="hljs-number">1</span>,  <span class="hljs-comment">//分类ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9.5</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"thumb_img"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//封面图</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">852</span>, <span class="hljs-comment">//阅读进度，852表示852‰，返回数据不含千分比符号。</span>
+    }
+    ]
+ }
+}</code></pre>
+<p>无数据时</p>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">100</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"未登录"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"没有借阅权限"</span>,
+}</code></pre>
+<h2 id="header-评论">评论 <a class="permalink" href="#header-评论" aria-hidden="true">¶</a></h2>
+<h3 id="header-1.-图书评论列表">1. 图书评论列表 <a class="permalink" href="#header-1.-图书评论列表" aria-hidden="true">¶</a></h3>
+<p>获取指定图书的评论列表，支持按照分页加载。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/reviews</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">start</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">起始offset数，默认0</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">Integer,可为空</td>
+<td style="text-align:left">每页结果条数，默认10，最大50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"start"</span>: <span class="hljs-number">0</span>,  <span class="hljs-comment">//传参start</span>
+    <span class="hljs-string">"count"</span>: <span class="hljs-number">10</span>,  <span class="hljs-comment">//每页结果条数</span>
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">30</span>,  <span class="hljs-comment">//结果总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">20001</span>,  <span class="hljs-comment">//评论ID</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"在哪里生活都是一样的，没什么生活在别处。地铁上满头小辫的黑姑娘在电话里跟男朋友吵架，报馆里都是开会熬夜菜色的脸，咖啡馆里两个花白胡子老头对坐着看一下午人来人往……人类只是个概念，一代一代人都是相似的生活，这辈子决定你悲欢的就是你身边的几个人。"</span>,  <span class="hljs-comment">//评论内容摘要</span>
+      <span class="hljs-string">"book_id"</span>:  <span class="hljs-number">1001</span>, <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">8</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"like_num"</span>: <span class="hljs-number">13</span>,  <span class="hljs-comment">//有用（赞）数量</span>
+      <span class="hljs-string">"create_time"</span>: <span class="hljs-string">"2017-02-10 23:32"</span>,
+      <span class="hljs-string">"nickname"</span>: <span class="hljs-string">"细说往事"</span>,  <span class="hljs-comment">//用户昵称</span>
+      <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//用户头像</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">22747</span>,  <span class="hljs-comment">//评论ID</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"作为一个学理工出生的人，已经记不清上次用文字来表达自己感受是什么时候了，大概要追溯到我的高中时代吧。那个时候我是极其讨厌文字的，认为文字是一种毫无逻辑的东西，更体会不了它所能带来的美感，以至于完成每周的语文作业——周记，我每写一个字都就像要是从一张干瘪..."</span>,  <span class="hljs-comment">//评论内容摘要</span>
+      <span class="hljs-string">"book_id"</span>:  <span class="hljs-number">1001</span>, <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"rate_num"</span>: <span class="hljs-number">9</span>,  <span class="hljs-comment">//评分</span>
+      <span class="hljs-string">"like_num"</span>: <span class="hljs-number">2</span>,  <span class="hljs-comment">//有用（赞）数量</span>
+      <span class="hljs-string">"create_time"</span>: <span class="hljs-string">"2017-01-26 08:56"</span>,
+      <span class="hljs-string">"nickname"</span>: <span class="hljs-string">"寂静Hill"</span>,  <span class="hljs-comment">//用户昵称</span>
+      <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"http://static.ilixiangguo.com/data/upload/thumb/201503/54fe5006c2606.jpg"</span>,  <span class="hljs-comment">//用户头像</span>
+    },
+    ]
+ }
+}</code></pre>
+<h3 id="header-2.-发评论">2. 发评论 <a class="permalink" href="#header-2.-发评论" aria-hidden="true">¶</a></h3>
+<p>为某本图书打分、发表评论。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/add_review</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">rate_num</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">评分值，1-10分</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:left"><mark>String,<strong>必填</strong></mark></td>
+<td style="text-align:left">评论内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"参数错误"</span>,
+}</code></pre>
+<h2 id="header-阅读">阅读 <a class="permalink" href="#header-阅读" aria-hidden="true">¶</a></h2>
+<h3 id="header-1.-图书正文内容">1. 图书正文内容 <a class="permalink" href="#header-1.-图书正文内容" aria-hidden="true">¶</a></h3>
+<p>获取图书指定章节（或指定进度）的正文内容，每次返回一个章节的完整内容。指定进度的获取正文的，前台阅读页面根据返回的offset进行分页及定位处理。
+未购买、借阅的图书，只能阅读免费试读的部分。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/content</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer，<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">chapter_id</td>
+<td style="text-align:left">Integer，chapter_id 和 progress必填一项</td>
+<td style="text-align:left">章节ID</td>
+</tr>
+<tr>
+<td style="text-align:left">progress</td>
+<td style="text-align:left">Integer，chapter_id 和 progress必填一项</td>
+<td style="text-align:left">内容进度，825表示825‰，不传千分比符号。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:
+  {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">8812</span>,  <span class="hljs-comment">//章节ID</span>
+      <span class="hljs-string">"chapter_name"</span>: <span class="hljs-string">"第七章 山西，山西"</span>,  <span class="hljs-comment">//章节标题</span>
+      <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;p class="</span>image<span class="hljs-string">"&gt;&lt;img alt="</span>正文图<span class="hljs-string">" class="</span>image_h1<span class="hljs-string">" src="</span>http:<span class="hljs-comment">//static.ilixiangguo.com/data/upload/post/201703/58d5fad0733d3.jpg" /&gt;&lt;/p&gt;&lt;p class="imagenote"&gt;大概是一九八〇年，我和妹妹柴敏，在纺织厂的照相馆里拍下的照片。我妈在工厂的理发店给我烫个卷毛，隔了这么多年，脑袋上包个黄色蛇皮袋的烫热感还有，是文明让人不舒服的启蒙。&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;第七章　山西，山西&lt;/h2&gt;&lt;p&gt;　　海子有句诗，深得我心：“天空一无所有，为何给我安慰。”&lt;/p&gt;&lt;p&gt;　　我出生在一九七六年的山西。小孩儿上学，最怕迟到，窗纸稍有点青，就哭着起了床。奶奶拉着手把我送一程，穿过枣树、石榴和大槐树，绕过大狗，我穿着奶黄色棉猴，像胖胖一粒花生米，站在乌黑的门洞里，等学校开门。&lt;/p&gt;&lt;p&gt;　　怕黑，死盯着一天碎星星，一直到瓷青的天里透着淡粉，大家才来。我打开书，念“神——笔——马——良”，一头栽在课桌上睡着，日日如此。&lt;/p&gt;&lt;p&gt;　　山西姑娘没见过小溪青山之类，基本上处处灰头土脸，但凡有一点诗意，全从天上来。中学时喜欢的男生路过我身边，下了自行车推着走，说几句话。分别之后心里蓬勃得静不下来，要去操场上跑几圈，喘着气找个地儿坐下，天蓝得不知所终，头顶肥大松软的白云，过好久笨重地翻一个身。&lt;/p&gt;&lt;p&gt;　　苦闷时也只有盯着天看，晚霞奇诡变化，觉得未来有无限可能。阵雨来得快，乌黑的云团滚动奔跑，剩了天边一粒金星没来得及遮，一小粒明光闪烁，突然一下就灭了。折身跑时，雨在后边追，卷着痛痛快快的土腥气扑过来。&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;　　二〇〇六年我回山西采访，在孝义县城一下车就喉头一紧。老郝说：“哎，像是小时候在教室里生煤炉子被呛的那一下。”&lt;/p&gt;&lt;p&gt;　　是，都是硫化氢。&lt;/p&gt;&lt;p&gt;　　天像个烧了很长时间的锅一样盖在城市上空。一眼望去，不是灰，也不是黑，是焦黄色。去了农村，村口一间小学，一群小孩子，正在剪小星星往窗户上贴。有个圆脸大眼的小姑娘，不怕生人，搬个小板凳坐我对面，不说话先笑。&lt;/p&gt;&lt;p&gt;　　我问她：“你见过星星吗？”&lt;/p&gt;&lt;p&gt;　　她说：“没有。”&lt;/p&gt;&lt;p&gt;　　“见过白云吗？”&lt;/p&gt;&lt;p&gt;　　“没有。”&lt;/p&gt;&lt;p&gt;　　“蓝天呢？”&lt;/p&gt;&lt;p&gt;　　她想了好久，说：“见过一点点儿蓝的。”&lt;/p&gt;&lt;p&gt;　　“空气是什么味道？”&lt;/p&gt;&lt;p&gt;　　“臭的。”她用手扇扇鼻子。&lt;/p&gt;&lt;p&gt;　　六岁的王惠琴闻到的是焦油的气味，不过更危险的是她闻不到的无味气体，那是一种叫苯并芘的强致癌物，超标九倍。离她的教室五十米的山坡上，是一个年产六十万吨的焦化厂，对面一百米的地方是两个化工厂，她从教室走回家的路上还要经过一个洗煤厂。不过，即使这么近，也看不清这些巨大的厂房，因为这里的能见度不到十米。&lt;/p&gt;&lt;p&gt;　　村里各条路上全是煤渣，路边庄稼地都被焦油染硬了，寸草不生。在只有焦黑的世界上，她的红棉袄是唯一的亮色。&lt;/p&gt;",</span>
+      <span class="hljs-string">"is_free"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//是否免费试读，1为免费试读的</span>
+      <span class="hljs-string">"start_offset"</span>: <span class="hljs-number">92</span>,  <span class="hljs-comment">//本章起始的进度值，千分数</span>
+      <span class="hljs-string">"end_offset"</span>: <span class="hljs-number">172</span>, <span class="hljs-comment">//本章结束的进度值，千分数</span>
+      <span class="hljs-string">"word_count"</span>: <span class="hljs-number">6781</span>, <span class="hljs-comment">//字数      </span>
+  }
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">105</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"章节需要购买或借阅"</span>,
+}</code></pre>
+<h3 id="header-2.-图书目录">2. 图书目录 <a class="permalink" href="#header-2.-图书目录" aria-hidden="true">¶</a></h3>
+<p>获取指定图书的目录章节列表。章节目录最多有2级。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/toc</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">12</span>,  <span class="hljs-comment">//章节总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">8812</span>,  <span class="hljs-comment">//章节ID</span>
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"第二章 知识分子与他的时代"</span>,  <span class="hljs-comment">//章节标题</span>
+      <span class="hljs-string">"start_offset"</span>: <span class="hljs-number">92</span>,  <span class="hljs-comment">//本章起始的进度值，千分数</span>
+      <span class="hljs-string">"end_offset"</span>: <span class="hljs-number">172</span>, <span class="hljs-comment">//本章结束的进度值，千分数</span>
+      <span class="hljs-string">"word_count"</span>: <span class="hljs-number">13781</span>, <span class="hljs-comment">//字数</span>
+      <span class="hljs-string">"is_free"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//是否免费试读，1为免费试读的</span>
+      <span class="hljs-string">"chapters"</span>: [ <span class="hljs-comment">//二级章节。大部分图书只有一级，chapters字段返回[]</span>
+          {
+               <span class="hljs-string">"id"</span>: <span class="hljs-number">8813</span>,  <span class="hljs-comment">//章节ID</span>
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"1 西蒙诺夫：生活在斯大林的阴影中"</span>,  <span class="hljs-comment">//章节标题</span>
+            <span class="hljs-string">"start_offset"</span>: <span class="hljs-number">92</span>,  <span class="hljs-comment">//本章起始的进度值，千分数</span>
+            <span class="hljs-string">"end_offset"</span>: <span class="hljs-number">123</span>, <span class="hljs-comment">//本章结束的进度值，千分数</span>
+            <span class="hljs-string">"word_count"</span>: <span class="hljs-number">3781</span>, <span class="hljs-comment">//字数</span>
+            <span class="hljs-string">"is_free"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//是否免费试读，1为免费试读的</span>
+          },
+          {
+               <span class="hljs-string">"id"</span>: <span class="hljs-number">8814</span>,  <span class="hljs-comment">//章节ID</span>
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"2 从时代潮流中心偏开去：沈从文的一九四九年"</span>,  <span class="hljs-comment">//章节标题</span>
+            <span class="hljs-string">"start_offset"</span>: <span class="hljs-number">124</span>,  <span class="hljs-comment">//本章起始的进度值，千分数</span>
+            <span class="hljs-string">"end_offset"</span>: <span class="hljs-number">156</span>, <span class="hljs-comment">//本章结束的进度值，千分数</span>
+            <span class="hljs-string">"word_count"</span>: <span class="hljs-number">6500</span>, <span class="hljs-comment">//字数</span>
+            <span class="hljs-string">"is_free"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//是否免费试读，1为免费试读的</span>
+          },
+          {
+               <span class="hljs-string">"id"</span>: <span class="hljs-number">8815</span>,  <span class="hljs-comment">//章节ID</span>
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"3 知识分子与他的时代：从梁思成谈起"</span>,  <span class="hljs-comment">//章节标题</span>
+            <span class="hljs-string">"start_offset"</span>: <span class="hljs-number">157</span>,  <span class="hljs-comment">//本章起始的进度值，千分数</span>
+            <span class="hljs-string">"end_offset"</span>: <span class="hljs-number">172</span>, <span class="hljs-comment">//本章结束的进度值，千分数</span>
+            <span class="hljs-string">"word_count"</span>: <span class="hljs-number">3500</span>, <span class="hljs-comment">//字数</span>
+            <span class="hljs-string">"is_free"</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//是否免费试读，1为免费试读的</span>
+          },
+      ]
+    },
+   ]
+ }
+}</code></pre>
+<h3 id="header-3.-书签列表">3. 书签列表 <a class="permalink" href="#header-3.-书签列表" aria-hidden="true">¶</a></h3>
+<p>当前用户在指定图书的书签列表。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/bookmarks</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>GET</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+  <span class="hljs-string">"data"</span>:{
+    <span class="hljs-string">"total"</span>: <span class="hljs-number">12</span>,  <span class="hljs-comment">//书签总数</span>
+    <span class="hljs-string">"list"</span>:[
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">20001</span>,  <span class="hljs-comment">//书签ID</span>
+      <span class="hljs-string">"sample_word"</span>: <span class="hljs-string">"就这么熬着，有个大冬天凌晨两点，人都走光了，没人帮我操机，我自己不会，盯着编辑机，心想，我不干了，天一亮我就跟陈虻打电话，去他的，爱谁谁。我在桌边坐着"</span>,  <span class="hljs-comment">//样本内容</span>
+      <span class="hljs-string">"book_id"</span>:  <span class="hljs-number">1001</span>, <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">157</span>,  <span class="hljs-comment">//书签的进度</span>
+    },
+    {
+      <span class="hljs-string">"id"</span>: <span class="hljs-number">22747</span>,  <span class="hljs-comment">//书签ID</span>
+      <span class="hljs-string">"desc"</span>: <span class="hljs-string">"如果这会儿是在演播室，灾难对我来说，只是一个需要完成的新闻，我只关心我播报赈灾的数字是不是流利，但看见一个老大爷光着一只脚，另一"</span>,  <span class="hljs-comment">//样本内容</span>
+      <span class="hljs-string">"book_id"</span>:  <span class="hljs-number">1001</span>, <span class="hljs-comment">//图书ID</span>
+      <span class="hljs-string">"progress"</span>: <span class="hljs-number">525</span>,  <span class="hljs-comment">//书签的进度</span>
+    },
+    ]
+ }
+}</code></pre>
+<h3 id="header-4.-添加书签">4. 添加书签 <a class="permalink" href="#header-4.-添加书签" aria-hidden="true">¶</a></h3>
+<p>将当前阅读页面加入书签，便于翻查定位。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/add_bookmark</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">progress</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">阅读进度，85表示85‰，返回数据不含千分比符号。</td>
+</tr>
+<tr>
+<td style="text-align:left">sample_word</td>
+<td style="text-align:left">String,可以为空</td>
+<td style="text-align:left">样本内容，当前页面的文本的前100~200字。便于书签位置的定位，封面、封底等特殊情况无样本内容时不用传。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<h3 id="header-5.-移除书签">5. 移除书签 <a class="permalink" href="#header-5.-移除书签" aria-hidden="true">¶</a></h3>
+<p>删除用户的书签。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/remove_bookmark</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">书签ID。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<h3 id="header-6.-保存阅读进度">6. 保存阅读进度 <a class="permalink" href="#header-6.-保存阅读进度" aria-hidden="true">¶</a></h3>
+<p>更新保存用户阅读某本书的进度。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/save_progress</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+<tr>
+<td style="text-align:left">progress</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">阅读进度，85表示85‰，返回数据不含千分比符号。</td>
+</tr>
+<tr>
+<td style="text-align:left">sample_word</td>
+<td style="text-align:left">String,可以为空</td>
+<td style="text-align:left">样本内容，当前页面的文本的前100~200字。便于前台分页位置的定位，封面、封底等特殊情况无样本内容时不用传。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">103</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"没有借阅权限"</span>,
+}</code></pre>
+<h2 id="header-书架">书架 <a class="permalink" href="#header-书架" aria-hidden="true">¶</a></h2>
+<h3 id="header-1.-借阅图书">1. 借阅图书 <a class="permalink" href="#header-1.-借阅图书" aria-hidden="true">¶</a></h3>
+<p>理想家会员借阅指定的图书。</p>
+<p>注：购买功能需要接入微信支付的流程，只能同步方式，提交页面到后端处理。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/borrow_book</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">103</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"没有借阅权限"</span>,
+}</code></pre>
+<h3 id="header-2.-归还图书">2. 归还图书 <a class="permalink" href="#header-2.-归还图书" aria-hidden="true">¶</a></h3>
+<p>理想家会员归还已借阅的图书。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/return_book</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"参数错误"</span>,
+}</code></pre>
+<h3 id="header-3.-删除阅读记录">3. 删除阅读记录 <a class="permalink" href="#header-3.-删除阅读记录" aria-hidden="true">¶</a></h3>
+<p>将阅读记录中的某本图书记录删除。</p>
+<ul>
+<li><strong>请求URL</strong></li>
+</ul>
+<p><a href="#">api/ebook/remove_history</a></p>
+<ul>
+<li><strong>请求方式</strong></li>
+</ul>
+<p><strong>POST</strong></p>
+<ul>
+<li><strong>请求参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">请求参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">book_id</td>
+<td style="text-align:left"><mark>Integer,<strong>必填</strong></mark></td>
+<td style="text-align:left">图书ID</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回参数</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">返回参数</th>
+<th style="text-align:left">参数类型</th>
+<th style="text-align:left">参数说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">执行结果code，成功200</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">执行结果消息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>返回示例</strong></li>
+</ul>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"ok"</span>,
+}</code></pre>
+<pre><code class="language-java">{
+  <span class="hljs-string">"code"</span>: <span class="hljs-number">101</span>,
+  <span class="hljs-string">"msg"</span>: <span class="hljs-string">"参数错误"</span>,
+}</code></pre>
+</div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 25 Mar 2017</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>
