@@ -1,13 +1,13 @@
 {% extends "base.nunjucks" %}
 
 {% block header %}
-    {% include  "partials/index_header.nunjucks" %}    
+    {% include  "partials/home_header.nunjucks" %}    
 {% endblock %}
 
 {% block content %}
-    {% include  "partials/header_index.nunjucks" %}
+    {% include  "partials/header_home.nunjucks" %}
     {% include  "partials/carousel.nunjucks" %}
     {% include  "partials/recommend_block.nunjucks" %}
     {% include  "partials/category_block.nunjucks" %}
-    {% include  "partials/index_footer.nunjucks" %}
+    {% include  "partials/home_footer.nunjucks" %}
 {% endblock %}

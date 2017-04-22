@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block content %}
+    {%
+        set header = {
+            title: '我的书架',
+            showBackBtn: true
+        }
+    %}
+
     {% include  "partials/header_common.nunjucks" %}
     <div class="tab-wrap">
         {% include  "partials/bookshelf_tab_header.nunjucks" %}

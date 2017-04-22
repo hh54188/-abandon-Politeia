@@ -16,7 +16,7 @@ gulp.task('compile template', function () {
     return gulp.src(path.join(__dirname, 'src', 'pages', '*.nunjucks'))
         .pipe(data(function() {
             return {
-                data: 'Hello World'
+                data: ''
             }
         }))
         .pipe(nunjucksRender({

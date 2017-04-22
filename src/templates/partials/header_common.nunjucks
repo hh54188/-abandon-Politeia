@@ -1,5 +1,9 @@
 <div class="header">
-    <a class="header__back" target="self" href="javascript:alert(0);">返回</a>
-    <span class="header__text">搜索图书</span>
+    {% if header.showBackBtn  %}
+        <a class="header__back" target="self" href="javascript:alert(0);">返回</a>
+    {% endif %}
+    <span class="header__text">{{header.title}}</span>
+    {% if header.showSearchBtn %}
     <a class="header__search icon-search" href="javascript:alert(0);" target="_blank"></a>
+    {% endif %}
 </div>

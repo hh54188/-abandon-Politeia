@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    {%
+        set header = {
+            title: '图书详情',
+            showBackBtn: true
+        }
+    %}
     {% include  "partials/header_common.nunjucks" %}
     <div class="content">
         <div class="books__list">
@@ -58,7 +64,15 @@
                             </div>
                         </div>
                         <p class="recommend__list__item__book-title">很长的书名</p>
-                    </li>                                                                                                                  
+                    </li> 
+                    <li class="recommend__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>
+                        <p class="recommend__list__item__book-title">很长的书名</p>
+                    </li>                                                                                                                                      
                 </ul>
             </div>
         </div>
@@ -72,7 +86,7 @@
                     </button>
                 </div>
             </div>
-            <div id="tab-index" class="tab-content">
+            <div id="tab-home" class="tab-content">
             </div>
         </div>
         <div class="comment">

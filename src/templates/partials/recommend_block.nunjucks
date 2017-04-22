@@ -4,19 +4,30 @@
     </div>
     <div class="recommend__content">
         <div class="recommend__content__row">
+            <!--
+                推荐文案既可以使用纯底色修饰，也可以使用图片修饰
+                如果使用图片修饰则需要
+                1. 移除颜色装饰class
+                2. 添加背景图片标签
+                3. 修改颜色字体（因为背景图片可能会对字体颜色产生干扰）
+            -->
             <a href="javascript:alert(0);" class="recommend__content__row__item recommend__content__row__item--color-one">
-                热门推荐
+                {#<img class="recommend__content__row__item__background-image" src="../sample_images/recommend-01.jpg">#}
+                <span class="recommend__content__row__item__text">热门推荐</span>
             </a>
             <a href="javascript:alert(0);" class="recommend__content__row__item recommend__content__row__item--color-two">
-                编辑推荐
+                {#<img class="recommend__content__row__item__background-image" src="../sample_images/recommend-02.jpg">#}
+                <span class="recommend__content__row__item__text">编辑推荐</span>
             </a>
         </div>
         <div class="recommend__content__row">
             <a href="javascript:alert(0);" class="recommend__content__row__item recommend__content__row__item--color-three">
-                最新上架
+                {#<img class="recommend__content__row__item__background-image" src="../sample_images/recommend-03.jpg">#}
+                <span class="recommend__content__row__item__text">最新上架</span>
             </a>
             <a href="javascript:alert(0);" class="recommend__content__row__item recommend__content__row__item--color-four">
-                限时优惠
+                {#<img class="recommend__content__row__item__background-image" src="../sample_images/recommend-04.jpg">                #}
+                <span class="recommend__content__row__item__text">限时优惠</span>
             </a>        
         </div>
     </div>

@@ -1,5 +1,7 @@
 ## TODO
 
+- 书架页加载更多按钮
+- 分享按钮
 - .nunjucks 参数化
 - 图片懒加载
 - 加载菊花居中
@@ -40,6 +42,9 @@ bower install
 ```
 
 ## Tutorial
+
+- lazyload
+    - http://luis-almeida.github.io/unveil/
 
 - nunjucks + gulp:
     - https://zellwk.com/blog/nunjucks-with-gulp/
