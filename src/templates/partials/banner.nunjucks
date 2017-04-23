@@ -1,3 +1,4 @@
 <a class="banner" target="blank" href="javascript:alert(0);">
+    {% include "partials/spinner-square2.nunjucks" %}
     <img data-src="../sample_images/banner-01.jpg" class="banner__background image-lazy" />
 </a>

@@ -5,6 +5,9 @@
 @import "book_cover_effect.less";
 @import "books.less";
 @import "stars.less";
+// @import "spinner_square.less";
+// @import "spinner_circle.less";
+@import "spinner_square2.less";
 
 .recommend {
     padding: 0 @pagePadding;
@@ -90,6 +93,11 @@
     border: 1px solid @borderColor;
     display: block;
     position: relative;
+
+    img {
+        position: relative;
+        z-index: 2;
+    }
 
     &__background {
         width: 100%;

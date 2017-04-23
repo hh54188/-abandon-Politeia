@@ -92,6 +92,41 @@
                 </div>
             </div>
             <div id="tab-home" class="tab-content">
+                <div class="catalogue">
+                    <ul class="catalogue__list">
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>新版序</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>我与武侠小说（代序）</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第一章 千古文人侠客梦</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第二章 唐宋豪侠小说</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第三章 清代侠义小说</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第四章 20世纪武侠小说</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第五章 仗剑行侠</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第六章 快意仇</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第七章 笑傲江湖</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第八章 浪迹天涯</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>第九章 作为一种小说类型的武侠小说</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录一 武侠小说与中国文化</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录二 类型等级与武侠小说</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录三 武侠小说中的“剑”</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录四 超越雅俗——金庸的成功及武侠小说的出路</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录五 走出“话本正脉”</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录六 小说家的历史意识与技术能力</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>附录七 又见金庸——答《南方周末》记者问</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>主要参考书目</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>索引</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>初版后记</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>我与武侠小说研究——新世界出版社“典藏版”后记</span></li>
+                        <li class="catalogue__list__item catalogue__list__item--main"><span>百花文艺版后记</span></li>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="comment">
@@ -99,52 +134,56 @@
             <div class="comment__content">
                 <ul class="comment__content__list">
                     <li class="comment__content__list__item">
-                        <div class="comment__content__list__item__avatar-wrap">
-                            <img class="comment__content__list__item__avatar-wrap__avatar" />
-                        </div>
-                        <div class="comment__content__list__item__content">
-                            <div class="comment__content__list__item__content__header">
-                                <img src="../sample_images/avatars/avatar-01.jpg" class="comment__content__list__item__content__header__avatar" alt="">
-                                <p class="comment__content__list__item__content__header__author">用户名称</p>
-                                <div class="comment__content__list__item__content__header__rate">
-                                    {% include "partials/stars.nunjucks" %}
+                        <a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">                                        
+                            <div class="comment__content__list__item__avatar-wrap">
+                                <img class="comment__content__list__item__avatar-wrap__avatar" />
+                            </div>
+                            <div class="comment__content__list__item__content">
+                                <div class="comment__content__list__item__content__header">
+                                    <img src="../sample_images/avatars/avatar-01.jpg" class="comment__content__list__item__content__header__avatar" alt="">
+                                    <p class="comment__content__list__item__content__header__author">用户名称</p>
+                                    <div class="comment__content__list__item__content__header__rate">
+                                        {% include "partials/stars.nunjucks" %}
+                                    </div>
+                                </div>
+                                <div class="comment__content__list__item__content__body">
+                                    <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
+                                </div>
+                                <div class="comment__content__list__item__content__footer">
+                                    <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
+                                    <div class="comment__content__list__item__content__footer__fav">
+                                        <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
+                                        <span class="comment__content__list__item__content__footer__fav__text">10</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="comment__content__list__item__content__body">
-                                <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
-                            </div>
-                            <div class="comment__content__list__item__content__footer">
-                                <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
-                                <div class="comment__content__list__item__content__footer__fav">
-                                    <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
-                                    <span class="comment__content__list__item__content__footer__fav__text">10</span>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </li>
                     <li class="comment__content__list__item">
-                        <div class="comment__content__list__item__avatar-wrap">
-                            <img class="comment__content__list__item__avatar-wrap__avatar" />
-                        </div>
-                        <div class="comment__content__list__item__content">
-                            <div class="comment__content__list__item__content__header">
-                                <img src="../sample_images/avatars/avatar-01.jpg" class="comment__content__list__item__content__header__avatar" alt="">
-                                <p class="comment__content__list__item__content__header__author">用户名称</p>
-                                <div class="comment__content__list__item__content__header__rate">
-                                    {% include "partials/stars.nunjucks" %}
+                        <a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">                                                            
+                            <div class="comment__content__list__item__avatar-wrap">
+                                <img class="comment__content__list__item__avatar-wrap__avatar" />
+                            </div>
+                            <div class="comment__content__list__item__content">
+                                <div class="comment__content__list__item__content__header">
+                                    <img src="../sample_images/avatars/avatar-01.jpg" class="comment__content__list__item__content__header__avatar" alt="">
+                                    <p class="comment__content__list__item__content__header__author">用户名称</p>
+                                    <div class="comment__content__list__item__content__header__rate">
+                                        {% include "partials/stars.nunjucks" %}
+                                    </div>
+                                </div>
+                                <div class="comment__content__list__item__content__body">
+                                    <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
+                                </div>
+                                <div class="comment__content__list__item__content__footer">
+                                    <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
+                                    <div class="comment__content__list__item__content__footer__fav">
+                                        <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
+                                        <span class="comment__content__list__item__content__footer__fav__text">10</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="comment__content__list__item__content__body">
-                                <p>马丁斯科塞斯的宗教三部曲的最后一部，我看得十分满足。数百年来多少西方传教士在世界各地执着一生地传教，有多少像片中在日本被迫弃教的传教士的悲惨故事啊！影片展示了这一我们很少了解的历史与人物。全片在台湾拍摄，听说选景等得到李安的帮忙。 美国新电影的三大导演年纪和</p>
-                            </div>
-                            <div class="comment__content__list__item__content__footer">
-                                <div class="comment__content__list__item__content__footer__date">2017-01-01</div>
-                                <div class="comment__content__list__item__content__footer__fav">
-                                    <i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>
-                                    <span class="comment__content__list__item__content__footer__fav__text">10</span>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
                     </li>                    
                 </ul>
                 {% include "partials/load_button.nunjucks" %}
@@ -152,5 +191,4 @@
         </div>
     </div>
     {% include "partials/bookdetail_footer.nunjucks" %}
-    {% include "partials/tab_script.nunjucks" %}
 {% endblock %}

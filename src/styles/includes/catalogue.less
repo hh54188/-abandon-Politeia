@@ -1,0 +1,25 @@
+.catalogue {
+    max-height: 15rem;
+    font-size: @normalFontSize;
+    overflow: scroll;
+
+    &__list {
+        width: 100%;
+        &__item {
+            border-bottom: 1px solid @borderColor;
+            padding: 0.5rem 0;
+
+            &--main {
+
+            }
+
+            &--sub {
+                padding-left: 2rem;
+            }
+
+            &:after {
+                border: none;
+            }
+        }
+    }
+}

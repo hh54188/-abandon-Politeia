@@ -1,19 +1,21 @@
+{% include "partials/tab_script.nunjucks" %}
+<script>
+    var introPullButton = document.querySelector('.book-intro__intro__button');
+    introPullButton.addEventListener('click', function () {
+        document.querySelector('.book-intro__intro').classList.remove('book-intro__intro--hidden');
+        var texts = Array.prototype.slice.call(document.querySelectorAll('.book-intro__intro__text'));
+        texts.forEach(function (item) {
+            item.classList.remove('book-intro__intro__text--hidden');
+        })
+        this.parentElement.removeChild(this);
+    });
+</script>
 <script src="../../bower_components/iscroll/build/iscroll.js"></script>
 <script>
     new IScroll('.recommend__container', { 
         scrollX: true, 
         scrollY: false, 
-        //mouseWheel: true,
         bounce: 'elastic',
         bounceTime: 1200
     });
-</script>
-{#<script src="../../bower_components/hammer.min.js"></script>#}
-<script>
-{#var myElement = document.querySelector('.recommend__container');
-var mc = new Hammer(myElement);
-mc.on('swipe', function (event) {
-    console.log(Hammer.DIRECTION_HORIZONTAL);
-    console.log(event);
-})#}
 </script>

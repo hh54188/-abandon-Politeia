@@ -6,6 +6,8 @@
 @import "books.less";
 @import "stars.less";
 @import "tab.less";
+@import "catalogue.less";
+@import "commentlist.less";
 
 .content {
     padding:0  @pagePadding;
@@ -127,12 +129,16 @@
         box-sizing: border-box;
         position: relative;
 
+        max-height: 15rem;
+        overflow: scroll;
+
         &--hidden {
             max-height: 12rem;
             overflow: hidden;
         }
 
         &__text {
+            text-indent: @normalFontSize;
             &--hidden {
                 opacity: 0.5;
             }
@@ -169,102 +175,6 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-            }
-        }
-    }
-}
-
-.comment {
-    margin: 1rem 0 0;
-    clear: both;
-
-    &__title {
-        font-size: @titleFontSize;   
-        margin: 1rem 0;     
-    }
-
-    &__content {
-        &__list {
-            &__item {
-                
-                &:last-child {
-                    border: none;
-                }
-                
-                padding: 1rem 0;
-                border-bottom: 1px solid @borderColor;
-
-                &:after {
-                    .clear-float
-                }
-                &__avatar-wrap {
-                    width: 3rem;
-                    float: left;
-
-                    &__avatar {
-
-                    }
-                }
-                &__content {
-                    float: right;
-                    font-size: @normalFontSize;
-                    &__header {
-                        @headerHeight: 3rem;
-
-                        color: @subTextColor;
-                        height: @headerHeight;
-                        position: relative;
-                        
-                        &:after {
-                            .clear-float
-                        }
-                        &__avatar {
-                            width: @headerHeight;
-                            height: @headerHeight;
-                            border-radius: @headerHeight / 2;
-                            float: left;
-                        }
-                        &__author {
-                            float: left;
-                            line-height: @headerHeight;                            
-                            margin: 0 0 0 1rem;         
-                        }
-                        &__rate {                       
-                            position: absolute;
-                            right: 0;
-                            top: 50%;
-                            transform: translateY(-50%);
-                        }
-                    }
-
-                    &__body {
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 4;
-
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-
-                        margin: 0.8rem 0;
-                        max-height: 8rem;
-                    }
-
-                    &__footer {
-                        color: @subTextColor;                        
-                        &:after {
-                            .clear-float
-                        }
-                        &__date {
-                            float: left;
-                        }               
-                        &__fav {
-                            float: right;
-                            &__icon {
-                                color: @contrastColor;
-                            }
-                        }         
-                    }
-                }
             }
         }
     }
