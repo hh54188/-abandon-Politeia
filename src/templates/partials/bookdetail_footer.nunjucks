@@ -1,9 +1,19 @@
 <script src="../../bower_components/iscroll/build/iscroll.js"></script>
 <script>
-    {#new IScroll('.recommend__container', { 
+    new IScroll('.recommend__container', { 
         scrollX: true, 
         scrollY: false, 
-        mouseWheel: true,
-        bounce: false
-    });#}
+        //mouseWheel: true,
+        bounce: 'elastic',
+        bounceTime: 1200
+    });
+</script>
+{#<script src="../../bower_components/hammer.min.js"></script>#}
+<script>
+{#var myElement = document.querySelector('.recommend__container');
+var mc = new Hammer(myElement);
+mc.on('swipe', function (event) {
+    console.log(Hammer.DIRECTION_HORIZONTAL);
+    console.log(event);
+})#}
 </script>

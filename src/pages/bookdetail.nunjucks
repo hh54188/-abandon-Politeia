@@ -16,12 +16,12 @@
         <div class="books__list">
             <ul>
                 <li class="books__list__item">
-                    <div class="book-cover">
+                    <div class="book-cover book-cover--big">
                         <div class="book">
                             <img src="../sample_images/cover-01.jpg" />
                         </div>
                     </div>
-                    <div class="book-desc">
+                    <div class="book-desc book-desc--big">
                         <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
                         <p class="book-desc__author book-desc__author--small">陈平原</p>
                         <p class="book-desc__author book-desc__category">小说 / 武侠</p>
@@ -55,7 +55,7 @@
                                 <img src="../sample_images/cover-01.jpg" />
                             </div>
                         </div>
-                        <p class="recommend__list__item__book-title">很长的书名</p>                                            
+                        <p class="recommend__list__item__book-title">很长很长很长的书名</p>                                            
                     </li> 
                     <li class="recommend__list__item">
                         <div class="book-cover">
@@ -80,7 +80,12 @@
             {% include "partials/bookdetail_tab_header.nunjucks" %}
             <div id="tab-intro" class="tab-content tab-content--focus">
                 <div class="book-intro__intro book-intro__intro--hidden">
-                    <p class="book-intro__intro__text book-intro__intro__text--hidden">《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、主题、背景及过程。全书将小说形态学的研究与文化发生学的探讨相结合，是一部视野广阔、研究扎实的武侠小说研究著作。</p>
+                    <p class="book-intro__intro__text book-intro__intro__text--hidden">
+                        《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、主题、背景及过程。全书将小说形态学的研究与文化发生学的探讨相结合，是一部视野广阔、研究扎实的武侠小说研究著作。
+                    </p>
+                    <p class="book-intro__intro__text book-intro__intro__text--hidden">
+                        《千古文人侠客梦(增订本)》的内容主要包括两个方面：一是纵向梳理侠之观念的形成，探讨唐宋以迄于20世纪武侠小说的发展；二是横向探讨武侠小说中行侠的手段、主题、背景及过程。全书将小说形态学的研究与文化发生学的探讨相结合，是一部视野广阔、研究扎实的武侠小说研究著作。
+                    </p>                    
                     <button class="book-intro__intro__button">
                         <span class="book-intro__intro__button__text">点击阅读更多</span>
                     </button>
