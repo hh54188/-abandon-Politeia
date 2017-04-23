@@ -43,6 +43,13 @@ bower install
 
 ## Tutorial
 
+- css3 art
+    - http://enjoycss.com/
+
+- css3 gif animation
+    - http://tobiasahlin.com/spinkit/
+    - https://projects.lukehaas.me/css-loaders/
+
 - lazyload
     - http://luis-almeida.github.io/unveil/
 
