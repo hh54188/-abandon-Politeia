@@ -1,0 +1,51 @@
+{% extends "base.nunjucks" %}
+
+{% block header %}
+    {% include  "partials/read_header.nunjucks" %}    
+{% endblock %}
+
+{% block content %}
+    {% include "partials/read_loading_mask.nunjucks" %}
+    {% include "partials/read_content.nunjucks" %}
+    {% include "partials/read_side_bar.nunjucks" %}
+    {% include "partials/read_top_bar.nunjucks" %}
+    {% include "partials/read_bottom_bar.nunjucks" %}
+    
+    <!--ZingTouch.js-->
+    {#<script type="text/javascript" src="../../bower_components/zingtouch.min.js"></script>#}
+    {#<script type="text/javascript">
+        var containerElement = document.querySelector('.content');
+        var activeRegion = ZingTouch.Region(containerElement);
+        activeRegion.bind(containerElement, 'swipe', function(event){
+            console.log(event);
+        });
+    </script>#}
+
+    <!--Hammer.js-->
+    {#<script type="text/javascript" src="../../bower_components/hammer.min.js"></script>#}
+    {#<script type="text/javascript">
+        var containerElement = document.querySelector('.content');
+    
+        var hammertime = new Hammer(containerElement);
+        hammertime.on('swipe', function(event) {
+            console.log(event);
+        });
+    </script>#}
+
+    <script>
+        var target = document.querySelector('body');
+        // touchstart vs touchenter ?
+        body.addEventListener('touchstart', function (event) {
+
+        });
+
+        body.addEventListener('touchmove', function (event) {
+
+        });
+
+        // touchend vs touchleave ?
+        body.addEventListener('touchend', function (event) {
+
+        })
+    </script>
+{% endblock %}

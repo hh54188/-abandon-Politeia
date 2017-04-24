@@ -1,12 +1,18 @@
 ## TODO
 
-- 书架页加载更多按钮
+### High Priority
+
+- 初始化iscroll
+- "加载更多"按钮的脚本功能
+- 字体修正
+- 自定义滚动栏
 - 分享按钮
-- .nunjucks 参数化
-- 图片懒加载
-- 加载菊花居中
 - autoprefix
-- 垂直居中 + clear-float 整理
+
+
+### Lower Priority
+
+- 垂直居中样式 + clear-float 集中整理
 - 模板归类文件夹
 
 ## 兼容性可能存在问题的样式：

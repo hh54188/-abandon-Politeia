@@ -1,0 +1,53 @@
+<div class="content">
+    <div class="content__paper">
+        <script>
+            function generateRandomStr(content) {
+                var minWordCount = 50;
+                var maxWordCount = 100;
+                var currentCount =  parseInt(minWordCount + (maxWordCount - minWordCount) * Math.random(), 10);
+                var str = '';
+                for (var i = 0; i < currentCount; i++) {
+                    str += ("--" + content + "--");
+                }
+                return str;
+            }
+
+            function generateRandomFontSize() {
+                var rootElement = document.querySelector('html');
+                var minFontSize = 10;
+                var maxFontSize = 30;
+                var currentFontSize = parseInt(minFontSize + (maxFontSize - minFontSize) * Math.random(), 10);
+                return currentFontSize;
+            }
+
+            function generateRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            
+            generateRandomFontSize();
+
+            var paragraphMap = {};
+
+            for (var i = 0; i < 100; i++) {
+                var id = "p-id-" + i;
+                document.write("<p style=\"background:" + generateRandomColor() + ";font-size:" + generateRandomFontSize() + "px;\" id=\"" + id + "\">" + generateRandomStr(id) + "</p>");
+            }
+
+            for (var i = 0; i < 100; i++) {
+                var id = "p-id-" + i;
+                var target = document.querySelector('#' + id);
+                paragraphMap[id] = target.offsetLeft;
+            }
+
+            function customScrollToId(num) {
+                var id = "p-id-" + num;
+                window.scrollTo(paragraphMap[id], 0);
+            }
+        </script>      
+    </div>
+</div>
