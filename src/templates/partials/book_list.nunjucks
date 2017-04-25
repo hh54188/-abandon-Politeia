@@ -3,6 +3,7 @@
         <li class="books__list__item">
             <div class="book-cover">
                 <div class="book">
+                    {% include "partials/spinner-square2.nunjucks" %}
                     <img src="../sample_images/cover-01.jpg" />
                 </div>
             </div>
@@ -18,6 +19,7 @@
         <li class="books__list__item">
             <div class="book-cover">
                 <div class="book">
+                    {% include "partials/spinner-square2.nunjucks" %}                    
                     <img src="../sample_images/cover-03.jpg" />
                 </div>                
             </div>
@@ -33,6 +35,7 @@
         <li class="books__list__item">
             <div class="book-cover">
                 <div class="book">
+                    {% include "partials/spinner-square2.nunjucks" %}                
                     <img src="../sample_images/cover-04.jpg" />
                 </div>
             </div>
@@ -48,6 +51,7 @@
         <li class="books__list__item">
             <div class="book-cover">
                 <div class="book">
+                    {% include "partials/spinner-square2.nunjucks" %}                
                     <img src="../sample_images/cover-02.jpg" />
                 </div>
             </div>
@@ -63,7 +67,8 @@
         <li class="books__list__item">
             <div class="book-cover">
                 <div class="book">
-                    <img src="../sample_images/cover-05.jpg" />
+                    {% include "partials/spinner-square2.nunjucks" %}                
+                    <img data-src="../sample_images/cover-05.jpg" class="image-lazy" />
                 </div>
             </div>
             <div class="book-desc">
@@ -77,4 +82,7 @@
         </li>        
     </ul>
     {% include "partials/load_button.nunjucks" %}
+    <script type="text/javascript">
+        
+    </script>
 </div>

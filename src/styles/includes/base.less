@@ -46,7 +46,13 @@ textarea:focus, input:focus, button {
     display: block;
     clear: both;
 }
-
+.line-clamp(@lineNumber) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @lineNumber;
+    -webkit-box-orient: vertical;
+}
 // ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 //     color: @commentColor;
 //     padding: 0 0 0 1rem;

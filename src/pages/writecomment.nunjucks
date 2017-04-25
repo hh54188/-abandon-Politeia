@@ -29,7 +29,7 @@
         <div class="comment-form__rate">
             <p class="comment-form__rate__text">请评分</p>
             <ul class="comment-form__rate__list">
-                <li class="comment-form__rate__list__item">
+                <li class="comment-form__rate__list__item comment-form__rate__list__item--selected">
                     <span class="comment-form__rate__list__item__icon icon-star-full"></span>
                 </li>
                 <li class="comment-form__rate__list__item">

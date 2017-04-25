@@ -1,4 +1,4 @@
 <a class="load load--normal" href="javascript:alert(0);">
-    {% include "partials/spinner-circle.nunjucks" %}
+    {% include "partials/spinner-square2.nunjucks" %}
     <span class="load__text">查看更多</span>
 </a>

@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    {%
+        set header = {
+            title: '搜索图书',
+            showBackBtn: true
+        }
+    %}
     {% include  "partials/header_common.nunjucks" %}
     {% include  "partials/search_bar.nunjucks" %}
     <div class="keywords">

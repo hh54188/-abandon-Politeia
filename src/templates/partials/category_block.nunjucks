@@ -8,7 +8,8 @@
             <li class="books__list__item">
                 <div class="book-cover">
                     <div class="book">
-                        <img src="../sample_images/cover-01.jpg" class="" />
+                        {% include "partials/spinner-square2.nunjucks" %}
+                        <img data-src="../sample_images/cover-01.jpg" class="book-image image-lazy"/>
                     </div>
                 </div>
                 <div class="book-desc">
@@ -20,7 +21,8 @@
             <li class="books__list__item">
                 <div class="book-cover">
                     <div class="book">
-                        <img src="../sample_images/cover-03.jpg" class="" />
+                        {% include "partials/spinner-square2.nunjucks" %}                
+                        <img data-src="../sample_images/cover-03.jpg" class="book-image image-lazy" />
                     </div>                
                 </div>
                 <div class="book-desc">
@@ -32,7 +34,8 @@
             <li class="books__list__item">
                 <div class="book-cover">
                     <div class="book">
-                        <img src="../sample_images/cover-04.jpg" class="" />
+                        {% include "partials/spinner-square2.nunjucks" %}                
+                        <img data-src="../sample_images/cover-04.jpg" class="book-image image-lazy" />
                     </div>
                 </div>
                 <div class="book-desc">

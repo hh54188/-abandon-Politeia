@@ -13,7 +13,7 @@
 
 .comment-form {
     padding: 0 @pagePadding;
-    font-size: @titleFontSize;    
+    font-size: @titleFontSize;  
     &__rate {
         margin: 1rem 0 0;
         &:after { 
@@ -29,8 +29,11 @@
             margin: 0 0 0 1rem;
 
             &__item {
+                &--selected {
+                    color: @highlightColor;
+                }
                 display: inline-block;
-                color: @subTextColor;
+                color: @commentColor;
                 font-size: @iconFontSize;
                 line-height: @iconFontSize;
             }

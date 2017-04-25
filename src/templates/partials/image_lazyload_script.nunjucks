@@ -1,0 +1,6 @@
+<script type="text/javascript" src="../../bower_components/jquery-unveil/jquery.unveil.min.js"></script>
+<script type="text/javascript">
+    $('.image-lazy').unveil(100, function () {
+        this.style.opacity = 1;
+    });
+</script>

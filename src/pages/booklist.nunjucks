@@ -14,5 +14,121 @@
     {% include  "partials/header_common.nunjucks" %}
     {% include  "partials/search_bar.nunjucks" %}
     {% include  "partials/book_list.nunjucks" %}
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    {% include  "partials/image_lazyload_script.nunjucks" %}
+    <script type="text/javascript">
+        var list = document.querySelector('.books__list ul');
+        var loadBtn = document.querySelector('.load');
+        
+        var currentPage = 1;
+        var countPerPage = 6;
 
+        var onloading = false;
+
+        function requestBooks() {
+            $.ajax({
+                url: '/api/ebook/books',
+                method: 'get',
+                timeout: 5 * 1000,
+                data: {
+                    cate_id: 1, // data-category
+                    start: (currentPage++) * countPerPage,
+                    count: countPerPage
+                },
+                success: function (result) {
+                    if (!result) {
+                        return;
+                    }
+
+                    result = JSON.parse(result);
+                    if (!result.code || result.code !== '200') {
+                        return;
+                    }
+
+                    var booklist = result.data.list;
+                    var booklistHtml = $(resolveData2Html(booklist));
+                    $(list).append(booklistHtml);
+                },
+                error: function () {
+
+                },
+                complete: function () {
+                    loadBtn.classList.remove('load--loading');
+                    loadBtn.classList.add('load--normal');
+                    loading = false;
+                }
+            })
+        }
+
+        function resolveData2Html(booklist) {
+
+            var str = '';
+
+            function renderStars(num) {
+                return '<li class="stars-list__item">'
+                        + '<span class="icon-star-full"></span>'
+                    + '</li>'
+                    + '<li class="stars-list__item">'
+                        + '<span class="icon-star-full"></span>'   
+                    + '</li>'
+                    + '<li class="stars-list__item">'
+                        + '<span class="icon-star-full"></span>'    
+                    + '</li>'
+                    + '<li class="stars-list__item">'
+                        + '<span class="icon-star-full"></span>'        
+                    + '</li>'
+                    + '<li class="stars-list__item">'
+                        + '<span class="icon-star-full"></span>'    
+                    + '</li>';
+            }
+
+            function renderBook(book) {
+                return '<li class="books__list__item">'
+                    + '<div class="book-cover">'
+                        + '<div class="book">'
+                            + '<div class="spinner">'
+                                + '<div class="rect1"></div>'
+                                + '<div class="rect2"></div>'
+                                + '<div class="rect3"></div>'
+                                + '<div class="rect4"></div>'
+                                + '<div class="rect5"></div>'
+                            + '</div>'                    
+                            + '<img src="' + book.thumb_img + '">'
+                        + '</div>'             
+                    + '</div>'
+                    + '<div class="book-desc">'
+                        + '<p class="book-desc__title book-desc__title--small">' + book.name + '</p>'
+                        + '<p class="book-desc__author book-desc__author--small">' + book.author_name + '</p>'
+                        + '<p class="book-desc__intro book-desc__intro--small">' + book.desc + '</p>'
+                        + '<div class="book-desc__rate">'
+                        + '<ul class="stars-list">'
+                            + renderStars(book.rate_num) + 
+                            + '<li class="stars-list__text">'
+                                + '<span class="stars-list__text__cur">book.rate_num</span>'
+                                + '<span class="stars-list__text__split">/</span>'
+                                + '<span class="stars-list__text__total">10</span>'
+                            + '</li>'
+                        + '</ul>'
+                       + '</div>'            
+                    + '</div>'          
+                + '</li>';
+
+            } 
+
+            booklist.forEach(function (book) {
+                str += renderBook(book);
+            });
+
+            return str; 
+        }
+
+        loadBtn.addEventListener('click', function () {
+            if (onloading) {
+                return true;
+            }
+            loadBtn.classList.remove('load--normal');
+            loadBtn.classList.add('load--loading');
+            requestBooks();
+        });
+    </script>
 {% endblock %}
