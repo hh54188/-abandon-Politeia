@@ -3,11 +3,14 @@
 ### High Priority
 
 - 初始化iscroll
+- position:sticky
 - "加载更多"按钮的脚本功能
 - 字体修正
 - 自定义滚动栏
 - 分享按钮
 - autoprefix
+- 回到顶部
+- 点击加载更多之后，加载并向下滚动
 
 
 ### Lower Priority
@@ -35,7 +38,7 @@
     - 加载更多评论
 8. 【未完成】书架列表（bookshelf）
 9. 【未完成】图书详情（bookdetail）
-10. 回到顶部
+
 
 ## 兼容性可能存在问题的样式：
 

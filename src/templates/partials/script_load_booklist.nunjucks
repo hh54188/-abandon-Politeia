@@ -1,40 +1,66 @@
 <script>
 
     function render(data) {
-
         var booklist = data.list;
-
         var str = '';
 
+        function generatorStar(state) {
+            var str = '';
+            switch(state) {
+                case 'full': str = '<span class="icon-star-full"></span>'; break;
+                case 'half': str = '<span class="icon-star-half"></span>'; break;
+                case 'empty': str = '<span class="icon-star-empty"></span>'; break;
+            }
+            return '<li class="stars-list__item">' + str + '</li>';
+        }
+
+        function generatorStarRow(state1, state2, state3, state4, state5) {
+            var str = '';
+            Array.prototype.slice.call(arguments).forEach(function (item) {
+                str += generatorStar(item);
+            });
+            return str;
+        }
+
         function renderStars(num) {
-            return '<li class="stars-list__item">'
-                    + '<span class="icon-star-full"></span>'
-                + '</li>'
-                + '<li class="stars-list__item">'
-                    + '<span class="icon-star-full"></span>'   
-                + '</li>'
-                + '<li class="stars-list__item">'
-                    + '<span class="icon-star-full"></span>'    
-                + '</li>'
-                + '<li class="stars-list__item">'
-                    + '<span class="icon-star-full"></span>'        
-                + '</li>'
-                + '<li class="stars-list__item">'
-                    + '<span class="icon-star-full"></span>'    
-                + '</li>';
+            num = num / 2;
+            var str = '';
+            if (num < 1) {
+                str = generatorStarRow('half', 'empty', 'empty', 'empty', 'empty');
+            } else if (num == 1) {
+                str = generatorStarRow('full', 'empty', 'empty', 'empty', 'empty');
+            } else if (num < 2) {
+                str = generatorStarRow('full', 'half', 'empty', 'empty', 'empty');
+            } else if (num == 2) {
+                str = generatorStarRow('full', 'full', 'empty', 'empty', 'empty');
+            } else if (num < 3) {
+                str = generatorStarRow('full', 'full', 'half', 'empty', 'empty');
+            } else if (num == 3) {
+                str = generatorStarRow('full', 'full', 'full', 'empty', 'empty');
+            } else if (num < 4) {
+                str = generatorStarRow('full', 'full', 'full', 'half', 'empty');
+            } else if (num == 4) {
+                str = generatorStarRow('full', 'full', 'full', 'full', 'empty');
+            } else if (num < 5) {
+                str = generatorStarRow('full', 'full', 'full', 'full', 'half');
+            } else if (num == 5) {
+                str = generatorStarRow('full', 'full', 'full', 'full', 'full');
+            }
+
+            return str;
         }
 
         function renderBook(book) {
             return '<li class="books__list__item">'
                 + '<div class="book-cover">'
                     + '<div class="book">'
-                        + '<div class="spinner">'
-                            + '<div class="rect1"></div>'
-                            + '<div class="rect2"></div>'
-                            + '<div class="rect3"></div>'
-                            + '<div class="rect4"></div>'
-                            + '<div class="rect5"></div>'
-                        + '</div>'                    
+                        // + '<div class="spinner">'
+                        //     + '<div class="rect1"></div>'
+                        //     + '<div class="rect2"></div>'
+                        //     + '<div class="rect3"></div>'
+                        //     + '<div class="rect4"></div>'
+                        //     + '<div class="rect5"></div>'
+                        // + '</div>'                    
                         + '<img src="' + book.thumb_img + '">'
                     + '</div>'             
                 + '</div>'
@@ -44,12 +70,12 @@
                     + '<p class="book-desc__intro book-desc__intro--small">' + book.desc + '</p>'
                     + '<div class="book-desc__rate">'
                     + '<ul class="stars-list">'
-                        + renderStars(book.rate_num) + 
+                        + renderStars(book.rate_num) 
                         + '<li class="stars-list__text">'
-                            + '<span class="stars-list__text__cur">book.rate_num</span>'
+                            + '<span class="stars-list__text__cur">' + book.rate_num + '</span>'
                             + '<span class="stars-list__text__split">/</span>'
                             + '<span class="stars-list__text__total">10</span>'
-                        + '</li>'
+                        + '</li>'    
                     + '</ul>'
                     + '</div>'            
                 + '</div>'          
@@ -102,12 +128,12 @@
                 }
 
                 result = JSON.parse(result);
-                if (!result.code || result.code !== '200') {
+                if (!result.code || result.code !== 200) {
                     return;
                 }
                 
                 currentPage++;
-                render(result);
+                render(result.data);
             },
             error: function () {
 

@@ -1,6 +1,6 @@
 <div class="header">
     {% if header.showBackBtn  %}
-        <a class="header__back" target="self" href="javascript:alert(0);">返回</a>
+        <a class="header__back" target="_self" href="//127.0.0.1:8080/releases/pages/">返回</a>
     {% endif %}
     <span class="header__text">{{header.title}}</span>
     {% if header.showSearchBtn %}
