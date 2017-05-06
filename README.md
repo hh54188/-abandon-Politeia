@@ -5,7 +5,6 @@
 - 初始化iscroll
 - position:sticky
 - "加载更多"按钮的脚本功能
-- 字体修正
 - 自定义滚动栏
 - 分享按钮
 - autoprefix

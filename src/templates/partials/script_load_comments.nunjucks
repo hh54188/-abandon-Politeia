@@ -1,7 +1,7 @@
 <script>
 
     function render(data) {
-        var booklist = data.list;
+        var comments = data.list;
         var str = '';
 
         function generatorStar(state) {
@@ -50,48 +50,51 @@
             return str;
         }
 
-        function renderBook(book) {
-            return '<li class="books__list__item">'
-                + '<div class="book-cover">'
-                    + '<div class="book">'
-                        // + '<div class="spinner">'
-                        //     + '<div class="rect1"></div>'
-                        //     + '<div class="rect2"></div>'
-                        //     + '<div class="rect3"></div>'
-                        //     + '<div class="rect4"></div>'
-                        //     + '<div class="rect5"></div>'
-                        // + '</div>'                    
-                        + '<img src="' + book.thumb_img + '">'
-                    + '</div>'             
-                + '</div>'
-                + '<div class="book-desc">'
-                    + '<p class="book-desc__title book-desc__title--small">' + book.name + '</p>'
-                    + '<p class="book-desc__author book-desc__author--small">' + book.author_name + '</p>'
-                    + '<p class="book-desc__intro book-desc__intro--small">' + book.desc + '</p>'
-                    + '<div class="book-desc__rate">'
-                    + '<ul class="stars-list">'
-                        + renderStars(book.rate_num) 
-                        + '<li class="stars-list__text">'
-                            + '<span class="stars-list__text__cur">' + book.rate_num + '</span>'
-                            + '<span class="stars-list__text__split">/</span>'
-                            + '<span class="stars-list__text__total">10</span>'
-                        + '</li>'    
-                    + '</ul>'
-                    + '</div>'            
-                + '</div>'          
-            + '</li>';
-
+        function renderComment(comment) {
+            return '<li class="comment__content__list__item">'
+                    + '<a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">'                                       
+                        + '<div class="comment__content__list__item__avatar-wrap">'
+                            + '<img class="comment__content__list__item__avatar-wrap__avatar">'
+                        + '</div>'
+                        + '<div class="comment__content__list__item__content">'
+                            + '<div class="comment__content__list__item__content__header">'
+                                + '<img src="' + comment.avatar + '" class="comment__content__list__item__content__header__avatar" alt="">'
+                                + '<p class="comment__content__list__item__content__header__author">' + comment.nickname + '</p>'
+                                + '<div class="comment__content__list__item__content__header__rate">'
+                                    + '<ul class="stars-list">'
+                                         + renderStars(comment.rate_num)
+                                        + '<li class="stars-list__text">'
+                                            + '<span class="stars-list__text__cur">' + comment.rate_num + '</span>'
+                                            + '<span class="stars-list__text__split">/</span>'
+                                            + '<span class="stars-list__text__total">10</span>'
+                                        + '</li>'
+                                    + '</ul>'
+                                + '</div>'
+                            + '</div>'
+                            + '<div class="comment__content__list__item__content__body">'
+                                + '<p>' + comment.desc + `</p>`
+                            + `</div>`
+                            + `<div class="comment__content__list__item__content__footer">`
+                                + `<div class="comment__content__list__item__content__footer__date">` + comment.create_time + `</div>`
+                                + `<div class="comment__content__list__item__content__footer__fav">`
+                                    + `<i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>`
+                                    + `<span class="comment__content__list__item__content__footer__fav__text">` + comment.like_num + `</span>`
+                                + `</div>`
+                            + `</div>`
+                        + `</div>`
+                    + `</a>`
+               + `</li>`
         } 
 
-        booklist.forEach(function (book) {
-            str += renderBook(book);
+        comments.forEach(function (comment) {
+            str += renderComment(comment);
         });
 
         $(list).append($(str));
     }
 
-    var requestURL = '/api/ebook/books';
-    var list = document.querySelector('.books__list ul');
+    var requestURL = '/api/ebook/reviews';
+    var list = document.querySelector('.comment__content__list');
     var loadBtn = document.querySelector('.load');
 
     var currentPage = 2;
@@ -116,7 +119,7 @@
         loadBtn.classList.remove('load--normal');
         loadBtn.classList.remove('load--loading');
         loadBtn.classList.add('load--complete');      
-        loadBtn.querySelector('.load__text').innerHTML = '所有图书加载完毕';
+        loadBtn.querySelector('.load__text').innerHTML = '所有评论加载完毕';
         loadBtn.removeEventListener('click', clickEventListener);
     }
 
@@ -133,7 +136,7 @@
             method: 'get',
             timeout: 5 * 1000,
             data: {
-                cate_id: 1,
+                book_id: 1,
                 start: currentPage * countPerPage,
                 count: countPerPage
             },
@@ -150,7 +153,7 @@
                 if (dataEnded(result.data)) {
                     setButtonComplete();
                     return;
-                }                
+                }
                 
                 currentPage++;
                 render(result.data);
