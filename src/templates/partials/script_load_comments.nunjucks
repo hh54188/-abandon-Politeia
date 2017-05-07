@@ -1,180 +1,62 @@
 <script>
 
-    function render(data) {
-        var comments = data.list;
-        var str = '';
-
-        function generatorStar(state) {
+    new LoadList({
+        loadBtn: document.querySelector('.load'),
+        listContainer: document.querySelector('.comment__content__list'),
+        requestURL: '/api/ebook/reviews',
+        data: {
+            book_id: 1,
+            start: 10,
+            count: 10
+        },
+        successCallback: function () {
+            this.data.start = this.data.start + this.data.count;
+        },        
+        renderCallback: function (data) {
+            var comments = data.list;
             var str = '';
-            switch(state) {
-                case 'full': str = '<span class="icon-star-full"></span>'; break;
-                case 'half': str = '<span class="icon-star-half"></span>'; break;
-                case 'empty': str = '<span class="icon-star-empty"></span>'; break;
-            }
-            return '<li class="stars-list__item">' + str + '</li>';
-        }
-
-        function generatorStarRow(state1, state2, state3, state4, state5) {
-            var str = '';
-            Array.prototype.slice.call(arguments).forEach(function (item) {
-                str += generatorStar(item);
-            });
-            return str;
-        }
-
-        function renderStars(num) {
-            num = num / 2;
-            var str = '';
-            if (num < 1) {
-                str = generatorStarRow('half', 'empty', 'empty', 'empty', 'empty');
-            } else if (num == 1) {
-                str = generatorStarRow('full', 'empty', 'empty', 'empty', 'empty');
-            } else if (num < 2) {
-                str = generatorStarRow('full', 'half', 'empty', 'empty', 'empty');
-            } else if (num == 2) {
-                str = generatorStarRow('full', 'full', 'empty', 'empty', 'empty');
-            } else if (num < 3) {
-                str = generatorStarRow('full', 'full', 'half', 'empty', 'empty');
-            } else if (num == 3) {
-                str = generatorStarRow('full', 'full', 'full', 'empty', 'empty');
-            } else if (num < 4) {
-                str = generatorStarRow('full', 'full', 'full', 'half', 'empty');
-            } else if (num == 4) {
-                str = generatorStarRow('full', 'full', 'full', 'full', 'empty');
-            } else if (num < 5) {
-                str = generatorStarRow('full', 'full', 'full', 'full', 'half');
-            } else if (num == 5) {
-                str = generatorStarRow('full', 'full', 'full', 'full', 'full');
-            }
-
-            return str;
-        }
-
-        function renderComment(comment) {
-            return '<li class="comment__content__list__item">'
-                    + '<a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">'                                       
-                        + '<div class="comment__content__list__item__avatar-wrap">'
-                            + '<img class="comment__content__list__item__avatar-wrap__avatar">'
-                        + '</div>'
-                        + '<div class="comment__content__list__item__content">'
-                            + '<div class="comment__content__list__item__content__header">'
-                                + '<img src="' + comment.avatar + '" class="comment__content__list__item__content__header__avatar" alt="">'
-                                + '<p class="comment__content__list__item__content__header__author">' + comment.nickname + '</p>'
-                                + '<div class="comment__content__list__item__content__header__rate">'
-                                    + '<ul class="stars-list">'
-                                         + renderStars(comment.rate_num)
-                                        + '<li class="stars-list__text">'
-                                            + '<span class="stars-list__text__cur">' + comment.rate_num + '</span>'
-                                            + '<span class="stars-list__text__split">/</span>'
-                                            + '<span class="stars-list__text__total">10</span>'
-                                        + '</li>'
-                                    + '</ul>'
-                                + '</div>'
+            var _this = this;
+            function renderComment(comment) {
+                return '<li class="comment__content__list__item">'
+                        + '<a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">'                                       
+                            + '<div class="comment__content__list__item__avatar-wrap">'
+                                + '<img class="comment__content__list__item__avatar-wrap__avatar">'
                             + '</div>'
-                            + '<div class="comment__content__list__item__content__body">'
-                                + '<p>' + comment.desc + `</p>`
-                            + `</div>`
-                            + `<div class="comment__content__list__item__content__footer">`
-                                + `<div class="comment__content__list__item__content__footer__date">` + comment.create_time + `</div>`
-                                + `<div class="comment__content__list__item__content__footer__fav">`
-                                    + `<i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>`
-                                    + `<span class="comment__content__list__item__content__footer__fav__text">` + comment.like_num + `</span>`
+                            + '<div class="comment__content__list__item__content">'
+                                + '<div class="comment__content__list__item__content__header">'
+                                    + '<img src="' + comment.avatar + '" class="comment__content__list__item__content__header__avatar" alt="">'
+                                    + '<p class="comment__content__list__item__content__header__author">' + comment.nickname + '</p>'
+                                    + '<div class="comment__content__list__item__content__header__rate">'
+                                        + '<ul class="stars-list">'
+                                            + _this.renderStars(comment.rate_num)
+                                            + '<li class="stars-list__text">'
+                                                + '<span class="stars-list__text__cur">' + comment.rate_num + '</span>'
+                                                + '<span class="stars-list__text__split">/</span>'
+                                                + '<span class="stars-list__text__total">10</span>'
+                                            + '</li>'
+                                        + '</ul>'
+                                    + '</div>'
+                                + '</div>'
+                                + '<div class="comment__content__list__item__content__body">'
+                                    + '<p>' + comment.desc + `</p>`
+                                + `</div>`
+                                + `<div class="comment__content__list__item__content__footer">`
+                                    + `<div class="comment__content__list__item__content__footer__date">` + comment.create_time + `</div>`
+                                    + `<div class="comment__content__list__item__content__footer__fav">`
+                                        + `<i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>`
+                                        + `<span class="comment__content__list__item__content__footer__fav__text">` + comment.like_num + `</span>`
+                                    + `</div>`
                                 + `</div>`
                             + `</div>`
-                        + `</div>`
-                    + `</a>`
-               + `</li>`
-        } 
+                        + `</a>`
+                + `</li>`
+            } 
 
-        comments.forEach(function (comment) {
-            str += renderComment(comment);
-        });
+            comments.forEach(function (comment) {
+                str += renderComment(comment);
+            });
 
-        $(list).append($(str));
-    }
-
-    var requestURL = '/api/ebook/reviews';
-    var list = document.querySelector('.comment__content__list');
-    var loadBtn = document.querySelector('.load');
-
-    var currentPage = 2;
-    var countPerPage = 6;
-    var onloading = false;
-
-    if (!list || !loadBtn || !requestURL) {
-        throw new Error('list or loadbtn or requestURL required');
-    }
-
-    function setButtonAvailable() {
-        loadBtn.classList.remove('load--loading');
-        loadBtn.classList.add('load--normal');
-    }
-
-    function setButtonUnavailable() {
-        loadBtn.classList.remove('load--normal');
-        loadBtn.classList.add('load--loading');
-    }
-
-    function setButtonComplete() {
-        loadBtn.classList.remove('load--normal');
-        loadBtn.classList.remove('load--loading');
-        loadBtn.classList.add('load--complete');      
-        loadBtn.querySelector('.load__text').innerHTML = '所有评论加载完毕';
-        loadBtn.removeEventListener('click', clickEventListener);
-    }
-
-    function dataEnded(data) {
-        if (data.start + data.count === data.total) {
-            return true;
+            $(_this.listContainer).append($(str));            
         }
-        return false;
-    }
-
-    function requestBooks() {
-        $.ajax({
-            url: requestURL,
-            method: 'get',
-            timeout: 5 * 1000,
-            data: {
-                book_id: 1,
-                start: currentPage * countPerPage,
-                count: countPerPage
-            },
-            success: function (result) {
-                if (!result) {
-                    return;
-                }
-
-                result = JSON.parse(result);
-                if (!result.code || result.code !== 200) {
-                    return;
-                }
-
-                if (dataEnded(result.data)) {
-                    setButtonComplete();
-                    return;
-                }
-                
-                currentPage++;
-                render(result.data);
-            },
-            error: function () {
-
-            },
-            complete: function () {
-                setButtonAvailable();
-                loading = false;
-            }
-        })
-    }
-
-    function clickEventListener() {
-        if (onloading) {
-            return true;
-        }
-        setButtonUnavailable();
-        requestBooks();
-    }
-
-    loadBtn.addEventListener('click', clickEventListener);    
+    }); 
 </script>

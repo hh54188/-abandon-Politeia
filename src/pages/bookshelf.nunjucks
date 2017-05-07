@@ -29,8 +29,8 @@
                             <p class="book-desc__author book-desc__author--small">陈平原</p>
                             <div class="book-desc__menu-wrap">
                                 {# 要确保id存在，并且id不唯一 #}
-                                <label for="book123456" class="book-desc__menu-wrap__icon icon-menu"></label>
-                                <input id="book123456" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <label for="book-history-123456" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-history-123456" class="book-desc__menu-wrap__input" type="checkbox">                                
                                 <div class="book-desc__menu-wrap__menu menu">
                                     <ul class="book-desc__menu-wrap__menu__list">
                                         <li class="book-desc__menu-wrap__menu__list__item">
@@ -65,8 +65,8 @@
                             <p class="book-desc__author book-desc__author--small">阿城</p>
                             <div class="book-desc__menu-wrap">
                                 {# 要确保id存在，并且id不唯一 #}
-                                <label for="book1234567" class="book-desc__menu-wrap__icon icon-menu"></label>
-                                <input id="book1234567" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <label for="book-history-1234567" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-history-1234567" class="book-desc__menu-wrap__input" type="checkbox">                                
                                 <div class="book-desc__menu-wrap__menu menu">
                                     <ul class="book-desc__menu-wrap__menu__list">
                                         <li class="book-desc__menu-wrap__menu__list__item">
@@ -101,8 +101,8 @@
                             <p class="book-desc__author book-desc__author--small">贾樟柯</p>           
                             <div class="book-desc__menu-wrap">
                                 {# 要确保id存在，并且id不唯一 #}
-                                <label for="book12345678" class="book-desc__menu-wrap__icon icon-menu"></label>
-                                <input id="book12345678" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <label for="book-history-12345678" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-history-12345678" class="book-desc__menu-wrap__input" type="checkbox">                                
                                 <div class="book-desc__menu-wrap__menu menu">
                                     <ul class="book-desc__menu-wrap__menu__list">
                                         <li class="book-desc__menu-wrap__menu__list__item">
@@ -166,8 +166,310 @@
                 {% include "partials/load_button.nunjucks" %}
             </div>            
         </div>
-        <div id="tab-buy" class="tab-content"></div>
-        <div id="tab-borrow" class="tab-content"></div>
+        <div id="tab-buy" class="tab-content">
+             <div class="books__list">
+                <ul>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                            <p class="book-desc__author book-desc__author--small">陈平原</p>
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-buy-123456" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-buy-123456" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-03.jpg" />
+                            </div>                
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">阿城精选</p>
+                            <p class="book-desc__author book-desc__author--small">阿城</p>
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-buy-1234567" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-buy-1234567" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                                                             
+                        </div>            
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-04.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">贾想1996-2008:贾樟柯​电影手记</p>
+                            <p class="book-desc__author book-desc__author--small">贾樟柯</p>           
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-buy-12345678" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-buy-12345678" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                             
+                        </div>            
+                    </li> 
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-05.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">观看之道</p>
+                            <p class="book-desc__author book-desc__author--small">约翰·伯格</p>           
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-buy-123456789" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-buy-123456789" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                             
+                        </div>            
+                    </li>                         
+                </ul>
+                {% include "partials/load_button.nunjucks" %}
+            </div>         
+        </div>
+        <div id="tab-borrow" class="tab-content">
+            <div class="books__list">
+                <ul>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-01.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">千古文人侠客梦</p>
+                            <p class="book-desc__author book-desc__author--small">陈平原</p>
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-borrow-123456" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-borrow-123456" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-03.jpg" />
+                            </div>                
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">阿城精选</p>
+                            <p class="book-desc__author book-desc__author--small">阿城</p>
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-borrow-1234567" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-borrow-1234567" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                                                             
+                        </div>            
+                    </li>
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-04.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">贾想1996-2008:贾樟柯​电影手记</p>
+                            <p class="book-desc__author book-desc__author--small">贾樟柯</p>           
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-borrow-12345678" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-borrow-12345678" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                             
+                        </div>            
+                    </li> 
+                    <li class="books__list__item">
+                        <div class="book-cover">
+                            <div class="book">
+                                <img src="../sample_images/cover-05.jpg" />
+                            </div>
+                        </div>
+                        <div class="book-desc">
+                            <p class="book-desc__title book-desc__title--small">观看之道</p>
+                            <p class="book-desc__author book-desc__author--small">约翰·伯格</p>           
+                            <div class="book-desc__menu-wrap">
+                                {# 要确保id存在，并且id不唯一 #}
+                                <label for="book-borrow-123456789" class="book-desc__menu-wrap__icon icon-menu"></label>
+                                <input id="book-borrow-123456789" class="book-desc__menu-wrap__input" type="checkbox">                                
+                                <div class="book-desc__menu-wrap__menu menu">
+                                    <ul class="book-desc__menu-wrap__menu__list">
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">立刻购买</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">查看详情</a>
+                                        </li>
+                                        <li class="book-desc__menu-wrap__menu__list__item">
+                                            <a href="javascript:alert(0);">删除记录</a>
+                                        </li>                                                                                
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="book-desc__progress">
+                                <span class="book-desc__progress__label">阅读进度</span>
+                                <span class="book-desc__progress__bar">
+                                    <span class="book-desc__progress__bar__inner" style="width:90%;"></span>
+                                </span>
+                                <span class="book-desc__progress__percentage">90%</span>
+                            </div>                             
+                        </div>            
+                    </li>                         
+                </ul>
+                {% include "partials/load_button.nunjucks" %}
+            </div>          
+        </div>
     </div>
     {% include "partials/tab_script.nunjucks" %}
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    {% include "partials/script_shelf_load_history.nunjucks" %}
 {% endblock %}

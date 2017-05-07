@@ -1,0 +1,69 @@
+{% include "partials/script_load_list_common.nunjucks" %}
+<script>
+
+    function initial(tab, apiURL, itemRenderFn) {
+        new LoadList({
+            loadBtn: tab.querySelector('.load'),
+            listContainer: tab.querySelector('.books__list ul'),
+            requestURL: apiURL,
+            data: {
+                start: 10,
+                count: 10
+            },
+            successCallback: function () {
+                this.data.start = this.data.start + this.data.count;
+            },        
+            renderCallback: function (data) {
+                var booklist = data.list;
+                var str = '';
+                var _this = this;
+                
+                booklist.forEach(function (book) {
+                    str += itemRenderFn(book);
+                });
+
+                $(_this.listContainer).append($(str));            
+            }
+        });
+    }
+
+    var historyTab = document.querySelector('#tab-history');
+    initial(historyTab, '/api/ebook/read_history', function renderBook(book) {
+        return  '<li class="books__list__item">'
+            + '<div class="book-cover">'
+                + '<div class="book">'
+                    + '<img src="' + book.thumb_img + '">'
+                + '</div>'
+            + '</div>'
+            + '<div class="book-desc">'
+                + '<p class="book-desc__title book-desc__title--small">' + book.name + '</p>'
+                + '<p class="book-desc__author book-desc__author--small">' + book.author_name + '</p>'         
+                + '<div class="book-desc__menu-wrap">'
+                    + '<label for="book-history-' + book.id + '" class="book-desc__menu-wrap__icon icon-menu"></label>'
+                    + '<input id="book-history-' + book.id + '" class="book-desc__menu-wrap__input" type="checkbox">'                                
+                    + '<div class="book-desc__menu-wrap__menu menu">'
+                        + '<ul class="book-desc__menu-wrap__menu__list">'
+                            + '<li class="book-desc__menu-wrap__menu__list__item">'
+                                + '<a href="javascript:alert(0);">立刻购买</a>'
+                            + '</li>'
+                            + '<li class="book-desc__menu-wrap__menu__list__item">'
+                                + '<a href="javascript:alert(0);">查看详情</a>'
+                            + '</li>'
+                            + '<li class="book-desc__menu-wrap__menu__list__item">'
+                                + '<a href="javascript:alert(0);">删除记录</a>'
+                            + '</li>'                                                                               
+                        + '</ul>'
+                    + '</div>'
+                + '</div>'
+                + '<div class="book-desc__progress">'
+                    + '<span class="book-desc__progress__label">阅读进度</span>'
+                    + '<span class="book-desc__progress__bar">'
+                        + '<span class="book-desc__progress__bar__inner" style="width:' + book.progress / 1000 * 100 + ';"></span>'
+                    + '</span>'
+                    + '<span class="book-desc__progress__percentage">' + book.progress / 1000 * 100 + '%</span>'
+                + '</div>'                             
+            + '</div>'            
+        + '</li>'
+    });
+                    
+</script>
