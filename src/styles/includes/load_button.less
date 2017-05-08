@@ -21,7 +21,12 @@
             display: none;
         }
         .load__text {
-            display: inline;
+            &--normal {
+                display: inline;
+            }
+            &--complete {
+                display: none;
+            }
         }
     }
 
@@ -42,7 +47,12 @@
             display: none;
         }           
         .load__text {
-            display: block;
+            &--normal {
+                display: none;
+            }
+            &--complete {
+                display: inline;
+            }
         }          
     }
 }

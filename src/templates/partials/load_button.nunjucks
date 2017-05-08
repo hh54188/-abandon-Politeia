@@ -1,4 +1,5 @@
 <a class="load load--normal" href="javascript:alert(0);">
     {% include "partials/spinner-square2.nunjucks" %}
-    <span class="load__text">查看更多</span>
+    <span class="load__text load__text--normal">查看更多</span>
+    <span class="load__text load__text--complete">加载完毕</span>
 </a>

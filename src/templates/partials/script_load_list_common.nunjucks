@@ -28,8 +28,11 @@
         this.setButtonComplete = function () {
             this.loadBtn.classList.remove('load--normal');
             this.loadBtn.classList.remove('load--loading');
-            this.loadBtn.classList.add('load--complete');      
-            this.loadBtn.querySelector('.load__text').innerHTML = '所有加载完毕';
+            this.loadBtn.classList.add('load--complete');
+
+            this.loadBtn.querySelector('.load__text').classList.remove('load__text--normal');
+            this.loadBtn.querySelector('.load__text').classList.add('load__text--complete');
+            
             this.loadBtn.removeEventListener('click', clickEventListener);
         }
 

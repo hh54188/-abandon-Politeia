@@ -14,12 +14,26 @@ app.get('/api/ebook/books', (req, res) => {
     }, 1000 * 2);
 });
 
+// 书架页
 app.get('/api/ebook/read_history', (req, res) => {
     setTimeout(() => {
         res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
     }, 1000 * 2);
 });
 
+app.get('/api/ebook/bought_books', (req, res) => {
+    setTimeout(() => {
+        res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
+    }, 1000 * 2);
+});
+
+app.get('/api/ebook/borrowed_books', (req, res) => {
+    setTimeout(() => {
+        res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
+    }, 1000 * 2);
+});
+
+// 评论页-记载更多评论
 app.get('/api/ebook/reviews', (req, res) => {
     setTimeout(() => {
         res.send(fs.readFileSync('./mock_data/comments.json', 'utf-8'))
