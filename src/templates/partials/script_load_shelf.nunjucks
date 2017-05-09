@@ -1,5 +1,92 @@
 {% include "partials/script_load_list_common.nunjucks" %}
 <script>
+    var leftedBookText = document.querySelector('.borrow-limit__text');
+    var leftedBookNum = parseInt(leftedBookText.innerHTML, 10);
+
+    function setLeftedBookCount(num) {
+        leftedBookText.innerHTML = num;
+    }
+
+    $('.book-desc__button__delete-record').on('click', function (event) {
+        var bookId = $(this).data('book');
+        var listItem = $(this).parents('li');
+
+        var listItemHeight = parseInt(window.getComputedStyle(listItem[0]).height);
+
+        listItem.animate({
+            height: 0,
+            opacity: 0
+        }, 300);
+
+        $.ajax({
+            url: '/api/ebook/remove_history',
+            method: 'get',
+            data: {
+                book_id: bookId
+            },
+            timeout: 1000 * 5,
+            success: function (result) {
+                if (!result) {
+                    return;
+                }
+                result = JSON.parse(result);
+                if (!result.code || result.code !== 200) {
+                    return;
+                }
+                listItem.remove();
+            },
+            error: function () {
+                listItem.animate({
+                    height: listItemHeight + 'px',
+                    opacity: 1
+                }, 300);
+            }
+        });
+
+        event.preventDefault();        
+    });
+
+    $('.book-desc__button__return').on('click', function (event) {
+        var bookId = $(this).data('book');
+        var listItem = $(this).parents('li');
+
+        var listItemHeight = parseInt(window.getComputedStyle(listItem[0]).height);
+
+        listItem.animate({
+            height: 0,
+            opacity: 0
+        }, 300);
+
+        setLeftedBookCount(++leftedBookNum);
+
+        $.ajax({
+            url: '/api/ebook/return_book',
+            method: 'get',
+            data: {
+                book_id: bookId
+            },
+            timeout: 1000 * 5,
+            success: function (result) {
+                if (!result) {
+                    return;
+                }
+                result = JSON.parse(result);
+                if (!result.code || result.code !== 200) {
+                    return;
+                }
+                listItem.remove();
+            },
+            error: function () {
+                listItem.animate({
+                    height: listItemHeight + 'px',
+                    opacity: 1
+                }, 300);
+                setLeftedBookCount(--leftedBookNum);                
+            }
+        });
+
+        event.preventDefault();        
+    });
 
     function initial(tab, apiURL, itemRenderFn) {
         new LoadList({

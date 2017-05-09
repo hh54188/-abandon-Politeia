@@ -20,23 +20,21 @@
 
 ## 页面总结
 
-1. 【完成】主页（home）
-    - 脚本：carousel，layload（banner + 图书封面）
-2. 【完成】类别页（catrgoeylist）
-    - 无任何脚本
-3. 【完成，待测试】图书列表页面（booklist）
-    - 图书封面lazyload，加载更多图书
-4. 【完成，能不能改成post同步请求？】搜索页面（search）
-5. 【未完成】评论详情（commentdetail）
+- 【完成】主页（home）
+- 【完成】类别页（catrgoeylist）
+- 【半完成】图书列表页面（booklist）
+    - 图书搜索
+- 【完成，能不能改成post同步请求？】搜索页面（search）
+- 【未完成】评论详情（commentdetail）
     - 【未完成】分享按钮功能
     - 【未完成】喜欢按钮
-6. 【未完成，虽然是post，但能不能改成post同步页面】撰写评论页面（writecomment）
+- 【未完成，虽然是post，但能不能改成post同步页面】撰写评论页面（writecomment）
     - 计算字数脚本
     - 提交评论（post）
-7. 【未完成】评论类表（commentlist）
+- 【未完成】评论类表（commentlist）
     - 加载更多评论
-8. 【未完成】书架列表（bookshelf）
-9. 【未完成】图书详情（bookdetail）
+- 【未完成】书架列表（bookshelf）
+- 【未完成】图书详情（bookdetail）
 
 
 ## 兼容性可能存在问题的样式：

@@ -5,6 +5,12 @@
 {% endblock %}
 
 {% block content %}
+    {%
+        set header = {
+            title: '撰写评论',
+            showBackBtn: true
+        }
+    %}
     {% include  "partials/header_common.nunjucks" %}
     <div class="book-detail">
         <div class="books__list">
@@ -29,20 +35,20 @@
         <div class="comment-form__rate">
             <p class="comment-form__rate__text">请评分</p>
             <ul class="comment-form__rate__list">
-                <li class="comment-form__rate__list__item comment-form__rate__list__item--selected">
-                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>
+                <li data-rate="1" class="comment-form__rate__list__item">
+                    <label class="comment-form__rate__list__item__icon icon-star-full"></label>
                 </li>
-                <li class="comment-form__rate__list__item">
-                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                <li data-rate="2" class="comment-form__rate__list__item comment-form__rate__btn">
+                    <label class="comment-form__rate__list__item__icon icon-star-full"></label>                
                 </li>
-                <li class="comment-form__rate__list__item">
-                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                <li data-rate="3" class="comment-form__rate__list__item comment-form__rate__btn">
+                    <label class="comment-form__rate__list__item__icon icon-star-full"></label>                
                 </li>
-                <li class="comment-form__rate__list__item">
-                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                <li data-rate="4" class="comment-form__rate__list__item comment-form__rate__btn">
+                    <label class="comment-form__rate__list__item__icon icon-star-full"></label>                
                 </li>
-                <li class="comment-form__rate__list__item">
-                    <span class="comment-form__rate__list__item__icon icon-star-full"></span>                
+                <li data-rate="5" class="comment-form__rate__list__item comment-form__rate__btn">
+                    <label class="comment-form__rate__list__item__icon icon-star-full"></label>                
                 </li>
             </ul>
         </div>
@@ -52,10 +58,32 @@
         <div class="comment-form__footer">
             <p class="comment-form__footer__text">
                 <span>还能输入</span>
-                <span>10</span>
+                <span>20</span>
                 <span>个字</span>
             </p>
             <button class="comment-form__footer__submit">提交</button>
         </div>
     </div>
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        var maxWordCount = 20;
+        
+        var rateStars = $('.comment-form__rate__list__item');
+        rateStars.on('click', function () {
+            var rate = $(this).data('rate');
+            rateStars.each(function (index, item) {
+                if (index + 1 <= rate) {
+                    $(item).addClass('comment-form__rate__list__item--selected');
+                } else {
+                    $(item).removeClass('comment-form__rate__list__item--selected');                    
+                }
+            })
+        });
+
+        document.querySelector('textarea').addEventListener('keydown', function () {
+            if (this.value.length >= maxWordCount) {
+                this.value = this.value.slice(0, maxWordCount);
+            }
+        }, false);
+    </script>
 {% endblock %}

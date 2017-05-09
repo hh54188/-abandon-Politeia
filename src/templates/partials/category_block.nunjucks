@@ -1,6 +1,6 @@
 <div class="books">
     <div class="books__title">
-        <p>热门推荐</p>
+        <p>图书分类</p>
     </div>
     <div class="books__content">
         {% include "partials/banner.nunjucks" %}
@@ -31,7 +31,7 @@
                     <p class="book-desc__intro book-desc__intro--normal">“世纪文学60家”书系的出版，旨在囊括20世纪华文创作的精华，展示具有经典意义的作家作品，打造一份适于典藏的精品书目。她凝聚了数十位专家的心血，</p>
                 </div>            
             </li>
-            <li class="books__list__item">
+            <li class="books__list__item books__list__item--last">
                 <div class="book-cover">
                     <div class="book">
                         {% include "partials/spinner-square2.nunjucks" %}                

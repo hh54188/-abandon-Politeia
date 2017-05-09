@@ -12,14 +12,20 @@
 }
 
 .borrow-limit {
-    width: 100%;
-    height: 4rem;
-    background: @borderColor;
-    margin: 1rem 0 0;
+    font-size: @normalFontSize;
+    color: @subTextColor;
+    
+    text-align: center;
 
-    &__progress {
-        height: 100%;
-        width: 20%;
-        background:  #666666;
+    padding: 1rem 0;
+    border-bottom: 1px solid @borderColor;
+
+    &__text {
+        &:before {
+            content: ' ';
+        }
+        &:after {
+            content: ' ';
+        }        
     }
 }
