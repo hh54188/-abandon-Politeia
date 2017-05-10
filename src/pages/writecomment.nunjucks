@@ -58,32 +58,68 @@
         <div class="comment-form__footer">
             <p class="comment-form__footer__text">
                 <span>还能输入</span>
-                <span>20</span>
+                <span class="comment-form__footer__text__count">20</span>
                 <span>个字</span>
             </p>
-            <button class="comment-form__footer__submit">提交</button>
+            <form class="comment-form__footer__form" method="get" action="/api/ebook/add_review">
+                <input class="hide" name="book_id" type="text" value="123456" />
+                <input class="hide" name="rate_num" type="text" value="8" />
+                <input class="hide" name="content" type="text" value="123456" />
+                <button disabled type="submit" class="comment-form__footer__submit">提交</button>
+            </form>
         </div>
     </div>
     <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
     <script>
         var maxWordCount = 20;
+        var selectedRate = 0;
+        var permitSubmit = false;
         
+        var textarea = document.querySelector('.comment-form__textarea textarea');
+        var submitButton = document.querySelector('.comment-form__footer__submit');
+
+        function checkEnableSubmit() {
+            if (selectedRate && textarea.value) {
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.setAttribute('disabled', true);
+            }
+        }
+
         var rateStars = $('.comment-form__rate__list__item');
         rateStars.on('click', function () {
             var rate = $(this).data('rate');
+            selectedRate = rate;
             rateStars.each(function (index, item) {
                 if (index + 1 <= rate) {
                     $(item).addClass('comment-form__rate__list__item--selected');
                 } else {
                     $(item).removeClass('comment-form__rate__list__item--selected');                    
                 }
-            })
+            });
+            checkEnableSubmit();
         });
 
-        document.querySelector('textarea').addEventListener('keydown', function () {
-            if (this.value.length >= maxWordCount) {
+        function textChangeHandler(event) {
+            if (this.value.length > maxWordCount) {
                 this.value = this.value.slice(0, maxWordCount);
             }
+            $('.comment-form__footer__text__count').text(maxWordCount - this.value.length);
+            checkEnableSubmit();
+        }
+        textarea.addEventListener('input', textChangeHandler, false);
+        textarea.addEventListener('change', textChangeHandler, false);
+
+        submitButton.addEventListener('click', function () {
+            var form = document.querySelector('.comment-form__footer__form');
+            var bookIdField = form.querySelector('[name="book_id"]');
+            var rateNumField = form.querySelector('[name="rate_num"]');
+            var contentField = form.querySelector('[name="content"]');
+
+            bookId = bookIdField.value;
+            rateNumField.value = selectedRate;
+            contentField.value = textarea.value;
+
         }, false);
     </script>
 {% endblock %}
