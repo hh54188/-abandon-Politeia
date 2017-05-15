@@ -10,6 +10,7 @@
     {% include "partials/read_side_bar.nunjucks" %}
     {% include "partials/read_top_bar.nunjucks" %}
     {% include "partials/read_bottom_bar.nunjucks" %}
+    {% include "partials/read_progress_bar.nunjucks" %}
     
     <!--ZingTouch.js-->
     {#<script type="text/javascript" src="../../bower_components/zingtouch.min.js"></script>#}
@@ -33,19 +34,6 @@
     </script>#}
 
     <script>
-        var target = document.querySelector('body');
-        // touchstart vs touchenter ?
-        body.addEventListener('touchstart', function (event) {
 
-        });
-
-        body.addEventListener('touchmove', function (event) {
-
-        });
-
-        // touchend vs touchleave ?
-        body.addEventListener('touchend', function (event) {
-
-        })
     </script>
 {% endblock %}

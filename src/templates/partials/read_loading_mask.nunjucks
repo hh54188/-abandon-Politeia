@@ -1,4 +1,4 @@
 <div class="loading-mask">
-    <p class="loading-mask__text">请稍等，图书加载中</p>
+    <p class="loading-mask__text">图书加载中</p>
     {% include "partials/spinner-square2.nunjucks" %}
 </div>

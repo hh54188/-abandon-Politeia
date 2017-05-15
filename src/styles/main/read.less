@@ -48,3 +48,101 @@
         top: 0; 
     }
 }
+
+.top-bar {
+    padding: 1rem 0;    
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid @borderColor;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    z-index: 2;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background: #ffffff;
+    text-align: center;
+
+    &__buy {
+        display: inline-block;
+        padding: 0.5rem 4rem;
+        border-radius: 1rem;
+        background: @importantColor;
+        color: #FFFFFF;            
+
+        &__icon {
+            font-size: @normalFontSize;
+        }
+        &__text {
+            font-size: @normalFontSize;
+            margin-left: 0.5rem;          
+        }
+    }
+
+    &__back {
+        font-size: @normalFontSize;
+
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+    } 
+
+    &__bookmark {
+
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);        
+
+        &__icon {
+            font-size: @iconFontSize;
+            color: @subTextColor;            
+        }
+    }
+}
+
+.bottom-bar {
+    width: 100%;
+    border-top: 1px solid @borderColor;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    z-index: 2;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    background: #ffffff;
+
+    &__btn-list {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        padding: 0.8rem 2rem;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: space-between;
+
+        &__btn {
+            display: inline-block;
+            color: @subTextColor;
+
+            &__icon {
+                display: block;
+                font-size: @iconFontSize;
+                margin: 0 0 0.3rem;
+            }
+            &__text {
+                font-size: @normalFontSize;
+                text-align: center;
+            }
+        }
+    }
+}

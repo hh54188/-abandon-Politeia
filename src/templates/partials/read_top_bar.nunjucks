@@ -1,0 +1,10 @@
+<div class="top-bar">
+    <a class="top-bar__back" href="javascript:alert(1);">返回</a>
+    <a class="top-bar__buy" href="javascript:alert(1);">
+        <i class="top-bar__buy__icon icon-cart"></i>
+        <span class="top-bar__buy__text">购买</span>
+    </a>
+    <a class="top-bar__bookmark" href="javascript:alert(1);">
+        <i class="top-bar__bookmark__icon icon-bookmark"></i>
+    </a>
+</div>
