@@ -7,10 +7,12 @@
 {% block content %}
     {% include "partials/read_loading_mask.nunjucks" %}
     {% include "partials/read_content.nunjucks" %}
-    {% include "partials/read_side_bar.nunjucks" %}
-    {% include "partials/read_top_bar.nunjucks" %}
-    {% include "partials/read_bottom_bar.nunjucks" %}
-    {% include "partials/read_progress_bar.nunjucks" %}
+    {% include "partials/read_index_menu.nunjucks" %}
+    
+    {#{% include "partials/read_top_bar.nunjucks" %}#}
+    {#{% include "partials/read_bottom_bar.nunjucks" %}#}
+    
+    {#{% include "partials/read_progress_bar.nunjucks" %}#}
     
     <!--ZingTouch.js-->
     {#<script type="text/javascript" src="../../bower_components/zingtouch.min.js"></script>#}

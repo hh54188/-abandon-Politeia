@@ -6,6 +6,8 @@
 @import "books.less";
 @import "stars.less";
 @import "spinner_square2.less";
+@import "catalogue.less";
+@import "custom_scrollbar.less";
 
 .loading-mask {
     display: none;
@@ -26,6 +28,28 @@
         margin: 50% 0 0;
     }
 }
+
+.index-menu {
+    padding: 0 @pagePadding;
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    width: 80%;
+    width: 80vw;
+
+    height: 100%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    z-index: 2;
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+} 
 
 .content {
     position: fixed;
@@ -144,5 +168,24 @@
                 text-align: center;
             }
         }
+    }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: transparent;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    &__fill {
+        background: @commentColor;
+        position: absolute;
+        left: 0;
+        height: 100%;
     }
 }
