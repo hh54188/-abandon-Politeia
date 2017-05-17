@@ -7,6 +7,35 @@
 @import "spinner_circle.less";
 @import "tab.less";
 
+.notify {
+    background: @importantColor;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+
+    transition: all .3s ease-out;
+    
+    &__text { 
+        font-size: @normalFontSize;
+        color: #ffffff;
+    }
+
+    &--hide {
+        transform: translateY(-100%);
+        z-index: -1;
+    }
+
+    &--show {
+        z-index: 2;        
+    }
+
+}
+
 .tab-wrap {
     padding: 0 @pagePadding;
 }

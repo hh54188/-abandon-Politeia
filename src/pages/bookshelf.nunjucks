@@ -13,6 +13,11 @@
     %}
 
     {% include  "partials/header_common.nunjucks" %}
+
+    <div class="notify notify--hide">
+        <span class="notify__text">删除出错，请稍候再试</span>
+    </div>
+
     <div class="tab-wrap">
         {% include  "partials/bookshelf_tab_header.nunjucks" %}
         <div id="tab-history" class="tab-content  tab-content--focus">

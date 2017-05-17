@@ -1,4 +1,6 @@
 <div class="search-bar">
-    <input class="search-bar__input" type="text" placeholder="请输入想查询的书名">
-    <span class="search-bar__icon icon-search"></span>
+    <form method="post" action="/api/ebook/search">
+        <input class="search-bar__input" type="text" placeholder="请输入想查询的书名">
+        <span class="search-bar__icon icon-search"></span>
+    </form>
 </div>

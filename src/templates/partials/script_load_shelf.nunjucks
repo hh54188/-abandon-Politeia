@@ -2,6 +2,31 @@
 <script>
     var leftedBookText = document.querySelector('.borrow-limit__text');
     var leftedBookNum = parseInt(leftedBookText.innerHTML, 10);
+    
+    var notifyBar = document.querySelector('.notify');
+    var notifyIsShow = false;
+
+    var requestTimeout = 1000 * 2;
+
+    function showNotify() {
+        if (notifyIsShow) {
+            return;
+        }
+
+        notifyBar.classList.remove('notify--hide');
+        notifyBar.classList.add('notify--show');
+        notifyIsShow = true;
+
+        setTimeout(function () {
+            hideNotify();
+        }, 1000 * 3);
+    }
+
+    function hideNotify() {
+        notifyBar.classList.remove('notify--show');
+        notifyBar.classList.add('notify--hide');
+        notifyIsShow = false;
+    }
 
     function setLeftedBookCount(num) {
         leftedBookText.innerHTML = num;
@@ -24,7 +49,7 @@
             data: {
                 book_id: bookId
             },
-            timeout: 1000 * 5,
+            timeout: requestTimeout,
             success: function (result) {
                 if (!result) {
                     return;
@@ -36,6 +61,7 @@
                 listItem.remove();
             },
             error: function () {
+                showNotify();                
                 listItem.animate({
                     height: listItemHeight + 'px',
                     opacity: 1
@@ -65,7 +91,7 @@
             data: {
                 book_id: bookId
             },
-            timeout: 1000 * 5,
+            timeout: requestTimeout,
             success: function (result) {
                 if (!result) {
                     return;
@@ -77,11 +103,12 @@
                 listItem.remove();
             },
             error: function () {
+                showNotify();
                 listItem.animate({
                     height: listItemHeight + 'px',
                     opacity: 1
                 }, 300);
-                setLeftedBookCount(--leftedBookNum);                
+                setLeftedBookCount(--leftedBookNum);            
             }
         });
 

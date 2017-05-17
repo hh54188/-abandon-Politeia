@@ -8,6 +8,10 @@
             border-bottom: 1px solid @borderColor;
             padding: 0.5rem 0;
 
+            &__text {
+                .line-clamp(1);
+            }
+
             &--disabled {
                 color: @commentColor;
             }
