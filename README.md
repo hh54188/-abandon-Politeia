@@ -2,10 +2,8 @@
 
 ### High Priority
 
+- 读书页滑动效果
 - 初始化iscroll
-- position:sticky
-- "加载更多"按钮的脚本功能
-- 自定义滚动栏
 - 分享按钮
 - autoprefix
 - 回到顶部
