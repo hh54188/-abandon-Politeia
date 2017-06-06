@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
+const PORT = 8000;
 
 app.get('/images/:filename', (req, res) => {
     let filename = req.params.filename;
@@ -63,8 +64,9 @@ app.get('/api/ebook/reviews', (req, res) => {
     }, 1000 * 2);
 });
 
-app.listen(8000);
-console.log('Server Start: http://127.0.0.1:8000');
+
+app.listen(PORT);
+console.log('Server Start: http://127.0.0.1:' + PORT);
 
 
 
