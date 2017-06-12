@@ -5,11 +5,15 @@
 {% endblock %}
 
 {% block content %}
+
+    {# 加载覆盖层 #}
     {% include "partials/read_loading_mask.nunjucks" %}
+
+    {# 图书内容 #}    
     {% include "partials/read_content.nunjucks" %}
     
     {# 目录与书签栏 #}
-    {#{% include "partials/read_index_menu.nunjucks" %}#}
+    {% include "partials/read_index_menu.nunjucks" %}
     
     {# 顶部菜单栏 #}
     {% include "partials/read_top_bar.nunjucks" %}
@@ -18,31 +22,8 @@
     {% include "partials/read_bottom_bar.nunjucks" %}
     
     {# 底部进度栏 #}
-    {#{% include "partials/read_progress_bar.nunjucks" %}#}
+    {% include "partials/read_progress_bar.nunjucks" %}
     
-    {# 暂时用不上的测试脚本#}
-
-    <!--ZingTouch.js-->
-    {#<script type="text/javascript" src="../../bower_components/zingtouch.min.js"></script>#}
-    {#<script type="text/javascript">
-        var containerElement = document.querySelector('.content');
-        var activeRegion = ZingTouch.Region(containerElement);
-        activeRegion.bind(containerElement, 'swipe', function(event){
-            console.log(event);
-        });
-    </script>#}
-
-    <!--Hammer.js-->
-    {#<script type="text/javascript" src="../../bower_components/hammer.min.js"></script>#}
-    {#<script type="text/javascript">
-        var containerElement = document.querySelector('.content');
-    
-        var hammertime = new Hammer(containerElement);
-        hammertime.on('swipe', function(event) {
-            console.log(event);
-        });
-    </script>#}
-
     <script>
 
     </script>
