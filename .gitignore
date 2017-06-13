@@ -1,8 +1,9 @@
 node_modules
 bower_components
+vue_ouput/*.js
 
 *.log
 
-releases/pages/*.html
-releases/scripts/*.js
-releases/styles/*.css
+releases/**/*.html
+releases/**/*.js
+releases/**/*.css

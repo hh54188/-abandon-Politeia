@@ -5,26 +5,27 @@
 {% endblock %}
 
 {% block content %}
+    <div id="app">
+        
+        {# 加载覆盖层 #}
+        {% include "partials/read_loading_mask.nunjucks" %}
 
-    {# 加载覆盖层 #}
-    {% include "partials/read_loading_mask.nunjucks" %}
-
-    {# 图书内容 #}    
-    {% include "partials/read_content.nunjucks" %}
+        {# 图书内容 #}    
+        {% include "partials/read_content.nunjucks" %}
+        
+        {# 目录与书签栏 #}
+        {% include "partials/read_index_menu.nunjucks" %}
+        
+        {# 顶部菜单栏 #}
+        {% include "partials/read_top_bar.nunjucks" %}
+        
+        {# 底部菜单栏 #}
+        {% include "partials/read_bottom_bar.nunjucks" %}
+        
+        {# 底部进度栏 #}
+        {% include "partials/read_progress_bar.nunjucks" %}
     
-    {# 目录与书签栏 #}
-    {% include "partials/read_index_menu.nunjucks" %}
+    </div>
     
-    {# 顶部菜单栏 #}
-    {% include "partials/read_top_bar.nunjucks" %}
-    
-    {# 底部菜单栏 #}
-    {% include "partials/read_bottom_bar.nunjucks" %}
-    
-    {# 底部进度栏 #}
-    {% include "partials/read_progress_bar.nunjucks" %}
-    
-    <script>
-
-    </script>
+    <script type='text/javascript' src="../../vue_output/read.bundle.js"></script>
 {% endblock %}
