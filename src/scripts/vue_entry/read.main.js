@@ -5,7 +5,5 @@ import Store from 'stores/read.js';
 new Vue({
     el: '#app',
     Store,
-    render: (createElement) => {
-        createElement(App);
-    }
+    render: h => h(App)
 })

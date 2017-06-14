@@ -14,7 +14,7 @@
     @import "~includes/variables.less";
 
     .progress-bar {
-        display: none;
+        // display: none;
 
         width: 100%;
         height: 5px;

@@ -45,10 +45,6 @@
                 paragraphMap[id] = target.offsetLeft;
             }
 
-            function customScrollToId(num) {
-                var id = "p-id-" + num;
-                window.scrollTo(paragraphMap[id], 0);
-            }
         </script>      
     </div>
 </div>
