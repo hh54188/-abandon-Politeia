@@ -20,6 +20,7 @@ export default {
 <style lang="less">
 
 @import "~includes/variables.less";
+@import "~includes/load_button.less";
 
 .top-bar {
     // display: none;

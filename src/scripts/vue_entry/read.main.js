@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from 'components/read/App.vue';
-import Store from 'stores/read.js';
+import store from 'stores/read.js';
 
 new Vue({
     el: '#app',
-    Store,
-    render: h => h(App)
+    store,
+    render: createElement => createElement(App),
 })

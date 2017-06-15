@@ -5,7 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
- 
+        UI: {
+            showTopBar: false,
+            showBottomBar: false,
+
+            showIndexMenu: false,
+            
+            showPaper: true,
+            showProgress: false
+        },
+        data: {
+            content: '',
+
+        }
     },
     mutations: {
 
@@ -17,6 +29,7 @@ export default new Vuex.Store({
 
     },
     getters: {
-
+        UI: state => state.UI,
+        data: state => state.data
     }
 })
