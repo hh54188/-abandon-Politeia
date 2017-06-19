@@ -2,6 +2,7 @@
 
 ### High Priority
 
+- 需要新增接口 read_history_by_book
 - 读书页滑动效果
 - 初始化iscroll
 - 分享按钮

@@ -1,2 +1,5 @@
+<script src="../../bower_components/zingtouch/dist/zingtouch.min.js"></script>
+<script src="../../bower_components/hammerjs/hammer.min.js"></script>
+<script src="../../bower_components/velocity/velocity.min.js"></script>
 <link rel="stylesheet" href="../styles/read.css">
 <link rel="stylesheet" href="../styles/icomoon/style.css">

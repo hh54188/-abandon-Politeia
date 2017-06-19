@@ -9,14 +9,29 @@ app.get('/images/:filename', (req, res) => {
     res.sendFile(path.join(__dirname, 'releases/sample_images/', filename));
 });
 
+// 分类图书列表
 app.get('/api/ebook/books', (req, res) => {
     setTimeout(() => {
         res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
     }, 1000 * 2);
 });
 
+// 获取图书内容
+app.get('/api/ebook/content', (req, res) => {
+    setTimeout(() => {
+        res.send(fs.readFileSync('./mock_data/book.json', 'utf-8'));
+    }, 1000 * 2);
+})
+
 // 阅读历史记录
 app.get('/api/ebook/read_history', (req, res) => {
+    setTimeout(() => {
+        res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
+    }, 1000 * 2);
+});
+
+// 阅读但本书的历史记录
+app.get('/api/ebook/read_history_by_book', (req, res) => {
     setTimeout(() => {
         res.send(fs.readFileSync('./mock_data/books.json', 'utf-8'));
     }, 1000 * 2);
