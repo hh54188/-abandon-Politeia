@@ -34,38 +34,49 @@
             })).then(function (response) {
                 return response.json();
             }).then(function (result) {
-                if (!result || !result.code || result.code !== 200) {
-                    return;
-                }
-
-                // 章节信息
-                let data = result.data;
                 return new Promise(function (resolve, reject) {
+                    // 根据章节信息请求章节内容
+                    if (!result || !result.code || result.code !== 200) {
+                        reject(result);
+                        return;
+                    }
 
-                })
+                    // 拿到用户的阅读历史记录，包括：
+                    // 1. 章节信息
+                    // 2. 段落信息
+                    let data = result.data;
+                    resolve(data);
+                });
+            }).then(function resolve(data) {
+                // 根据用户的阅读历史，请求章节内容
+                fetch(new Request('/api/ebook/content', {
+                    'method': 'GET',
+                    'headers': new Headers({
+                        'Content-Type': 'application/x-www-form-urlencoded'                    
+                    })
+                })).then(function (response) {
+                    return response.json();
+                }).then(function (result) {
+                    if (!result || !result.code || result.code !== 200) {
+                        return;
+                    }
+                    let data = result.data;
+                    let content = data.content;
+                    // 抹除静态资源，渲染当前请求的章节内容
+                    this.$refs.paper.$el.innerHTML = content;
+                    // 计算每一个段落的 offset
+                    // 定位到段落 ID 处
+
+                    // 添加交互功能
+
+                }.bind(this));
+            }.bind(this), function reject() {
+
             });
             
 
             
-            // 根据用户的阅读历史，请求章节内容，并且渲染内容
-            fetch(new Request('/api/ebook/content', {
-                'method': 'GET',
-                'headers': new Headers({
-                    'Content-Type': 'application/x-www-form-urlencoded'                    
-                })
-            })).then(function (response) {
-                return response.json();
-            }).then(function (result) {
-                if (!result || !result.code || result.code !== 200) {
-                    return;
-                }
-                let data = result.data;
-                let content = data.content;
 
-                // 抹除静态资源
-                this.$refs.paper.$el.innerHTML = content;
-                debugger
-            }.bind(this))
 
             // 定位到书签处
 

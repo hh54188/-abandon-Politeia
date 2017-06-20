@@ -157,16 +157,16 @@
 
 
                 // Hammer.js:
+                var currentPage = 1;
+
                 var body = document.querySelector('body');
                 var viewportWidth = window.innerWidth;
 
-                var deltaX = 0;
-                var distance = 0;
-                var direction = -1;
+                var distance = 0; // 手指移动距离
+                var direction = -1; // 手指移动方向
 
-                var currentPage = 1;
-                var lastOffset = 0;
-                var offset = 0;
+                var lastOffset = 0; // 上一次的移动位移，用于还原
+                var offset = 0; // 当前位移
 
                 var hammertime = new Hammer(body);
 
@@ -182,10 +182,9 @@
                 }
 
                 function panHorizontalMoveHandler(event) {
-                    deltaX = event.deltaX;
                     distance = event.distance;
                     direction = event.direction;
-                    container.style.left = (offset + deltaX);
+                    container.style.left = (offset + event.deltaX);
                 }
 
                 hammertime.on('panend', function () {
@@ -193,12 +192,15 @@
                         if (direction === Hammer.DIRECTION_LEFT) {
                             // Next Page
                             currentPage++;
+
                             offset = lastOffset - viewportWidth;
                             lastOffset = offset;                            
                             animateOffset(container, offset);
-                        } else if (direction === Hammer.DIRECTION_RIGHT) {
+                        
+                    } else if (direction === Hammer.DIRECTION_RIGHT) {
                             // Previous Page
                             currentPage--;
+                    
                             if (currentPage < 1) {
                                 currentPage++;
                                 offset = lastOffset;
