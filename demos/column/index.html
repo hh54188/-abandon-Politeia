@@ -157,68 +157,106 @@
 
 
                 // Hammer.js:
-                var currentPage = 1;
 
-                var body = document.querySelector('body');
-                var viewportWidth = window.innerWidth;
+                function SwipeGesture(options) {
 
-                var distance = 0; // 手指移动距离
-                var direction = -1; // 手指移动方向
+                    this.nextPageEventHandlers = [];
+                    this.prevPageEventHandlers = [];
 
-                var lastOffset = 0; // 上一次的移动位移，用于还原
-                var offset = 0; // 当前位移
+                    let element = options.element;
+                    let target = options.target;
 
-                var hammertime = new Hammer(body);
+                    let disableTurnNextPage = false;
+                    let disableTurnPrevPage = false;
 
-                function animateOffset(container, offset) {
-                    Velocity(
-                        container, { 
-                            left: offset 
-                        }, { 
-                            duration: 300,
-                            easing: 'ease-out' 
-                        }
-                    );
-                }
+                    var viewportWidth = window.innerWidth;
 
-                function panHorizontalMoveHandler(event) {
-                    distance = event.distance;
-                    direction = event.direction;
-                    container.style.left = (offset + event.deltaX);
-                }
+                    var distance = 0; // 手指移动距离
+                    var direction = -1; // 手指移动方向
 
-                hammertime.on('panend', function () {
-                    if (distance > viewportWidth / 2) {
-                        if (direction === Hammer.DIRECTION_LEFT) {
-                            // Next Page
-                            currentPage++;
+                    var lastOffset = 0; // 上一次的移动位移，用于还原
+                    var offset = 0; // 当前位移
 
-                            offset = lastOffset - viewportWidth;
-                            lastOffset = offset;                            
-                            animateOffset(container, offset);
-                        
-                    } else if (direction === Hammer.DIRECTION_RIGHT) {
-                            // Previous Page
-                            currentPage--;
-                    
-                            if (currentPage < 1) {
-                                currentPage++;
-                                offset = lastOffset;
-                                animateOffset(container, offset);              
-                                return;
-                            }
-                            offset = lastOffset + viewportWidth;
-                            lastOffset = offset;                           
-                            animateOffset(container, offset);
-                        }
-                    } else {
-                        offset = lastOffset;
-                        animateOffset(container, offset);
+                    var hammertime = new Hammer(element);
+
+                    function invokeNextPageEventHandler() {
+                        this.nextPageEventHandlers.forEach((handler) => {
+                            handler.call(this);
+                        });
                     }
-                });
 
-                hammertime.on('panleft', panHorizontalMoveHandler);
-                hammertime.on('panright', panHorizontalMoveHandler);
+                    function invokePrevPageEventHandler() {
+                        this.prevPageEventHandlers.forEach((handler) => {
+                            handler.call(this);
+                        });                        
+                    }
+
+                    function animateOffset(target, offset) {
+                        Velocity(
+                            target, 
+                            { left: offset }, 
+                            { duration: 300, easing: 'ease-out'}
+                        );
+                    }
+
+                    function panHorizontalMoveHandler(event) {
+                        distance = event.distance;
+                        direction = event.direction;
+                        target.style.left = (offset + event.deltaX);
+                    }
+
+                    hammertime.on('panend', function () {
+                        if (distance > viewportWidth / 2) {
+                            if (direction === Hammer.DIRECTION_LEFT) {
+
+                                if (disableTurnNextPage) {
+                                    animateOffset(target, offset = lastOffset);              
+                                    return;
+                                }
+
+                                offset = lastOffset - viewportWidth;
+                                lastOffset = offset;                            
+                                animateOffset(target, offset);
+
+                                // Next Page
+                                invokeNextPageEventHandler();
+                            } else if (direction === Hammer.DIRECTION_RIGHT) {
+
+                                if (disableTurnPrevPage) {
+                                    animateOffset(target, offset = lastOffset);              
+                                    return;
+                                }
+
+                                offset = lastOffset + viewportWidth;
+                                lastOffset = offset;                           
+                                animateOffset(target, offset);
+
+                                // Previous Page
+                                invokePrevPageEventHandler();
+                            }
+                        } else {
+                            offset = lastOffset;
+                            animateOffset(target, offset);
+                        }
+                    }.bind(this));
+
+                    hammertime.on('panleft', panHorizontalMoveHandler);
+                    hammertime.on('panright', panHorizontalMoveHandler);                    
+                }
+
+                SwipeGesture.prototype.onNextPageEvent = function (eventHandler) {
+                    this.nextPageEventHandlers.push(eventHandler);
+                }
+
+                SwipeGesture.prototype.onPrevPageEvent = function (eventHandler) {
+                    this.prevPageEventHandlers.push(eventHandler);
+                }
+
+                var swipeGesture = new SwipeGesture({
+                    element: document.querySelector('body'),
+                    target: document.querySelector('.container')
+                });
+                
 
             </script>
         </div>
