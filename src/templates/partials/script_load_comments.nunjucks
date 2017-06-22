@@ -1,0 +1,62 @@
+<script>
+
+    new LoadList({
+        loadBtn: document.querySelector('.load'),
+        listContainer: document.querySelector('.comment__content__list'),
+        requestURL: '/api/ebook/reviews',
+        data: {
+            book_id: 1,
+            start: 10,
+            count: 10
+        },
+        successCallback: function () {
+            this.data.start = this.data.start + this.data.count;
+        },        
+        renderCallback: function (data) {
+            var comments = data.list;
+            var str = '';
+            var _this = this;
+            function renderComment(comment) {
+                return '<li class="comment__content__list__item">'
+                        + '<a target="_blank" href="javascript:alert(0);" class="comment__content__list__item__content">'                                       
+                            + '<div class="comment__content__list__item__avatar-wrap">'
+                                + '<img class="comment__content__list__item__avatar-wrap__avatar">'
+                            + '</div>'
+                            + '<div class="comment__content__list__item__content">'
+                                + '<div class="comment__content__list__item__content__header">'
+                                    + '<img src="' + comment.avatar + '" class="comment__content__list__item__content__header__avatar" alt="">'
+                                    + '<p class="comment__content__list__item__content__header__author">' + comment.nickname + '</p>'
+                                    + '<div class="comment__content__list__item__content__header__rate">'
+                                        + '<ul class="stars-list">'
+                                            + _this.renderStars(comment.rate_num)
+                                            + '<li class="stars-list__text">'
+                                                + '<span class="stars-list__text__cur">' + comment.rate_num + '</span>'
+                                                + '<span class="stars-list__text__split">/</span>'
+                                                + '<span class="stars-list__text__total">10</span>'
+                                            + '</li>'
+                                        + '</ul>'
+                                    + '</div>'
+                                + '</div>'
+                                + '<div class="comment__content__list__item__content__body">'
+                                    + '<p>' + comment.desc + `</p>`
+                                + `</div>`
+                                + `<div class="comment__content__list__item__content__footer">`
+                                    + `<div class="comment__content__list__item__content__footer__date">` + comment.create_time + `</div>`
+                                    + `<div class="comment__content__list__item__content__footer__fav">`
+                                        + `<i class="icon-heart comment__content__list__item__content__footer__fav__icon"></i>`
+                                        + `<span class="comment__content__list__item__content__footer__fav__text">` + comment.like_num + `</span>`
+                                    + `</div>`
+                                + `</div>`
+                            + `</div>`
+                        + `</a>`
+                + `</li>`
+            } 
+
+            comments.forEach(function (comment) {
+                str += renderComment(comment);
+            });
+
+            $(_this.listContainer).append($(str));            
+        }
+    }); 
+</script>

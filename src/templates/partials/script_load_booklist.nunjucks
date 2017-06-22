@@ -1,0 +1,53 @@
+{% include  "partials/script_load_list_common.nunjucks" %}
+<script>
+    new LoadList({
+        loadBtn: document.querySelector('.load'),
+        listContainer: document.querySelector('.books__list ul'),
+        requestURL: '/api/ebook/books',
+        data: {
+            cate_id: 1,
+            start: 10,
+            count: 10
+        },
+        successCallback: function () {
+            this.data.start = this.data.start + this.data.count;
+        },        
+        renderCallback: function (data) {
+            var booklist = data.list;
+            var str = '';
+            var _this = this;
+
+            function renderBook(book) {
+                return '<li class="books__list__item">'
+                    + '<div class="book-cover">'
+                        + '<div class="book">'                  
+                            + '<img src="' + book.thumb_img + '">'
+                        + '</div>'             
+                    + '</div>'
+                    + '<div class="book-desc">'
+                        + '<p class="book-desc__title book-desc__title--small">' + book.name + '</p>'
+                        + '<p class="book-desc__author book-desc__author--small">' + book.author_name + '</p>'
+                        + '<p class="book-desc__intro book-desc__intro--small">' + book.desc + '</p>'
+                        + '<div class="book-desc__rate">'
+                        + '<ul class="stars-list">'
+                            + _this.renderStars(book.rate_num) 
+                            + '<li class="stars-list__text">'
+                                + '<span class="stars-list__text__cur">' + book.rate_num + '</span>'
+                                + '<span class="stars-list__text__split">/</span>'
+                                + '<span class="stars-list__text__total">10</span>'
+                            + '</li>'    
+                        + '</ul>'
+                        + '</div>'            
+                    + '</div>'          
+                + '</li>';
+
+            } 
+
+            booklist.forEach(function (book) {
+                str += renderBook(book);
+            });
+
+            $(this.listContainer).append($(str));
+        }
+    });
+</script>

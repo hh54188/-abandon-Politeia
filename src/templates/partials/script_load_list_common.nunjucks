@@ -1,0 +1,140 @@
+<script>
+    function LoadList(options) {
+        this.loadBtn = options.loadBtn;
+        this.listContainer = options.listContainer;
+        this.requestURL = options.requestURL;
+        this.data = options.data;
+
+        this.renderCallback = options.renderCallback;
+        this.successCallback = options.successCallback;
+
+        this.onloading = false;
+        var _this = this;
+
+        if (!this.listContainer || !this.loadBtn || !this.requestURL) {
+            throw new Error('list or loadbtn or requestURL required');
+        }
+
+        this.setButtonAvailable = function () {
+            this.loadBtn.classList.remove('load--loading');
+            this.loadBtn.classList.add('load--normal');
+        }
+
+        this.setButtonUnavailable = function() {
+            this.loadBtn.classList.remove('load--normal');
+            this.loadBtn.classList.add('load--loading');
+        }
+
+        this.setButtonComplete = function () {
+            this.loadBtn.classList.remove('load--normal');
+            this.loadBtn.classList.remove('load--loading');
+            this.loadBtn.classList.add('load--complete');
+
+            this.loadBtn.querySelector('.load__text').classList.remove('load__text--normal');
+            this.loadBtn.querySelector('.load__text').classList.add('load__text--complete');
+            
+            this.loadBtn.removeEventListener('click', clickEventListener);
+        }
+
+        this.dataEnded = function (data) {
+            if (data.start + data.count === data.total) {
+                return true;
+            }
+            return false;
+        }
+
+        this.generatorStar = function (state) {
+            var str = '';
+            switch(state) {
+                case 'full': str = '<span class="icon-star-full"></span>'; break;
+                case 'half': str = '<span class="icon-star-half"></span>'; break;
+                case 'empty': str = '<span class="icon-star-empty"></span>'; break;
+            }
+            return '<li class="stars-list__item">' + str + '</li>';
+        }
+
+        this.generatorStarRow = function (state1, state2, state3, state4, state5) {
+            var str = '';
+            Array.prototype.slice.call(arguments).forEach(function (item) {
+                str += _this.generatorStar(item);
+            });
+            return str;
+        }
+
+        this.renderStars = function (num) {
+            num = num / 2;
+            var str = '';
+            if (num < 1) {
+                str = _this.generatorStarRow('half', 'empty', 'empty', 'empty', 'empty');
+            } else if (num == 1) {
+                str = _this.generatorStarRow('full', 'empty', 'empty', 'empty', 'empty');
+            } else if (num < 2) {
+                str = _this.generatorStarRow('full', 'half', 'empty', 'empty', 'empty');
+            } else if (num == 2) {
+                str = _this.generatorStarRow('full', 'full', 'empty', 'empty', 'empty');
+            } else if (num < 3) {
+                str = _this.generatorStarRow('full', 'full', 'half', 'empty', 'empty');
+            } else if (num == 3) {
+                str = _this.generatorStarRow('full', 'full', 'full', 'empty', 'empty');
+            } else if (num < 4) {
+                str = _this.generatorStarRow('full', 'full', 'full', 'half', 'empty');
+            } else if (num == 4) {
+                str = _this.generatorStarRow('full', 'full', 'full', 'full', 'empty');
+            } else if (num < 5) {
+                str = _this.generatorStarRow('full', 'full', 'full', 'full', 'half');
+            } else if (num == 5) {
+                str = _this.generatorStarRow('full', 'full', 'full', 'full', 'full');
+            }
+
+            return str;
+        }
+
+        this.request = function () {
+            $.ajax({
+                url: _this.requestURL,
+                method: 'get',
+                timeout: 5 * 1000,
+                data: _this.data,
+                success: function (result) {
+                    if (!result) {
+                        return;
+                    }
+
+                    result = JSON.parse(result);
+                    if (!result.code || result.code !== 200) {
+                        return;
+                    }
+
+                    if (_this.dataEnded(result.data)) {
+                        _this.setButtonComplete();
+                        return;
+                    }
+
+                    if (_this.successCallback) {
+                        _this.successCallback.call(_this);
+                    }
+                    
+                    _this.renderCallback(result.data);
+                },
+                error: function () {
+
+                },
+                complete: function () {
+                    _this.setButtonAvailable();
+                    _this.loading = false;
+                }
+            })
+        }
+
+        this.clickEventListener = function () {
+            if (this.onloading) {
+                return true;
+            }
+            _this.setButtonUnavailable();
+            _this.request();
+        }
+
+        this.loadBtn.addEventListener('click', this.clickEventListener);  
+
+    }
+</script>

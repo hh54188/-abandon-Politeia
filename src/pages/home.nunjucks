@@ -9,6 +9,8 @@
     {% include  "partials/carousel.nunjucks" %}
     {% include  "partials/recommend_block.nunjucks" %}
     {% include  "partials/category_block.nunjucks" %}
+    {% include  "partials/category_block.nunjucks" %}
+    {% include  "partials/category_block.nunjucks" %}
 
     <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
@@ -27,5 +29,5 @@
             }
         });
     </script>
-    {% include  "partials/image_lazyload_script.nunjucks" %}    
+    {% include  "partials/script_image_lazyload.nunjucks" %}    
 {% endblock %}

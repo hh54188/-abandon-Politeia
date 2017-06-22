@@ -1,0 +1,52 @@
+{
+    "code": 200,
+    "msg": "ok",
+    "data":{
+        "start": 0,
+        "count": 10, 
+        "total": 30, 
+        "list":[
+            {
+                "id": 100011,  
+                "name": "看见",  
+                "author_name": "柴静",  
+                "desc": "柴静十年央视历程，中国十年社会变迁备忘录",  
+                "cate_id":  1, 
+                "rate_num": 6.5,  
+                "thumb_img": "http://127.0.0.1:8000/images/cover-01.jpg",
+                "progress": 120
+            },
+            {
+                "id": 100022,  
+                "name": "看见",  
+                "author_name": "柴静",  
+                "desc": "柴静十年央视历程，中国十年社会变迁备忘录",  
+                "cate_id":  1,  
+                "rate_num": 9.5,  
+                "thumb_img": "http://127.0.0.1:8000/images/cover-02.jpg",
+                "progress": 120 
+            },
+            {
+                "id": 100023,  
+                "name": "看见",  
+                "author_name": "柴静",  
+                "desc": "柴静十年央视历程，中国十年社会变迁备忘录",  
+                "cate_id":  1,  
+                "rate_num": 9.5,  
+                "thumb_img": "http://127.0.0.1:8000/images/cover-03.jpg",
+                "progress": 120
+            },
+            {
+                "id": 100024,  
+                "name": "看见",  
+                "author_name": "柴静",  
+                "desc": "柴静十年央视历程，中国十年社会变迁备忘录",  
+                "cate_id":  1,  
+                "rate_num": 1,  
+                "thumb_img": "http://127.0.0.1:8000/images/cover-04.jpg",
+                "progress": 120
+            }
+        ]
+    }
+}
+        

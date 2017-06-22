@@ -21,7 +21,12 @@
             display: none;
         }
         .load__text {
-            display: inline;
+            &--normal {
+                display: inline;
+            }
+            &--complete {
+                display: none;
+            }
         }
     }
 
@@ -32,5 +37,22 @@
         .load__text {
             display: none;
         }        
+    }
+
+    &--complete {
+        border: none;
+        border-top: 1px solid @borderColor;
+
+        .spinner {
+            display: none;
+        }           
+        .load__text {
+            &--normal {
+                display: none;
+            }
+            &--complete {
+                display: inline;
+            }
+        }          
     }
 }

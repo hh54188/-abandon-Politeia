@@ -1,20 +1,34 @@
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <!--<script src="../../bower_components/jquery/dist/jquery.min.js"></script>-->
+        <script src="../../bower_components/zingtouch/dist/zingtouch.min.js"></script>
+        <script src="../../bower_components/hammerjs/hammer.min.js"></script>
+        <script src="../../bower_components/velocity/velocity.min.js"></script>
         <style>
             * {
                 margin: 0;
                 padding: 0;
             }
             html, body {
-                width: 100%;
-                height: 100%;
+                width: 100vw;
+                height: 100vh;
                 font-size: 16px;
+
+                position: relative;
+                overflow: hidden;
             }
             .container {
                 width: 100%;
                 height: 100%;                
                 columns: auto 100vw;
+                /*column-gap: 10px;*/
+
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                /*transition: all 0.3s ease-out;  */
             }
             button {
                 padding: 10px 20px;
@@ -35,7 +49,7 @@
     </head>
     <body>
         <button id="help">跳转到</button>
-        <div class="container">
+        <div id="container" class="container">
             <script>
                 function generateRandomStr(content) {
                     var minWordCount = 50;
@@ -68,11 +82,14 @@
                 generateRandomFontSize();
 
                 var paragraphMap = {};
+                var parapraphCount = 100;
 
-                for (var i = 0; i < 100; i++) {
+                for (var i = 0; i < parapraphCount; i++) {
                     var id = "p-id-" + i;
                     document.write("<p style=\"background:" + generateRandomColor() + ";font-size:" + generateRandomFontSize() + "px;\" id=\"" + id + "\">" + generateRandomStr(id) + "</p>");
                 }
+
+                var container = document.querySelector('.container');
 
                 for (var i = 0; i < 100; i++) {
                     var id = "p-id-" + i;
@@ -80,10 +97,20 @@
                     paragraphMap[id] = target.offsetLeft;
                 }
 
+                //------------------------------------------
+
                 function customScrollToId(num) {
                     var id = "p-id-" + num;
-                    window.scrollTo(paragraphMap[id], 0);
-                    // document.querySelector('#' + id).scrollIntoView({block: "start", behavior: "smooth"});
+                    Velocity(
+                        container,
+                        {
+                            left: paragraphMap[id] * (-1)
+                        }, 
+                        { 
+                            duration: 1000 * 3,
+                            easing: 'ease-out' 
+                        }                        
+                    );
                 }
 
                 document.querySelector('#help').onclick = function () {
@@ -91,9 +118,146 @@
                         var value = prompt("请输入自然段序号（0至100）");
                         customScrollToId(value);
                     } catch(e) {
+                        console.log(e);
                         alert("输入有误！");
                     }
                 }
+
+                var left = 0;
+
+                // ZingTouch:
+
+                // var containerElement = document.querySelector('body');
+                // var activeRegion = ZingTouch.Region(containerElement);
+                // var childElement = document.querySelector('#container');
+
+                // var viewportWidth = window.innerWidth;
+
+                // activeRegion.bind(containerElement, 'pan', function(event){
+
+                //     var data = event.detail.data[0];
+                //     if (data.currentDirection !== 180 && data.currentDirection !== 360) {
+                //         return;
+                //     }
+
+                //     console.log(JSON.stringify(data, null, 4));
+
+                //     if (data.currentDirection === 180) {
+                //         left = data.distanceFromOrigin * (-1);
+                //     } else if (data.currentDirection === 360) {
+                //         left = data.distanceFromOrigin;
+                //     }
+
+                //     childElement.style.left = left + 'px';
+                //     console.log(data.distanceFromOrigin, viewportWidth / 2);
+                //     if (data.distanceFromOrigin > (viewportWidth / 2)) {
+                //         console.log('Need to Change!');
+                //     }
+                // });
+
+
+                // Hammer.js:
+
+                function SwipeGesture(options) {
+
+                    this.nextPageEventHandlers = [];
+                    this.prevPageEventHandlers = [];
+
+                    let element = options.element;
+                    let target = options.target;
+
+                    let disableTurnNextPage = false;
+                    let disableTurnPrevPage = false;
+
+                    var viewportWidth = window.innerWidth;
+
+                    var distance = 0; // 手指移动距离
+                    var direction = -1; // 手指移动方向
+
+                    var lastOffset = 0; // 上一次的移动位移，用于还原
+                    var offset = 0; // 当前位移
+
+                    var hammertime = new Hammer(element);
+
+                    function invokeNextPageEventHandler() {
+                        this.nextPageEventHandlers.forEach((handler) => {
+                            handler.call(this);
+                        });
+                    }
+
+                    function invokePrevPageEventHandler() {
+                        this.prevPageEventHandlers.forEach((handler) => {
+                            handler.call(this);
+                        });                        
+                    }
+
+                    function animateOffset(target, offset) {
+                        Velocity(
+                            target, 
+                            { left: offset }, 
+                            { duration: 300, easing: 'ease-out'}
+                        );
+                    }
+
+                    function panHorizontalMoveHandler(event) {
+                        distance = event.distance;
+                        direction = event.direction;
+                        target.style.left = (offset + event.deltaX);
+                    }
+
+                    hammertime.on('panend', function () {
+                        if (distance > viewportWidth / 2) {
+                            if (direction === Hammer.DIRECTION_LEFT) {
+
+                                if (disableTurnNextPage) {
+                                    animateOffset(target, offset = lastOffset);              
+                                    return;
+                                }
+
+                                offset = lastOffset - viewportWidth;
+                                lastOffset = offset;                            
+                                animateOffset(target, offset);
+
+                                // Next Page
+                                invokeNextPageEventHandler();
+                            } else if (direction === Hammer.DIRECTION_RIGHT) {
+
+                                if (disableTurnPrevPage) {
+                                    animateOffset(target, offset = lastOffset);              
+                                    return;
+                                }
+
+                                offset = lastOffset + viewportWidth;
+                                lastOffset = offset;                           
+                                animateOffset(target, offset);
+
+                                // Previous Page
+                                invokePrevPageEventHandler();
+                            }
+                        } else {
+                            offset = lastOffset;
+                            animateOffset(target, offset);
+                        }
+                    }.bind(this));
+
+                    hammertime.on('panleft', panHorizontalMoveHandler);
+                    hammertime.on('panright', panHorizontalMoveHandler);                    
+                }
+
+                SwipeGesture.prototype.onNextPageEvent = function (eventHandler) {
+                    this.nextPageEventHandlers.push(eventHandler);
+                }
+
+                SwipeGesture.prototype.onPrevPageEvent = function (eventHandler) {
+                    this.prevPageEventHandlers.push(eventHandler);
+                }
+
+                var swipeGesture = new SwipeGesture({
+                    element: document.querySelector('body'),
+                    target: document.querySelector('.container')
+                });
+                
+
             </script>
         </div>
     </body>

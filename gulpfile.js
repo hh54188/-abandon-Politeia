@@ -7,6 +7,8 @@ var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var autoprefixer = require('gulp-autoprefixer');
 var data = require('gulp-data');
+var proxy = require('http-proxy-middleware');
+var child_process = require('child_process');
 
 gulp.task('dev', ['watch', 'compile template', 'dev web server', 'compile less', 'concat css']);
 var outputRootPath = path.join(__dirname, 'releases');
@@ -27,8 +29,18 @@ gulp.task('compile template', function () {
 
 var webserverRootPath = path.join(__dirname);
 gulp.task('dev web server', function () {
+    child_process.fork('server.js');
     webserver.server({
-        root: webserverRootPath
+        root: webserverRootPath,
+        middleware: function(connect, opt) {
+
+            var apiProxy = proxy('/api', {
+                target: 'http://127.0.0.1:8000',
+                changeOrigin: true
+            });
+
+            return [apiProxy];
+        }  
     });
 });
 

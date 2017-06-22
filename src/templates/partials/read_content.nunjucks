@@ -1,4 +1,4 @@
-<div class="content">
+<div id="content" class="content">
     <div class="content__paper">
         <script>
             function generateRandomStr(content) {
@@ -26,7 +26,8 @@
                 for (var i = 0; i < 6; i++ ) {
                     color += letters[Math.floor(Math.random() * 16)];
                 }
-                return color;
+                // return color;
+                return '#f7f4ed'
             }
             
             generateRandomFontSize();
@@ -44,10 +45,6 @@
                 paragraphMap[id] = target.offsetLeft;
             }
 
-            function customScrollToId(num) {
-                var id = "p-id-" + num;
-                window.scrollTo(paragraphMap[id], 0);
-            }
         </script>      
     </div>
 </div>

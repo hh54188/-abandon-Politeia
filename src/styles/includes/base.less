@@ -6,12 +6,23 @@
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0;  
 }
+
 html, body {
     width: 100%;
     font-size: 62.5%;
     box-sizing: border-box;
+
+    font-family: -apple-system, 
+                BlinkMacSystemFont, 
+                "Segoe UI", 
+                Roboto, 
+                Oxygen-Sans, 
+                Ubuntu, 
+                Cantarell, 
+                "Helvetica Neue", 
+                sans-serif;
 }
 
 img.image-lazy {
@@ -52,6 +63,9 @@ textarea:focus, input:focus, button {
     display: -webkit-box;
     -webkit-line-clamp: @lineNumber;
     -webkit-box-orient: vertical;
+}
+.hide {
+    display: none;
 }
 // ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 //     color: @commentColor;
