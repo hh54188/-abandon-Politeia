@@ -1,5 +1,6 @@
 <template>
-<div class="paper"></div>
+<div class="paper" v-html="this.$store.getters.data.content">
+</div>
 </template>
 
 <script>

@@ -6,8 +6,8 @@ function SwipeGesture(options) {
     this.element = options.element;
     this.target = options.target;
 
-    this.disableTurnNextPageFlag = false;
-    this.disableTurnPrevPageFlag = false;
+    this.disableTurnNextPageFlag = options.disableTurnNext || false;
+    this.disableTurnPrevPageFlag = options.disableTurnPrev || false;
 
     var viewportWidth = window.innerWidth;
 

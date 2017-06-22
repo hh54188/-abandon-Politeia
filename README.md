@@ -1,39 +1,37 @@
+## 配置环境
+
+1. 前往 http://nodejs.cn/download/ 下载并且最新版本的 NodeJs
+2. 安装完毕后将npm镜像设置为淘宝镜像，在控制台中执行命令`npm config set registry https://registry.npm.taobao.org`
+3. 安装`bower`模块：`npm install -g bower`
+4. 安装`gulp`模块：`npm install -g gulp-cli`
+5. 安装`less`模块：`npm install -g less`
+6. 安装本项目依赖的Nodejs模块，切换到本项目根目录下运行：`npm install`
+7. 安装本项目的Bower模块依赖，切换到本项目根目录下运行：`bower install`
+
+## 编译项目和启动环境
+- 切换到根目录下运行：`gulp dev`
+- 打开新的控制台，切换到根目录下运行：`npm run vue`
+- 浏览器中访问：http://127.0.0.1:8080/releases/pages/ 查看静态页面
+
 ## TODO
 
 ### High Priority
 
-- 需要新增接口 read_history_by_book
-- 读书页滑动效果
-- 初始化iscroll
+- 阅读页面
 - 分享按钮
-- autoprefix
-- 回到顶部
-- 点击加载更多之后，加载并向下滚动
-
+- 初始化iscroll
+- 需要新增接口 read_history_by_book
 
 ### Lower Priority
 
+- autoprefix
+- 回到顶部
+- 点击加载更多之后，加载并向下滚动
 - 把jQuery替换成.slim版本或者是zepto版本
 - 垂直居中样式 + clear-float 集中整理
 - 模板归类文件夹
 
 ## 页面总结
-
-- 【完成】主页（home）
-- 【完成】类别页（catrgoeylist）
-- 【半完成】图书列表页面（booklist）
-    - 图书搜索
-- 【完成，能不能改成post同步请求？】搜索页面（search）
-- 【未完成】评论详情（commentdetail）
-    - 【未完成】分享按钮功能
-    - 【未完成】喜欢按钮
-- 【未完成，虽然是post，但能不能改成post同步页面】撰写评论页面（writecomment）
-    - 计算字数脚本
-    - 提交评论（post）
-- 【未完成】评论类表（commentlist）
-    - 加载更多评论
-- 【未完成】书架列表（bookshelf）
-- 【未完成】图书详情（bookdetail）
 
 
 ## 兼容性可能存在问题的样式：
