@@ -79,7 +79,7 @@
 
     &__price {
         font-size: @normalFontSize;
-        color: @subTextColor;          
+        color: @subTextColor;              
     }
 
     &__title {
@@ -102,19 +102,13 @@
     }
 
     &__intro {
-        &--normal {
-            font-size: @normalFontSize;
-            -webkit-line-clamp: 2;
-        }
-        &--small {
-            font-size: @normalFontSize;
-            -webkit-line-clamp: 2;            
-        }
+        &--normal {}
+        &--small {}
+
         color: @subTextColor;
-        display: -webkit-box;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-box-orient: vertical;
+        font-size: @normalFontSize;
+
+        .line-clamp(2);                    
     }
 
     &__menu-wrap {

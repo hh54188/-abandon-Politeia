@@ -1,3 +1,5 @@
+@import "spinner_square2.less";
+
 .load {
     width: 100%;
     height: 3.5rem;
@@ -10,9 +12,12 @@
     position: relative;
     box-sizing: border-box;
 
+    .spinner {
+        height: 2rem;
+    }
 
     &--normal {
-        .spinner_circle {
+        .spinner {
             display: none;
         }
         .load__text {
@@ -20,10 +25,10 @@
         }
     }
 
-    &--loading {
-        .spinner_circle {
+    &--loading {    
+        .spinner {
             display: block;
-        }
+        }           
         .load__text {
             display: none;
         }        

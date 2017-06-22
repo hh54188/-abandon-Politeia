@@ -9,5 +9,23 @@
     {% include  "partials/carousel.nunjucks" %}
     {% include  "partials/recommend_block.nunjucks" %}
     {% include  "partials/category_block.nunjucks" %}
-    {% include  "partials/home_footer.nunjucks" %}
+
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $('.carousel__list').slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 300,
+            arrows: false,
+            mobileFirst: true,
+            lazyLoad: 'ondemand',
+            appendDots: $('.carousel__controller'),
+            dots: true,
+            customPaging: function (slider, i) {
+                return $('<span></span>');
+            }
+        });
+    </script>
+    {% include  "partials/image_lazyload_script.nunjucks" %}    
 {% endblock %}
