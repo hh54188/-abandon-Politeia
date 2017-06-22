@@ -6,8 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         UI: {
-            showTopBar: false,
-            showBottomBar: false,
+            showTopBar: true,
+            showBottomBar: true,
 
             showIndexMenu: false,
             

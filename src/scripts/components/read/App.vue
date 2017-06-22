@@ -18,9 +18,6 @@
     export default {
         name: 'App',
         mounted: function () {
-            let loadingMask = document.querySelector('.loading-mask');
-            loadingMask.style.display = 'none';
-
             // 服务器生成的静态资源：1.第一章内容；2.图书目录（包括是否可用）
             // 1. 未登录状态的话就不进行以下步骤，直接使用后端渲染的第一章内容
             // 2. 已登录状态：  
@@ -62,8 +59,19 @@
                     }
                     let data = result.data;
                     let content = data.content;
+
                     // 抹除静态资源，渲染当前请求的章节内容
                     this.$refs.paper.$el.innerHTML = content;
+
+                    let swipeGesture = new SwipeGesture({
+                        element: document.querySelector('body'),
+                        target: this.$refs.paper.$el
+                    });
+
+                    // 移除加载遮罩
+                    let loadingMask = document.querySelector('.loading-mask');
+                    loadingMask.style.display = 'none';
+
                     // 计算每一个段落的 offset
                     // 定位到段落 ID 处
 

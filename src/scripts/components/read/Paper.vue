@@ -23,6 +23,7 @@ export default {
 
     columns: auto 100vw;
     column-rule: 1px solid #eeeeee;
+    column-gap: 0;
 
     box-sizing: border-box;
 
