@@ -35,9 +35,15 @@ export default new Vuex.Store({
             let viewName = payload.viewName;
             let visible = payload.visible;
             state.UI['show' + viewName] = visible;
+        },
+        setTotalPageNum(state, totalPageNum) {
+            state.data.totalPage = totalPageNum;
         }
     },
     actions: {
+        updateTotalPage({commit}, totalPageNum) {
+            commit('setTotalPageNum', totalPageNum);
+        },
         updateViewVisible({commit}, payload) {
             commit('setViewVisible', payload);
         },

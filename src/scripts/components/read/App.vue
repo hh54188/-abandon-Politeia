@@ -102,7 +102,26 @@
                     // 记录阅读进度
                     this.$store.dispatch('requestProgress');                    
                 });
+
+                // 记录每一个段落的位置
+                let contentElements = Array.prototype.slice.call(this.$refs.paper.$el.querySelectorAll(':scope > *'));
+                let element2PageMap = new Map();
+                let viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
                 
+                // 需要延迟一段时间才能正确计算元素的偏移，没有道理
+                // 算是 hack 吧
+                setTimeout(() => {
+                    contentElements.forEach((element, index) => {
+                        let pageNum = Math.floor(element.offsetLeft / viewportWidth) + 1;
+                        let id = element.id;
+                        element2PageMap.set(id, pageNum);
+                        if (index === contentElements.length - 1) {
+                            this.$store.dispatch('updateTotalPage', pageNum);
+                        }
+                    });
+                }, 1000 * 1);
+
+
                 // 定位到书签处
             })
 
