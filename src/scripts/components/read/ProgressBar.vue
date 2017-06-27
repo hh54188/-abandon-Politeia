@@ -1,12 +1,17 @@
 <template>
     <div class="progress-bar">
-        <div class="progress-bar__fill" style="width:10%;"></div>
+        <div class="progress-bar__fill" v-bind:style="{width: progress}"></div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'ProgressBar'
+        name: 'ProgressBar',
+        computed: {
+            progress () {
+                return parseInt(this.$store.getters.data.currentPage /  this.$store.getters.data.totalPage * 100, 10)  + '%';
+            } 
+        }
     }
 </script>
 
@@ -14,7 +19,6 @@
     @import "~includes/variables.less";
 
     .progress-bar {
-        // display: none;
 
         width: 100%;
         height: 5px;

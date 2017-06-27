@@ -12,11 +12,12 @@ export default new Vuex.Store({
             showIndexMenu: false,
             
             showPaper: true,
-            showProgress: false
+            showProgressBar: false
         },
         data: {
             content: '',
             currentPage: 1,
+            totalPage: 100,
             historyData: '',
         }
     },
@@ -24,19 +25,35 @@ export default new Vuex.Store({
         setHistoryData(state, data) {
             state.data.historyData = data;
         },
-        setContentData(state,content) {
+        setContentData(state, content) {
             state.data.content = content;
         },
         setPage(state, page) {
             state.data.currentPage = page;
+        },
+        setViewVisible(state, payload) {
+            let viewName = payload.viewName;
+            let visible = payload.visible;
+            state.UI['show' + viewName] = visible;
         }
     },
     actions: {
+        updateViewVisible({commit}, payload) {
+            commit('setViewVisible', payload);
+        },
         turnNextPage({commit, dispatch, state}) {
             commit('setPage', state.data.currentPage + 1);
         },
         turnPrevPage({commit, dispatch, state}) {
             commit('setPage', state.data.currentPage - 1);
+        },
+        requestProgress() {
+            return fetch(new Request('/api/ebook/save_progress', {
+                'method': 'GET',
+                'headers': new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            }))
         },
         requestHistory({commit, dispatch}) {
             return fetch(new Request('/api/ebook/read_history_by_book', {

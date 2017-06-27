@@ -27,11 +27,18 @@ export default {
     column-gap: 0;
 
     box-sizing: border-box;
-
+    padding: @pagePadding 0;
+    
     z-index: 1;
 
     .image img {
         width: 100%;
+    }
+
+    * {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 @pagePadding;
     }
 }
 </style>
