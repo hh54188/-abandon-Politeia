@@ -6,13 +6,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         UI: {
-            showTopBar: true,
-            showBottomBar: true,
+            showTopBar: true, // 顶部栏
 
-            showIndexMenu: false,
-            
-            showPaper: true,
-            showProgressBar: false
+            showIndexMenu: false, // 目录栏
+            showPaper: true, // 书的内容
+
+            showBottomBar: true, // 底部菜单栏
+            showFontMenuBar: false, // 字体栏
+
+            showProgressBar: false // 进度栏
         },
         data: {
             content: '',

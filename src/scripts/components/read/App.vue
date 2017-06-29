@@ -7,7 +7,8 @@
         </transition>
         <transition name="fade">
             <BottomBar v-show="this.$store.getters.UI.showBottomBar"></BottomBar>
-        </transition>        
+        </transition>
+        <FontMenu v-show="this.$store.getters.UI.showFontMenuBar"></FontMenu>        
         <transition name="fade">
             <ProgressBar v-show="this.$store.getters.UI.showProgressBar"></ProgressBar>
         </transition>
@@ -20,6 +21,7 @@
     import TopBar from './TopBar.vue';
     import BottomBar from './BottomBar.vue';
     import Paper from './Paper.vue';
+    import FontMenu from './FontMenu.vue';
 
     export default {
         name: 'App',
@@ -27,6 +29,7 @@
             // 绑定通用事件
             let body = document.querySelector('body');
             body.addEventListener('click', () => {
+                return;
                 // 如果“顶栏”和“低栏”同时显示的话，则进行隐藏并显示进度栏
                 if (this.$store.getters.UI.showTopBar && this.$store.getters.UI.showBottomBar) {
                     this.$store.dispatch('updateViewVisible', {
@@ -124,15 +127,14 @@
 
                 // 定位到书签处
             })
-
-
         },
         components: {
             ProgressBar,
             IndexMenu,
             TopBar,
             BottomBar,
-            Paper
+            Paper,
+            FontMenu
         }
     }
 </script>

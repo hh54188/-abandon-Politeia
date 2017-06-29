@@ -1,66 +1,78 @@
 <template>
     <div class="bottom-bar">
         <ul class="bottom-bar__btn-list">
-            <li class="bottom-bar__btn-list__btn">
+            <li class="bottom-bar__btn-list__btn ripple" @click="toggleIndexMenu">
                 <i class="bottom-bar__btn-list__btn__icon icon-menu"></i>
                 <span class="bottom-bar__btn-list__btn__text">目录</span>
             </li>
-            <li class="bottom-bar__btn-list__btn">
+            <li class="bottom-bar__btn-list__btn ripple" @click="toggleFontMenu">
                 <i class="bottom-bar__btn-list__btn__icon icon-font-size"></i>
                 <span class="bottom-bar__btn-list__btn__text">字体</span>            
             </li>
-            <li class="bottom-bar__btn-list__btn">
+            <li class="bottom-bar__btn-list__btn ripple" @click="toggleNightMode">
                 <i class="bottom-bar__btn-list__btn__icon icon-sun"></i>
                 <span class="bottom-bar__btn-list__btn__text">夜间</span>               
             </li>
-            <li class="bottom-bar__btn-list__btn">
-                <i class="bottom-bar__btn-list__btn__icon icon-bubble"></i>
-                <span class="bottom-bar__btn-list__btn__text">评论</span>              
+            <li class="bottom-bar__btn-list__btn ripple">
+                <a class="bottom-bar__btn-list__btn__link" href="http://baidu.com" target="_blank">
+                    <i class="bottom-bar__btn-list__btn__icon icon-bubble"></i>
+                    <span class="bottom-bar__btn-list__btn__text">评论</span>
+                </a>
             </li>
         </ul>
-    </div> 
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'BottomBar'
+    name: 'BottomBar',
+    methods: {
+        toggleIndexMenu() {
+
+        },
+        toggleFontMenu() {
+            console.log('toggle font menu');
+        },
+        toggleNightMode() {
+            console.log('toggle night mode');
+        }
+    }
 }
 </script>
 
 <style lang="less">
 
+@import "~includes/base.less";
 @import "~includes/variables.less";
+@import "~includes/bottom_bar.less";
 
 .bottom-bar {
-    // display: none;
-
-    width: 100%;
-    border-top: 1px solid @borderColor;
-
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-
-    z-index: 2;
-
-    position: fixed;
-    left: 0;
-    bottom: 0;
-
-    background: #ffffff;
+    .bottom_bar_common;
 
     &__btn-list {
+        &:after {
+            .clear-float;
+        }
         width: 100%;
         height: 100%;
         text-align: center;
 
-        padding: 0.8rem 2rem;
         box-sizing: border-box;
 
-        display: flex;
-        justify-content: space-between;
-
         &__btn {
-            display: inline-block;
+            display: block;
+            padding: 0.8rem 0;
+
+            /* 为什么不使用flex，因为要实现 ripple 效果 */
+            width: 25%;
+            width: calc(100% / 4);
+            
+            float: left;
             color: @subTextColor;
+
+            &__link {
+                color: @subTextColor;
+            }
 
             &__icon {
                 display: block;
