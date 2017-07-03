@@ -34,10 +34,30 @@ export default {
     },
     methods: {
         toggleIndexMenu() {
-
+            if (this.$store.getters.UI.showIndexMenu) {
+                this.$store.dispatch('updateViewVisible', {
+                    viewName: 'IndexMenu',
+                    visible: false
+                });
+            } else {
+                this.$store.dispatch('updateViewVisible', {
+                    viewName: 'IndexMenu',
+                    visible: true
+                });
+            }
         },
         toggleFontMenu() {
-            console.log('toggle font menu');
+            if (this.$store.getters.UI.showFontMenuBar) {
+                this.$store.dispatch('updateViewVisible', {
+                    viewName: 'FontMenuBar',
+                    visible: false
+                });
+            } else {
+                this.$store.dispatch('updateViewVisible', {
+                    viewName: 'FontMenuBar',
+                    visible: true
+                });                
+            }
         },
         toggleNightMode() {
             console.log('toggle night mode');
@@ -52,11 +72,52 @@ export default {
 @import "~includes/variables.less";
 @import "~includes/bottom_bar.less";
 
+.slide_up-enter-active, .slide_up-leave-active {
+    transition: all .3s ease-out;
+}
+
+.slide_up-enter {
+    transform: translateY(0);
+    z-index: -1;
+}
+
+.slide_up-enter-to {
+    transform: translateY(-100%);
+    z-index: 1;
+}
+
+.slide_up-leave {
+    transform: translateY(-100%);
+    z-index: 1;
+}
+
+.slide_up-leave-to {
+    transform: translateY(0);
+    z-index: -1;
+}
+
 .bottom-bar {
     .bottom_bar_common;
     
     position: fixed;
     bottom: 0;
+
+    z-index: 2;
+
+    &:before {
+        content: '';
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        transform: translateY(-50%);
+        
+        width: 100%;
+        height: 1px;
+        
+        box-shadow: 0 0 8px black;
+    }    
 
     &__btn-list {
         &:after {
@@ -73,6 +134,8 @@ export default {
                 background: @importantColor;
                 color: #ffffff;                
             }
+            background: white;
+
             display: block;
             padding: 0.8rem 0;
 

@@ -29,7 +29,7 @@ export default {
     box-sizing: border-box;
     border-bottom: 1px solid @borderColor;
 
-    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
     z-index: 2;
 

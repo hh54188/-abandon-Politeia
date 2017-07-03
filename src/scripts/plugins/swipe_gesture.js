@@ -50,7 +50,27 @@ function SwipeGesture(options) {
 
     panHorizontalMoveHandler = panHorizontalMoveHandler.bind(this);
 
-    hammertime.on('panend', function () {
+    function checkContainedInTarget(child, parent) {
+        while (child.tagName.toLowerCase() !== 'body' && child != parent) {
+            child = child.parentNode || child.parentElement;
+        } 
+
+        if (child.tagName.toLowerCase() === 'body') {
+            return false;
+        }
+
+        if (child == parent) {
+            return true;
+        }
+
+        return false;
+    }
+
+    hammertime.on('panend', function (event) {
+        if (!checkContainedInTarget(event.target, this.target)) {
+            return;
+        }
+
         if (distance > viewportWidth / 2) {
             if (direction === Hammer.DIRECTION_LEFT) {
 

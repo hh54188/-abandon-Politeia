@@ -34,11 +34,28 @@ export default {
     top: 0;
     transform: translateY(-100%);
 
+    &:before {
+        content: '';
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        transform: translateY(-50%);
+        
+        width: 100%;
+        height: 1px;
+        
+        box-shadow: 0 0 10px black;
+    }
+
     &__list {
         &:after {
             .clear-float;
         }
         &__item {
+            background: white;
+
             width: 33.3%;
             width: calc(100% / 3);
             

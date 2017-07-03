@@ -147,20 +147,12 @@
         transition: all .3s ease-out;
     }
 
-    .fade-enter {
+    .fade-enter, .fade-leave-to {
         opacity: 0;
     }
 
-    .fade-enter-to {
+    .fade-enter-to, .fade-leave {
         opacity: 1;
-    }
-
-    .fade-leave {
-        opacity: 1;
-    }
-
-    .fade-leave-to {
-        opacity: 0;
     }
     
 </style>
