@@ -23,14 +23,13 @@ export default {
 @import "~includes/load_button.less";
 
 .top-bar {
-    // display: none;
 
     padding: 1rem 0;    
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid @borderColor;
 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
     z-index: 2;
 

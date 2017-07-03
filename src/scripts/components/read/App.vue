@@ -8,7 +8,6 @@
         <transition name="fade">
             <BottomBar v-show="this.$store.getters.UI.showBottomBar"></BottomBar>
         </transition>
-        <FontMenu v-show="this.$store.getters.UI.showFontMenuBar"></FontMenu>        
         <transition name="fade">
             <ProgressBar v-show="this.$store.getters.UI.showProgressBar"></ProgressBar>
         </transition>
@@ -21,7 +20,6 @@
     import TopBar from './TopBar.vue';
     import BottomBar from './BottomBar.vue';
     import Paper from './Paper.vue';
-    import FontMenu from './FontMenu.vue';
 
     export default {
         name: 'App',
@@ -133,8 +131,7 @@
             IndexMenu,
             TopBar,
             BottomBar,
-            Paper,
-            FontMenu
+            Paper
         }
     }
 </script>

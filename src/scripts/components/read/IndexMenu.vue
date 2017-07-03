@@ -126,8 +126,6 @@
 
 
     .index-menu {
-        // display: none;
-        
         padding: 0 @pagePadding;
         box-sizing: border-box;
 
@@ -143,7 +141,7 @@
         left: 0;
         top: 0;
 
-        z-index: 2;
+        z-index: 3;
         
         overflow-y: scroll;
         overflow-x: hidden;

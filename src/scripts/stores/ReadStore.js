@@ -12,7 +12,7 @@ export default new Vuex.Store({
             showPaper: true, // 书的内容
 
             showBottomBar: true, // 底部菜单栏
-            showFontMenuBar: false, // 字体栏
+            showFontMenuBar: true, // 字体栏
 
             showProgressBar: false // 进度栏
         },

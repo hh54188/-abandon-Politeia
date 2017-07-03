@@ -1,11 +1,11 @@
 <template>
     <div class="bottom-bar">
         <ul class="bottom-bar__btn-list">
-            <li class="bottom-bar__btn-list__btn ripple" @click="toggleIndexMenu">
+            <li class="bottom-bar__btn-list__btn ripple" v-bind:class="{'bottom-bar__btn-list__btn--select': this.$store.getters.UI.showIndexMenu}"  @click="toggleIndexMenu">
                 <i class="bottom-bar__btn-list__btn__icon icon-menu"></i>
                 <span class="bottom-bar__btn-list__btn__text">目录</span>
             </li>
-            <li class="bottom-bar__btn-list__btn ripple" @click="toggleFontMenu">
+            <li class="bottom-bar__btn-list__btn ripple" v-bind:class="{'bottom-bar__btn-list__btn--select': this.$store.getters.UI.showFontMenuBar}" @click="toggleFontMenu">
                 <i class="bottom-bar__btn-list__btn__icon icon-font-size"></i>
                 <span class="bottom-bar__btn-list__btn__text">字体</span>            
             </li>
@@ -20,12 +20,18 @@
                 </a>
             </li>
         </ul>
+        <FontMenu v-show="this.$store.getters.UI.showFontMenuBar"></FontMenu>
     </div>
 </template>
 
 <script>
+import FontMenu from './FontMenu.vue';
+
 export default {
     name: 'BottomBar',
+    components: {
+        FontMenu
+    },
     methods: {
         toggleIndexMenu() {
 
@@ -48,6 +54,9 @@ export default {
 
 .bottom-bar {
     .bottom_bar_common;
+    
+    position: fixed;
+    bottom: 0;
 
     &__btn-list {
         &:after {
@@ -60,6 +69,10 @@ export default {
         box-sizing: border-box;
 
         &__btn {
+            &--select {
+                background: @importantColor;
+                color: #ffffff;                
+            }
             display: block;
             padding: 0.8rem 0;
 

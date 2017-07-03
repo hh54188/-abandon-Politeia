@@ -27,6 +27,12 @@ export default {
 
 .font-menu {
     .bottom_bar_common;
+    
+    position: absolute;
+    border-bottom: 1px solid @borderColor;
+
+    top: 0;
+    transform: translateY(-100%);
 
     &__list {
         &:after {
